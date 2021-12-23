@@ -1,14 +1,22 @@
 import React from 'react'
 import Head from 'next/head'
-
+import NavBar from '../components/NavBar'
+import AppContext from '../context/AppContext';
+import '../styles/global.css';
+import '../styles/products.css';
+import '../styles/navbar.css';
 function CustomApp({Component, pageProps}) {
     return (
       <>
         <Head>
-          <title>Create Next App</title>
+          <title>E-Commerce Atlas Search</title>
           <link rel="icon" href="/favicon.ico" />
+          <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
         </Head>
-        <Component {...pageProps} />
+        <AppContext>
+          <NavBar />
+          <Component {...pageProps} />
+        </AppContext>
       </>
     );
 }

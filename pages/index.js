@@ -3,10 +3,10 @@ import dbConnect from '../lib/dbConnect'
 import Product from '../models/Product'
 
 export default function Home({ products }) {
-  console.log(products)
+  
   return (
     <div className="App-header">
-      
+
     </div>
   )
 }
