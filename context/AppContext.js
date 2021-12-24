@@ -3,7 +3,7 @@ import { createContext, useState } from 'react'
 export const AppProvider = createContext()
 function AppContext({children}) {
     const initialState = {
-        cart: [], categories: []
+        cart: [], categories: [], products: []
     }
     const [state, dispatch] = useState(initialState)
     return (

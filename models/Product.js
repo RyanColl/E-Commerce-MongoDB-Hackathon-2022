@@ -27,10 +27,13 @@ const ProductSchema = new mongoose.Schema({
 
     type: String,
   },
+  brand: {
+    type: String
+  },
   image: {
     /* Boolean poddy_trained value, if applicable */
 
-    type: String,
+    type: Array,
   },
   rating: {
     /* List of dietary needs, if applicable */
