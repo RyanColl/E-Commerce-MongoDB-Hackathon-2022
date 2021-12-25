@@ -3,17 +3,17 @@ import dbConnect from '../lib/dbConnect'
 import Product from '../models/Product'
 
 export default function Home({ products }) {
-  
+  // console.log(products)
   return (
     <div className="App-header">
 
     </div>
   )
 }
-
 export async function getServerSideProps({query}) {
   await dbConnect()
-  const res = await Product.find({})
+  console.log(query)
+  const res = await Product.find({}).limit(20)
   const products = res.map((doc) => {
     const product = doc.toObject()
     product._id = product._id.toString()
