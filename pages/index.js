@@ -26,6 +26,7 @@ export default function Home({ products }) {
       }
     }, 10000)
   })
+  // push for vercel
   return (
     <motion.div className="index-content">
       <motion.div className='gallery'>
