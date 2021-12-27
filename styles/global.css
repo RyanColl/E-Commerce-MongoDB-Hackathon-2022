@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Play&family=Roboto+Condensed&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+:root {
+    --span-color: #D3435A;
+}
 body, html {
     height: 100%;
     width: 100%;
+    margin: 0px;
 }
 .banner {
     width: 100%;

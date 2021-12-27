@@ -19,16 +19,18 @@ function NavBar() {
             <motion.div className='nav-item nav-start'>
             <motion.img 
             onClick={() => router.push('/')} 
-            whileHover={{scale: 1.1, cursor: 'pointer'}}
-            src={'./ecommerce-small.png'} />
+            whileHover={{scale: 0.7, cursor: 'pointer'}}
+            src={'./streetz.svg'} 
+            animate={{scale: 0.6}}/>
+            
             </motion.div>
-            <motion.div className='nav-item nav-start nav-link'>
+            <motion.div className='nav-item nav-link'>
                 <motion.span onClick={() => router.push('/')}>Home</motion.span>
             </motion.div>
-            <motion.div onHoverStart={() => {setOpen(true)}} onHoverEnd={() => {setOpen(false)}}
+            <motion.div onClick={() => {setOpen(!isOpen)}} onHoverStart={() => {setOpen(true)}} onHoverEnd={() => {setOpen(false)}}
             className='nav-item nav-start nav-link'>
                 
-                <motion.span className='categories-dropdown'>Categories
+                <motion.span className='categories-dropdown'>Brands
 
                 <motion.div variants={containerV} animate="visible" initial="hidden" className='categories'>
                     {categories.length > 1 && categories.filter((value, index, self) => self.indexOf(value) === index)
