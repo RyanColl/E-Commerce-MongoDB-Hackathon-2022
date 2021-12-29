@@ -7,14 +7,6 @@ import dbConnect from '../lib/dbConnect'
 import Product from '../models/Product'
 import {changeSpanColor} from '../lib/doc.serv'
 import Typewriter from 'typewriter-effect';
-const NikeImageArray = [
-  'https://firebasestorage.googleapis.com/v0/b/anystorage-7a2ad.appspot.com/o/4.png?alt=media&token=e4f3d223-15ca-4bc3-86b0-b29faf49c675',
-  'https://firebasestorage.googleapis.com/v0/b/anystorage-7a2ad.appspot.com/o/5.png?alt=media&token=78fc85be-b22a-48a3-9842-af2b4e2d1dc5',
-  'https://firebasestorage.googleapis.com/v0/b/anystorage-7a2ad.appspot.com/o/6.png?alt=media&token=148b440d-42b8-4a52-816d-9793fa0b42bf',
-  'https://firebasestorage.googleapis.com/v0/b/anystorage-7a2ad.appspot.com/o/7.png?alt=media&token=40d6cebb-37f6-46fa-8278-375bda687ee8',
-  'https://firebasestorage.googleapis.com/v0/b/anystorage-7a2ad.appspot.com/o/8.png?alt=media&token=79200344-a3d4-4683-9d7e-858b0d981b9b',
-  'https://firebasestorage.googleapis.com/v0/b/anystorage-7a2ad.appspot.com/o/9.png?alt=media&token=1d8d43a7-c711-402b-90ed-ddd4c1b4db55'
-]
 export default function Home({ products }) {
   const [timer, setTimer] = useState(0)
   useEffect(() => {
