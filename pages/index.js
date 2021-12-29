@@ -1,7 +1,5 @@
-import { AnimatePresence, motion } from 'framer-motion'
-import Head from 'next/head'
+import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import GalleryImage from '../components/gallery/galleryImage'
 import { getProducts } from '../lib/dbAccess'
 import dbConnect from '../lib/dbConnect'
 import Product from '../models/Product'
