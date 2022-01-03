@@ -6,6 +6,7 @@ import Product from '../models/Product'
 import {changeSpanColor} from '../lib/doc.serv'
 import Typewriter from 'typewriter-effect';
 export default function Home({ products }) {
+  console.log(products)
   const [timer, setTimer] = useState(0)
   useEffect(() => {
     setInterval(() => {
@@ -28,7 +29,7 @@ export default function Home({ products }) {
           )
         })}
         <motion.img initial={{x: 50, opacity: 0, scale: 0.8}} animate={{x: 0, opacity: 1, scale: 0.8}} transition={{duration: 1.2, delay: 0.6}}
-        className='shoes-over' src='./shoes.png' 
+        className='shoes-over' src={'./shoes.png'} 
         />
         <motion.div className='shoes-wording'>
           <motion.div className='shoes-text-div'>
