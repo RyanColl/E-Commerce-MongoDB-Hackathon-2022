@@ -57,6 +57,7 @@ export default function Home({ products }) {
     </motion.div>
   )
 }
+
 export async function getStaticProps({query}) {
   await dbConnect()
   const products = await getProducts()
