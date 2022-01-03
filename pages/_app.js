@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-// import NavBar from '../components/NavBar'
+import NavBar from '../components/navbar/NavBar'
 import AppContext from '../context/AppContext';
 import '../styles/global.scss';
 import '../styles/products.scss';
