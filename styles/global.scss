@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+/* colors
+ #000000 For almost all text
+ #808080 For text like in input boxes
+ #A8A8A8 For input box outline, number text for the sizes
+ #F2F2F2 Background color for container(s)
+ #FFFFFF background color
+*/
+
+// ===== text ==========================
+h1 {
+  font-family: 'Inria Sans', sans-serif;
+  font-size: 64px;
+  color: black;
+}
+h2 {
+  font-family: 'Inria Sans', sans-serif;
+  font-size: 48px;
+  color: black;
+}
+h3 {
+  font-family: 'Inria Sans', sans-serif;
+  font-size: 36px;
+  color: black;
+}
+h4 {
+  font-family: 'Inria Sans', sans-serif;
+  font-size: 24px;
+  color: black;
+}
+h5 {
+  font-family: 'Inria Sans', sans-serif;
+  font-size: 20px;
+  color: black;
+}
+p {
+  font-family: 'Inria Sans', sans-serif;
+  font-size: 18px;
+  color: black;
+}
+a {
+  font-family: 'Inria Sans', sans-serif;
+  font-size: 18px;
+  color: #71B1CC;
+}
+
+@media screen and (max-width: 800px) {
+  h1 {font-size: 36px;}
+  h2 {font-size: 24px;}
+  h3 {font-size: 20px;}
+  h4 {font-size: 18px;}
+  p {font-size: 16px;}
+  a {font-size: 16px;}
+}
+
