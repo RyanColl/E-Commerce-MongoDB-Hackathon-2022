@@ -5,9 +5,28 @@
     color: white;
     display: flex;
     justify-content: space-between;
+    div {
+        display: flex;
+    }
 }
 .nav-item {
-    padding: 0.3em 0.3em;
+    padding: 0px 0.15em;
     height: 100%;
-    background-color: red;
+    place-items: center;
+    margin-right: 2em;
+    font-size: 18px;
+    :hover {
+        cursor: pointer;
+    }
+}
+.nav-right {
+    div {
+        margin-right: 1em;
+    }
+    div:last-child {
+        margin-right: 2em;
+    }
+}
+.logo {
+    margin-right: 1em;
 }
