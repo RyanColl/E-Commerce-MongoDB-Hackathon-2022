@@ -2,10 +2,11 @@ import React from 'react'
 import Head from 'next/head'
 import NavBar from '../components/NavBar'
 import AppContext from '../context/AppContext';
-import '../styles/global.css';
-import '../styles/products.css';
-import '../styles/navbar.css';
-import '../styles/index.css';
+import '../styles/global.scss';
+import '../styles/products.scss';
+import '../styles/navbar.scss';
+import '../styles/footer.scss';
+import '../styles/index.scss';
 function CustomApp({Component, pageProps}) {
     return (
       <>
