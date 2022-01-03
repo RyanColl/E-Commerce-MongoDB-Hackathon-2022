@@ -32,21 +32,15 @@ export default function Home({ products }) {
               .typeString('Comfort')
               .pauseFor(2500)
               .deleteAll()
-              .callFunction(() => {
-                changeSpanColor('#D3764A')
-              })
+              .callFunction(() => changeSpanColor('#D3764A'))
               .typeString('LifeStyle')
               .pauseFor(2500)
               .deleteAll()
-              .callFunction(() => {
-                changeSpanColor('#304C7A')
-              })
+              .callFunction(() => changeSpanColor('#304C7A'))
               .typeString('Fashion')
               .pauseFor(2500)
               .deleteAll()
-              .callFunction(() => {
-                changeSpanColor('#B03860')
-              })
+              .callFunction(() => changeSpanColor('#B03860'))
               .typeString('Collection')
               .start()
             }}
