@@ -4,7 +4,7 @@ import NavBar from '../components/NavBar'
 import AppContext from '../context/AppContext';
 import '../styles/global.scss';
 import '../styles/products.scss';
-import '../styles/navbar.scss';
+import '../components/navbar/navbar.scss';
 import '../styles/footer.scss';
 import '../styles/index.scss';
 function CustomApp({Component, pageProps}) {
