@@ -7,16 +7,6 @@ import {changeSpanColor} from '../lib/doc.serv'
 import Typewriter from 'typewriter-effect';
 export default function Home({ products }) {
   console.log(products)
-  const [timer, setTimer] = useState(0)
-  useEffect(() => {
-    setInterval(() => {
-      if(timer === 5) {
-        setTimer(0)
-      } else {
-        setTimer(timer+1)
-      }
-    }, 10000)
-  })
   // push for vercel
   return (
     <motion.div className="index-content">
@@ -67,7 +57,7 @@ export default function Home({ products }) {
     </motion.div>
   )
 }
-export async function getServerSideProps({query}) {
+export async function getStaticProps({query}) {
   await dbConnect()
   const products = await getProducts()
   const brands = await Product.collection.distinct('brand')
@@ -75,7 +65,8 @@ export async function getServerSideProps({query}) {
   // server side rendering
   return {
     props: {
-      products: JSON.parse(JSON.stringify(products))
+      products: JSON.parse(JSON.stringify(products)),
+      revalidate: false,
     }, // will be passed to the page component as props
   }
 }
