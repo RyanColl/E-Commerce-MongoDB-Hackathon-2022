@@ -5,8 +5,11 @@ import AppContext from '../context/AppContext';
 import '../styles/global.scss';
 import '../styles/products.scss';
 import '../components/navbar/navbar.scss';
-import '../styles/footer.scss';
+import '../components/footer/footer.scss';
+import '../components/subscribe/subscribe.scss';
+import '../components/textInput/textinput.scss';
 import '../styles/index.scss';
+import Footer from '../components/footer/Footer';
 function CustomApp({Component, pageProps}) {
     return (
       <>
@@ -18,6 +21,7 @@ function CustomApp({Component, pageProps}) {
         <AppContext>
           <NavBar />
           <Component {...pageProps} />
+          <Footer />
         </AppContext>
       </>
     );
