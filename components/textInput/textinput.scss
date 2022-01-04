@@ -1,0 +1,13 @@
+.input-tag {
+    height: 54px;
+    border-radius: 4px;
+    border: 0.1em solid #AEAEAE inset;
+    padding: 0px 12px;
+    
+}
+.input-tag:focus {
+    outline: none;
+}
+.input-tag::placeholder {
+    color: #949494 !important;
+}
