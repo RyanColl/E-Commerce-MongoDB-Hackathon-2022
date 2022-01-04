@@ -1,0 +1,19 @@
+.main-cont {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+}
+.product-list {
+  margin: 24px 24px;
+  width: 100%;
+  max-width: 1350px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  // display: grid;
+  // grid-template-columns: repeat(4, 1fr);
+  // justify-content: center;
+
+}

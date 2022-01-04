@@ -7,7 +7,7 @@
   box-sizing: border-box;
   width: 275px;
   text-align: center;
-  margin: 20px 4px;
+  margin: 20px 2px;
 }
 
 .prod-preview, .prod-img  {
@@ -21,7 +21,6 @@
 
   button {
     opacity: 0;
-    cursor: pointer;
   }
 }
 
@@ -39,10 +38,6 @@
   button {
     opacity: 1;
     transition: all 0.5s ease-in-out;
-  }
-  button:hover {
-    background-color: black;
-    color: white;
   }
 }
 

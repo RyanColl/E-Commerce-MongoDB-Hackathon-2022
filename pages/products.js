@@ -3,8 +3,59 @@ import ProductPreview from '../components/productPreview/productPreview'
 
 function products() {
     return (
-        <div>
-            <ProductPreview></ProductPreview>
+        <div className='main-cont'>
+            <div className='product-list'>
+                <ProductPreview 
+                    // src=''
+                    // prodTitle=''
+                    // prodPrice=''
+                />
+                <ProductPreview 
+                    // src=''
+                    // prodTitle=''
+                    // prodPrice=''
+                />
+                <ProductPreview 
+                    // src=''
+                    // prodTitle=''
+                    // prodPrice=''
+                />
+                <ProductPreview 
+                    // src=''
+                    // prodTitle=''
+                    // prodPrice=''
+                />
+                <ProductPreview 
+                    // src=''
+                    // prodTitle=''
+                    // prodPrice=''
+                />
+                <ProductPreview 
+                    // src=''
+                    // prodTitle=''
+                    // prodPrice=''
+                />
+                <ProductPreview 
+                    // src=''
+                    // prodTitle=''
+                    // prodPrice=''
+                />
+                <ProductPreview 
+                    // src=''
+                    // prodTitle=''
+                    // prodPrice=''
+                />
+                <ProductPreview 
+                    // src=''
+                    // prodTitle=''
+                    // prodPrice=''
+                />
+                <ProductPreview 
+                    // src=''
+                    // prodTitle=''
+                    // prodPrice=''
+                />
+            </div>
         </div>
     )
 }
