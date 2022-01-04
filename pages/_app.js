@@ -1,12 +1,18 @@
-import React from 'react'
-import Head from 'next/head'
-import NavBar from '../components/navbar/NavBar'
+import React from 'react';
+import Head from 'next/head';
+import NavBar from '../components/navbar/NavBar';
 import AppContext from '../context/AppContext';
+
 import '../styles/global.scss';
 import '../styles/products.scss';
-import '../components/navbar/navbar.scss';
 import '../styles/footer.scss';
 import '../styles/index.scss';
+
+// components scss
+import '../components/navbar/navbar.scss';
+import "../components/productPreview/productPreview.scss";
+
+
 function CustomApp({Component, pageProps}) {
     return (
       <>

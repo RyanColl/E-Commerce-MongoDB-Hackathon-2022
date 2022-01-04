@@ -17,41 +17,63 @@ h1 {
   font-family: 'Inria Sans', sans-serif;
   font-size: 64px;
   color: black;
+  margin: 0;
 }
 h2 {
   font-family: 'Inria Sans', sans-serif;
   font-size: 48px;
   color: black;
+  margin: 0;
 }
 h3 {
   font-family: 'Inria Sans', sans-serif;
   font-size: 36px;
   color: black;
+  margin: 0;
 }
 h4 {
   font-family: 'Inria Sans', sans-serif;
   font-size: 24px;
   color: black;
+  margin: 0;
 }
 h5 {
   font-family: 'Inria Sans', sans-serif;
   font-size: 20px;
   color: black;
+  margin: 0;
 }
 h6 {
   font-family: 'Inria Sans', sans-serif;
   font-size: 18px;
   color: black;
+  margin: 0;
 }
 p {
   font-family: 'Inria Sans', sans-serif;
   font-size: 18px;
   color: black;
+  margin: 0;
 }
 a {
   font-family: 'Inria Sans', sans-serif;
   font-size: 18px;
   color: #71B1CC;
+  margin: 0;
+}
+
+button[type="button"] {
+  padding: 8px 36px;
+  border-radius: 3px;
+}
+.black-btn {
+  background-color: black;
+  color: white;
+}
+.white-btn {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
 }
 
 @media screen and (max-width: 800px) {
@@ -62,4 +84,3 @@ a {
   p {font-size: 16px;}
   a {font-size: 16px;}
 }
-
