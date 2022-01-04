@@ -14,12 +14,20 @@ $md: 800px;
 /* COUNTERING USER AGENT STYLESHEET */
 body {margin: 0px}
 /* -------------------------------- */
+.centered-cont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 // ===== text styling ==========================
 h1, h2, h3, h4, h5, h6, p, a, span, button[type="button"] {
   font-family: 'Inria Sans', sans-serif;
+  font-weight: 400;
   margin: 0;
 }
+
 h1 {font-size: 64px;}
 h2 {font-size: 48px;}
 h3 {font-size: 36px;}

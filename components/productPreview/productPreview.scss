@@ -7,7 +7,12 @@
   box-sizing: border-box;
   width: 275px;
   text-align: center;
-  margin: 20px 2px;
+  margin: 18px 2px;
+
+  h6, p {
+    width: 100%;
+    text-align: left;
+  }
 }
 
 .prod-preview, .prod-img  {

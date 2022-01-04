@@ -11,6 +11,7 @@ import '../styles/index.scss';
 // components scss
 import '../components/navbar/navbar.scss';
 import "../components/productPreview/productPreview.scss";
+import '../components/banner/Banner.scss';
 
 
 function CustomApp({Component, pageProps}) {
