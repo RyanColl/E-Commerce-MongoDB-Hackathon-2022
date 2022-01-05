@@ -1,17 +1,13 @@
 import React from 'react'
 import Option from '../option/Option'
 
-export default function OptionCont() {
+export default function OptionCont({
+  optionTitle="Select an Option"
+}) {
   return (
     <div>
-      <p>Select a Color</p>
+      <p>{optionTitle}</p>
       <div className='option-cont'>
-        <Option />
-        <Option />
-        <Option />
-        <Option />
-        <Option />
-        <Option />
         <Option />
       </div>
     </div>

@@ -25,7 +25,8 @@ export default function ProductView({
           <h3>{title}</h3>
           <p>Style: _______</p>
           <h4>${price}</h4>
-          <OptionCont />
+          <OptionCont optionTitle="Select a Color" />
+          <OptionCont optionTitle="Select a Size" />
         </div>
 
       </div>
