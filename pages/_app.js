@@ -21,6 +21,8 @@ import "../components/productPreview/productPreview.scss";
 import '../components/banner/Banner.scss';
 import "../components/filterBar/filterbar.scss";
 import "../components/productView/productView.scss";
+import "../components/optionCont/optioncont.scss";
+import "../components/option/option.scss";
 
 function CustomApp({Component, pageProps}) {
     return (
