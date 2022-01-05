@@ -12,7 +12,11 @@ $md: 800px;
 */
 
 /* COUNTERING USER AGENT STYLESHEET */
-body {margin: 0px}
+html, body {
+  box-sizing: border-box;
+  margin: 0px;
+  width: 100%;
+}
 /* -------------------------------- */
 .centered-cont {
   margin-top: 60px;
