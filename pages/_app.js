@@ -10,6 +10,7 @@ import Footer from '../components/footer/Footer';
 import '../styles/global.scss';
 import '../styles/index.scss';
 import '../styles/products.scss';
+import '../styles/individualProduct.scss';
 
 // components scss
 import '../components/navbar/navbar.scss';
@@ -18,8 +19,8 @@ import '../components/subscribe/subscribe.scss';
 import '../components/textInput/textinput.scss';
 import "../components/productPreview/productPreview.scss";
 import '../components/banner/Banner.scss';
-
 import "../components/filterBar/filterbar.scss";
+import "../components/productView/productView.scss";
 
 function CustomApp({Component, pageProps}) {
     return (

@@ -1,0 +1,27 @@
+.product-info {
+  display: flex;
+  flex-direction: row;
+  margin-top: 80px;
+}
+
+.product-image {
+  width: 500px;
+  height: 550px;
+  object-fit: cover;
+  object-position: bottom;
+}
+.small-product-images {
+  background-color: rgb(235, 217, 226);
+}
+.small-product-images > img {
+  width: 48px;
+  height: 48px;
+}
+
+.product-details {
+  background-color: rgb(255, 194, 214);
+
+  h3 {
+    text-transform: uppercase;
+  }
+}
