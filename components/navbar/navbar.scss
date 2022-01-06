@@ -17,9 +17,10 @@
     place-items: center;
     margin-right: 2em;
     font-size: 18px;
-    :hover {
-        cursor: pointer;
-    }
+    
+}
+.nav-item:hover {
+    cursor: pointer;
 }
 .nav-right {
     div {
@@ -31,4 +32,7 @@
 }
 .logo {
     margin-right: 1em;
+}
+.browse {
+    position: relative;
 }

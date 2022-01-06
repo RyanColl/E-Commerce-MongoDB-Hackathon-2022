@@ -1,8 +1,16 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 import { Icon } from '@iconify/react';
+import BrowseDropdown from '../browseDropdown/BrowseDropdown'
+import {useRouter} from 'next/router'
 
+// import context to grab cart state for purpose of seeing cart volume hover over cart icon
+import { AppProvider } from '../../context/AppContext'
+import CartBubble from '../cart/CartBubble';
 function NavBar() {
+    // app context = global state
+    const {state, dispatch} = React.useContext(AppProvider)
+    const {cart} = state;
     // window object in nextjs
     const windowObject = typeof window != 'undefined' && window;
 
@@ -25,7 +33,14 @@ function NavBar() {
         window.addEventListener("scroll", setScroll);
         return () => window.removeEventListener("scroll", setScroll);
     })
-    console.log(hidden)
+
+
+    // state for browse dropdown
+    const [isHover, setHover] = useState(false)
+
+    // router access for pushing route instead of adding a tags
+    const router = useRouter()
+    const home = () => router.push('/')
     return (
         <AnimatePresence>
             {!hidden &&
@@ -36,25 +51,44 @@ function NavBar() {
             exit={{ opacity: 0 }}
             className='nav-bar'>
                 <motion.div className='nav-left'>
-                    <motion.div className='nav-item logo'>
+                    <motion.div onClick={home} className='nav-item logo'>
                         <motion.img src='./logo.png' animate={{scale: 0.6}} />
                     </motion.div>
-                    <motion.div className='nav-item home'>
+                    <motion.div onClick={home} className='nav-item home'>
                         <span>Home</span>
                     </motion.div>
-                    <motion.div className='nav-item browse'>
-                        <span>Browse</span>
+                    <motion.div 
+                    onHoverStart={() => {setHover(true)}}
+                    onHoverEnd={() => {setHover(false)}}
+                    className='nav-item browse'>
+                        <span>Browse
+                            <AnimatePresence>
+                            {isHover && 
+                                <BrowseDropdown
+                                close={()=>setHover(false)} 
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                />
+                            }
+                            </AnimatePresence>
+                        </span>
                     </motion.div>
                 </motion.div>
                 <motion.div className='nav-right'>
                     <motion.div className='nav-item search'>
-                        <Icon icon="akar-icons:search" />
+                        <Icon style={iconSize} icon="akar-icons:search" />
                     </motion.div>
                     <motion.div className='nav-item account'>
-                        <Icon icon="bi:person" />
+                        <Icon style={iconSize} icon="bi:person" />
                     </motion.div>
-                    <motion.div className='nav-item cart'>
-                        <Icon icon="clarity:shopping-cart-line" />
+                    <motion.div onClick={() => dispatch({...state, cart: [...cart, ['']]})} className='nav-item cart'>
+                        <Icon style={iconSize} icon="clarity:shopping-cart-line" />
+                        <AnimatePresence>
+                        {cart.length &&
+                            <CartBubble number={cart.length} />
+                        }
+                        </AnimatePresence>
                     </motion.div>
                 </motion.div>
             </motion.div>
@@ -64,3 +98,4 @@ function NavBar() {
 }
 
 export default NavBar
+const iconSize = {width: 24, height: 24}
