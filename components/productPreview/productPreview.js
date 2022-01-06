@@ -1,7 +1,7 @@
 import React from 'react';
 
 function ProductPreview({
-  src="/placeholder.jpg",
+  src="https://static.nike.com/a/images/t_PDP_1728_v1/17c7e995-7b18-43ff-87cb-ce0e239f4fe5/air-max-dia-se-shoe-CH3Phk.jpg",
   prodTitle="Product Name Here",
   prodPrice="399.00"
 
