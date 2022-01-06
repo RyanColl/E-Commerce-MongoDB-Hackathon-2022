@@ -27,6 +27,7 @@ export default function ProductView({
           <h4>${price}</h4>
           <OptionCont optionTitle="Select a Color" />
           <OptionCont optionTitle="Select a Size" />
+          <button className='black-btn' type='button'>Add to Cart</button>
         </div>
 
       </div>
