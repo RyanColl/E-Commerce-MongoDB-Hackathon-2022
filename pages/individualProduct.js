@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductView from '../components/productView/productView'
+import ProductView from '../components/productView/ProductView'
 
 export default function IndividualProduct() {
   return (
