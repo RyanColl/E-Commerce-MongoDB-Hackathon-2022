@@ -7,7 +7,6 @@ export default function ProductView({
   price="550",
 }) {
   return (
-    // <div className='centered-cont'>
       <div className='product-info'>
         <div className='product-images'>
           <img className='main-product-image' src={image}/>
@@ -38,6 +37,5 @@ export default function ProductView({
         </div>
 
       </div>
-    // </div>
   )
 }
