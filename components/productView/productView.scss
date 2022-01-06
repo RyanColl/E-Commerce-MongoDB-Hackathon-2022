@@ -1,3 +1,6 @@
+$lg: 1000px;
+$md: 800px;
+
 .product-info {
   display: flex;
   justify-content: center;
@@ -45,10 +48,11 @@
     margin-top: 24px;
   }
   h4 { margin: 24px 0 12px; }
+  .cart-btn { margin-top: 36px; }
 }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: $lg) {
   .product-info {
     flex-direction: column;
     align-items: center;
@@ -63,7 +67,6 @@
     .cart-btn {
       display: flex;
       margin: auto;
-      margin-top: 36px;
     }
   }
   
@@ -80,7 +83,7 @@
   
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $md) {
   .product-info {
     width: 90%;
   }

@@ -26,8 +26,14 @@ export default function ProductView({
           {/* not sure if we have the data for this */}
           {/* <p>Style: _______</p> */}
           <h4>${price}</h4>
-          <OptionCont optionTitle="Select a Color" />
-          <OptionCont optionTitle="Select a Size" />
+          <OptionCont 
+            optionTitle="Select a Color"
+            optionText={"dwfwe"}
+          />
+          <OptionCont 
+            optionTitle="Select a Size" 
+            optionText={11.5}  
+          />
           <button className='black-btn cart-btn' type='button'>Add to Cart</button>
         </div>
 
