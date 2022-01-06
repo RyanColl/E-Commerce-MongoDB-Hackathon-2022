@@ -1,10 +1,14 @@
 import React from 'react'
+import Breadcrumbs from 'nextjs-antd-breadcrumbs';
 
 function Breadcrumb() {
     return (
-        <div>
-            
-        </div>
+        <Breadcrumbs 
+            className='breadcrumb'
+            useDefaultStyle 
+            omitRootLabel
+            rootLabel="Home" 
+        />
     )
 }
 
