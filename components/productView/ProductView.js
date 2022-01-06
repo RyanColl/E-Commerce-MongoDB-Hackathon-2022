@@ -7,7 +7,6 @@ export default function ProductView({
   price="550",
 }) {
   return (
-    <div>
       <div className='product-info'>
         <div className='product-images'>
           <img className='main-product-image' src={image}/>
@@ -23,14 +22,20 @@ export default function ProductView({
 
         <div className='product-details'>
           <h3>{title}</h3>
-          <p>Style: _______</p>
+          {/* not sure if we have the data for this */}
+          {/* <p>Style: _______</p> */}
           <h4>${price}</h4>
-          <OptionCont optionTitle="Select a Color" />
-          <OptionCont optionTitle="Select a Size" />
-          <button className='black-btn' type='button'>Add to Cart</button>
+          <OptionCont 
+            optionTitle="Select a Color"
+            optionText={"dwfwe"}
+          />
+          <OptionCont 
+            optionTitle="Select a Size" 
+            optionText={11.5}  
+          />
+          <button className='black-btn cart-btn' type='button'>Add to Cart</button>
         </div>
 
       </div>
-    </div>
   )
 }
