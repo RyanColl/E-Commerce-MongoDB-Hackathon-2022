@@ -1,19 +1,23 @@
+// media queries screen sizes
 $lg: 1000px;
 $md: 800px;
 
-// breadcrumbs, rating stars
+// breadcrumbs, rating stars, sizing ===========================
 .basic-info-cont {
   display: flex;
-  width: 80%;
   justify-content: space-between;
   align-items: center;
+}
+
+.basic-info-cont, .product-info, 
+.descriptions, .ratings-section {
+  width: 80%;
 }
 
 // information section 1 ==============================
 .product-info, .descriptions {
   display: flex;
   justify-content: center;
-  width: 80%;
   flex-direction: row;
   margin: 0 24px;
 }
@@ -62,12 +66,11 @@ $md: 800px;
   .cart-btn { margin-top: 36px; }
 }
 // end of section 1 =================================
-
 // information section 2 ============================
 .descriptions {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr;
-  margin-top: 72px;
+  margin-top: 120px;
   
 
   .long-description {
@@ -100,17 +103,29 @@ $md: 800px;
 }
 
 // end of section 2 ==============================
+// ratings section ===============================
+.ratings-section {
+  margin-top: 120px;
+  
+  div {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  div > div { margin-top: 2px; }
+  p { margin-top: 8px; }
+}
 
 
 // media queries ==================================
 @media screen and (max-width: $lg) {
+  .basic-info-cont, .product-info, 
+  .descriptions, .ratings-section {
+    width: 70%;
+  }
   .product-info {
     flex-direction: column;
     align-items: center;
-    width: 70%;
-  }
-  .basic-info-cont {
-    width: 70%;
   }
 
   //section 1 =================================
@@ -145,7 +160,6 @@ $md: 800px;
     display: flex;
     flex-direction: column-reverse;
     align-items: flex-start;
-    width: 70%;
 
     .short-details {
       margin-left: 0;
@@ -174,7 +188,8 @@ $md: 800px;
 }
 
 @media screen and (max-width: $md) {
-  .product-info, .descriptions, .basic-info-cont {
+  .product-info, .descriptions, 
+  .basic-info-cont, .ratings-section {
     width: 90%;
   }
 

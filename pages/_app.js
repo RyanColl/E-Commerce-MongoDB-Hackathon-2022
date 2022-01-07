@@ -26,7 +26,6 @@ import "../components/option/option.scss";
 import "../components/browseDropdown/browsedropdown.scss";
 import '../components/cart/cart.scss';
 import "../components/breadcrumb/breadcrumb.scss";
-import "../components/rating/rating.scss";
 
 function CustomApp({Component, pageProps}) {
     return (

@@ -69,7 +69,13 @@ export default function Product({
       </div>
 
       {/* ratings section */}
-
+      <div className='ratings-section'>
+        <div>
+          <h3>Ratings & Reviews</h3>
+          <Rating rating={rating} />
+        </div>
+        <p>No reviews yet. Be the first one to leave a review.</p>
+      </div>
     </div>
   )
 }
