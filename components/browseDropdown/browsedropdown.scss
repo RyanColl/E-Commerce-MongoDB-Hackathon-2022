@@ -1,0 +1,53 @@
+.browse-dropdown {
+    width: clamp(300px, 592px, 100%);
+    height: 392px;
+    background: black;
+    position: absolute;
+    top: 80px;
+    padding: 1.75em;
+    z-index: 10;
+}
+.browse-dropdown:before {
+    content:"\A";
+    border-style: solid;
+    border-width: 10px 15px 10px 0;
+    transform: rotate(90deg);
+    border-color: transparent black transparent transparent;
+    position: absolute;
+    top: -17px;
+}
+.browse-dropdown:hover {
+    cursor: default !important;
+}
+.browse-dropdown-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    div {
+        margin: 1em 0px;
+    }
+}
+.view-by {
+    width: 100%;
+    a {
+        text-decoration: none;
+        cursor: pointer;
+        color: white !important;
+    }
+    span {
+        text-align: left;
+        font-size: 18px;
+        margin: 4px 0;
+    }
+}
+.view-all-products {
+    
+}
+.view-by-type {
+    display: flex;
+    flex-direction: column;
+}
+.view-by-collection {
+    display: flex;
+    flex-direction: column;
+}

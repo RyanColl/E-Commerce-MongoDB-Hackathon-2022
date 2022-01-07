@@ -1,7 +1,7 @@
 .filter-cont {
   width: 100%;
   max-width: 1163px;
-
+  z-index: -11 !important;
   .filter-bar {
     width: 100%;
     display: flex;
@@ -18,6 +18,7 @@
 
 .filter-item {
   display: flex;
+  z-index: 1 !important;
   align-items: center;
   height: 52px;
   column-gap: 8px;
