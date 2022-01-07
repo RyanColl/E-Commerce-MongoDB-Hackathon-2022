@@ -1,12 +1,21 @@
 import React from 'react';
 import OptionCont from '../optionCont/OptionCont';
+import Rating from '../rating/Rating';
+import Breadcrumb from '../breadcrumb/Breadcrumb';
 
-export default function ProductView({
+export default function Product({
+  // products=null,
   title="Name of Product",
   image="/placeholder.jpg",
   price="550",
 }) {
   return (
+    <div className='centered-cont'>
+      <div>
+        <Breadcrumb />
+        <Rating />
+      </div>
+
       <div className='product-info'>
         <div className='product-images'>
           <img className='main-product-image' src={image}/>
@@ -37,5 +46,6 @@ export default function ProductView({
         </div>
 
       </div>
+    </div>
   )
 }

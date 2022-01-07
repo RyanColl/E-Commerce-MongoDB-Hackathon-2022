@@ -5,6 +5,7 @@ import ProductPreview from '../components/productPreview/productPreview'
 import { AppProvider } from '../context/AppContext';
 import dbConnect from '../lib/dbConnect'
 import { getProducts } from '../lib/dbAccess'
+import {useRouter} from 'next/router'
 // import { useRouter } from 'next/router'
 function products({query, products}) {
     const {state, dispatch} = React.useContext(AppProvider)
@@ -19,6 +20,8 @@ function products({query, products}) {
     // console.log(router.query.Search)
     /* HEADS UP - DUE TO SERVER SIDE PROPS ON LINE 77, WE NO LONGER NEED USE ROUTER */
     console.log(query)
+
+    const router = useRouter()
     return (
         <div className='centered-cont'>
             <Banner />
@@ -26,8 +29,12 @@ function products({query, products}) {
             <div className='product-list'>
                 {products.map((product, i) => {
                     return (
-                        <ProductPreview src={product.image[0] || product.image[1]} 
-                        prodTitle={product.title} prodPrice={`${product.price}`} />
+                        <ProductPreview 
+                            src={product.image[0] || product.image[1]} 
+                            prodTitle={product.title} 
+                            prodPrice={`${product.price}`}
+                            prodPage={() => router.push("product/" + `{product.title}`)} 
+                        />
                     );
                 })}
             </div>
