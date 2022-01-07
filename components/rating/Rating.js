@@ -1,13 +1,19 @@
 import React from 'react'
-import ReactStars from 'react-stars'
+import StarRatings from 'react-star-ratings';
 
-export default function Rating(newRating) {
-    console.log(newRating)
+export default function Rating({
+    rating=5
+}) {
+
     return (
-    <ReactStars
-        count={5}
-        onChange={Rating}
-        size={24}
-        color2={'#ffd700'} />
+        <StarRatings
+            numberOfStars={5}
+            rating={rating}
+            starDimension="20px"
+            starSpacing="1px"
+            starRatedColor='#FFE455'
+            starEmptyColor='#E7E7E7'
+            
+        />
     )
 }

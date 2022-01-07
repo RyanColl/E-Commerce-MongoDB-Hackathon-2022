@@ -15,9 +15,12 @@
         text-decoration: underline;
     }
 
-    span:last-child span:last-child {
+    // hiding the slash of end links
+    span:last-child span:last-child, 
+    span:nth-child(2) span:last-child {
         display: none;
     }
+    
 
 
     @media screen and (max-width: 1000px) {
@@ -26,4 +29,9 @@
     @media screen and (max-width: 800px) {
         width: 90%;
     }
+}
+
+// hiding product name
+div.ant-breadcrumb.breadcrumb > span:nth-child(3) {
+    display: none;
 }

@@ -6,7 +6,16 @@ import Product from '../../components/product/Product'
 export default function Item({product}) {
   console.log(product)
   return (
-    <Product />
+    <Product 
+      title={product.title}
+
+      //the price is not in the thousands -- there should be a period before the second last #
+      price={product.price}
+      
+      // need halp much halp 
+      rating={4.3}
+      // image={product.image}
+    />
   )
 }
 
