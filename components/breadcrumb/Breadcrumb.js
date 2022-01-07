@@ -5,8 +5,7 @@ function Breadcrumb() {
     return (
         <Breadcrumbs 
             className='breadcrumb'
-            useDefaultStyle 
-            omitRootLabel
+            // omitRootLabel
             rootLabel="Home" 
         />
     )

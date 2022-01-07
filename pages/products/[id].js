@@ -6,7 +6,20 @@ import Product from '../../components/product/Product'
 export default function Item({product}) {
   console.log(product)
   return (
-    <Product />
+    <Product 
+      // need halp much halp 
+        rating={4.3}
+      // information section 1 ==================
+        title={product.title}
+        //the price is not in the thousands -- there should be a period before the second last #
+        price={product.price}
+      // image={product.image}
+
+      // information section 2 ==================
+        // longDetails={}
+        // imgDetails={}
+        // prodDetails={}
+    />
   )
 }
 
