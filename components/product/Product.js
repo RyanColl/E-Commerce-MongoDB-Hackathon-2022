@@ -4,14 +4,14 @@ import Rating from '../rating/Rating';
 import Breadcrumb from '../breadcrumb/Breadcrumb';
 
 export default function Product({
-  // products=null,
+  products=null,
   title="Name of Product",
   image="/placeholder.jpg",
   price="550",
 }) {
   return (
     <div className='centered-cont'>
-      <div>
+      <div className='basic-info-cont'>
         <Breadcrumb />
         <Rating />
       </div>

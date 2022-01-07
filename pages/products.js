@@ -33,7 +33,7 @@ function products({query, products}) {
                             src={product.image[0] || product.image[1]} 
                             prodTitle={product.title} 
                             prodPrice={`${product.price}`}
-                            prodPage={() => router.push("product/" + `{product.title}`)} 
+                            prodPage={() => router.push("products/" + product._id)} 
                         />
                     );
                 })}
