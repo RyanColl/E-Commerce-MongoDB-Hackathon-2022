@@ -7,7 +7,11 @@ export default function Product({
   title="Name of Product",
   image="/placeholder.jpg",
   price="550",
-  rating=5
+  rating=5,
+
+  longDetails="one short descriptive paragraph",
+  imgDetails="/placeholder.jpg",
+  prodDetails="short point form information"
 }) {
 
   return (
@@ -17,6 +21,7 @@ export default function Product({
         <Rating rating={rating}/>
       </div>
 
+      {/* information section 1 */}
       <div className='product-info'>
         <div className='product-images'>
           <img className='main-product-image' src={image}/>
@@ -46,6 +51,25 @@ export default function Product({
         </div>
 
       </div>
+
+      {/* information section 2 -- extra product info */}
+      <div className='product-info descriptions'>
+        <div className='long-description'>
+          <p>{longDetails}</p>
+        </div>
+        <div className='description-image'>
+          <img src={imgDetails} />
+          <div className='style-cont'></div>
+        </div>
+        <div className='short-details'>
+          <h4>Product Details</h4>
+          <p>{prodDetails}</p>
+        </div>
+
+      </div>
+
+      {/* ratings section */}
+
     </div>
   )
 }
