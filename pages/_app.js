@@ -24,6 +24,7 @@ import "../components/productView/productView.scss";
 import "../components/optionCont/optioncont.scss";
 import "../components/option/option.scss";
 import "../components/breadcrumb/breadcrumb.scss";
+import "../components/rating/rating.scss";
 
 function CustomApp({Component, pageProps}) {
     return (
