@@ -47,7 +47,7 @@ export default products
 
 export async function getServerSideProps({query}) {
     await dbConnect()
-    const products = await getProducts(query.page | 1)
+    const products = await getProducts()
     console.log(query)
     return {
       props: {
