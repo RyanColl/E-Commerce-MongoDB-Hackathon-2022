@@ -33,9 +33,9 @@ function BrowseDropdown({exit, initial, animate, close}) {
                 </div>
                 <div className='view-by view-by-collection'>
                     <span>VIEW BY COLLECTION</span>
-                    <span onClick={close}><Link href={'/products?category=sport'}>Sport</Link></span>
-                    <span onClick={close}><Link href={'/products?category=luxury'}>Luxury</Link></span>
-                    <span onClick={close}><Link href={'/products?category=collectors'}>Collectors</Link></span>
+                    <span onClick={close}><Link href={'/products?collection=sport'}>Sport</Link></span>
+                    <span onClick={close}><Link href={'/products?collection=luxury'}>Luxury</Link></span>
+                    <span onClick={close}><Link href={'/products?collection=collectors'}>Collectors</Link></span>
                 </div>
             </div>
         </motion.div>

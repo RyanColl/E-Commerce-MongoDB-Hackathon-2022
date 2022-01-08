@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Icon } from '@iconify/react';
 import BrowseDropdown from '../browseDropdown/BrowseDropdown'
 import {useRouter} from 'next/router'
-
+import logo from '../../assets/logo.svg'
 // import context to grab cart state for purpose of seeing cart volume hover over cart icon
 import { AppProvider } from '../../context/AppContext'
 import CartBubble from '../cart/CartBubble';
@@ -41,6 +41,7 @@ function NavBar() {
     // router access for pushing route instead of adding a tags
     const router = useRouter()
     const home = () => router.push('/')
+    console.log()
     return (
         <AnimatePresence>
             {!hidden &&
@@ -52,7 +53,7 @@ function NavBar() {
             className='nav-bar'>
                 <motion.div className='nav-left'>
                     <motion.div onClick={home} className='nav-item logo'>
-                        <motion.img src='./logo.png' animate={{scale: 0.6}} />
+                        <motion.img src={logo.src} />
                     </motion.div>
                     <motion.div onClick={home} className='nav-item home'>
                         <span>Home</span>
