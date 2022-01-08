@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
-import { useEffect } from 'react/cjs/react.development'
 
 function BrowseDropdown({exit, initial, animate, close}) {
     // added dropdownr ref, but then realized I do not need it. Code is neat tho
