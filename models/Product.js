@@ -21,7 +21,7 @@ const ProductSchema = new mongoose.Schema({
     fiveStar: Number,
   },
   type: {type: String},
-  collection: {type: String}
+  collectionName: {type: String}
 })
 
 export default mongoose.models.Product || mongoose.model('Product', ProductSchema)
