@@ -11,6 +11,7 @@ import '../styles/global.scss';
 import '../styles/index.scss';
 import '../styles/products.scss';
 import '../styles/individualProduct.scss';
+import '../styles/checkout.scss';
 
 // components scss
 import '../components/navbar/navbar.scss';
@@ -26,6 +27,7 @@ import "../components/option/option.scss";
 import "../components/browseDropdown/browsedropdown.scss";
 import '../components/cart/cart.scss';
 import "../components/breadcrumb/breadcrumb.scss";
+import "../components/checkoutAccordion/checkoutAccordion.scss";
 
 function CustomApp({Component, pageProps}) {
     return (

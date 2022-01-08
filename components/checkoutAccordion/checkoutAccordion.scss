@@ -1,0 +1,28 @@
+.accordion-cont {
+    h3 {
+        margin-bottom: 24px;
+    }
+}
+
+.checkout-form {
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 12px;
+
+    .flex-row {
+        display: flex;
+        column-gap: 12px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .accordion-cont h3 {
+        margin-bottom: 12px;
+    }
+
+    .flex-row {
+        flex-direction: column;
+        row-gap: 12px;
+    }
+    
+}
