@@ -14,6 +14,7 @@ function products({query, products}) {
                 {products.map((product, i) => {
                     return (
                         <ProductPreview 
+                            i={i}
                             src={product.image[0] || product.image[1]} 
                             prodTitle={product.title} 
                             prodPrice={`${product.price}`}

@@ -18,7 +18,6 @@
     place-items: center;
     margin-right: 2em;
     font-size: 18px;
-    
 }
 .nav-item:hover {
     cursor: pointer;
@@ -37,4 +36,7 @@
 }
 .browse {
     position: relative;
+}
+.hamburger {
+    margin-right: 0em !important;
 }

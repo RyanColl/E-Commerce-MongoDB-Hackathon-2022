@@ -1,15 +1,15 @@
 import React from 'react';
 
 function ProductPreview({
-  src="https://static.nike.com/a/images/t_PDP_1728_v1/17c7e995-7b18-43ff-87cb-ce0e239f4fe5/air-max-dia-se-shoe-CH3Phk.jpg",
+  src="https://static.nike.com/a/images/t_PDP_1728_v1/i1-512bfa8a-01a0-4971-bd34-9cef18a159e0/air-force-1-07-shoe-AKTdww3y.jpg",
   prodTitle="Product Name Here",
   prodPrice="399.00",
   prodPage = () => {},
-
+  i=0
 }) {
 
   return (
-    <div className='prod-div'>
+    <div key={`prod-div-${i}`} className='prod-div'>
       <div className='prod-preview'>
         <button 
           className="white-btn" 
