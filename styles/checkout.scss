@@ -16,14 +16,14 @@
 
 @media screen and (max-width: 1200px) {
     .checkout-content-right {
-        margin-left: 60px;
+        margin-left: 36px;
     }
 }
 
 @media screen and (max-width: 1000px) {
-    .checkout-content {
-        column-gap: 36px;
-    }
+    // .checkout-content {
+    //     column-gap: 36px;
+    // }
     .checkout-content-right {
         margin-left: 0px;
         width: 370px;

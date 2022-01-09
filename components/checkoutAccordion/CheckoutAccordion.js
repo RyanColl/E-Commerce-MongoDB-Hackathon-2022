@@ -6,7 +6,7 @@ import americanexpress from "../../assets/american-express.svg";
 import paypal from "../../assets/paypal.svg";
 
 export default function CheckoutAccordion({}) {
-    // form 1 ============================================================
+    // form 1 - shipping address ============================================================
     //     return (
     //         <div className='accordion-cont'>
     //             <h3 className='uppercased'>Shipping Address</h3>
@@ -59,7 +59,7 @@ export default function CheckoutAccordion({}) {
     //     )
 
 
-    //form 2 ========================================================
+    //form 2 - payment method ========================================================
         // return (
         //     <div className='accordion-cont'>
         //         <h4 className='uppercased'>Shipping Address</h4>
@@ -126,31 +126,59 @@ export default function CheckoutAccordion({}) {
         //     </div>
         // )
 
-    //form 3 ========================================================
-        return (
-            <div className='accordion-cont'>
-                <h4 className='uppercased'>Shipping Address</h4>
-                <hr />
-                <h4 className='uppercased'>Payment Method</h4>
-                <hr />
-                <h3 className='uppercased'>Contact Information</h3>
-                <form className='checkout-form'>
-                    <TextInput 
-                        placeholder='Email Address'
-                        value={null} 
-                        width="100%" />
-                    <TextInput 
-                        placeholder='Phone Number'
-                        value={null} 
-                        width="100%" />
-                    <input 
-                        className="black-btn" 
-                        type="submit" 
-                        value="Next"/>
-                </form>
-                <hr />
-                <h4 className='uppercased'>Review Order</h4>
-            </div>
-        )
+    //form 3 - contact information ========================================================
+        // return (
+        //     <div className='accordion-cont'>
+        //         <h4 className='uppercased'>Shipping Address</h4>
+        //         <hr />
+        //         <h4 className='uppercased'>Payment Method</h4>
+        //         <hr />
+        //         <h3 className='uppercased'>Contact Information</h3>
+        //         <form className='checkout-form'>
+        //             <TextInput 
+        //                 placeholder='Email Address'
+        //                 value={null} 
+        //                 width="100%" />
+        //             <TextInput 
+        //                 placeholder='Phone Number'
+        //                 value={null} 
+        //                 width="100%" />
+        //             <input 
+        //                 className="black-btn" 
+        //                 type="submit" 
+        //                 value="Next"/>
+        //         </form>
+        //         <hr />
+        //         <h4 className='uppercased'>Review Order</h4>
+        //     </div>
+        // )
+
+        
+    //form 4 - review order ========================================================
+    return (
+        <div className='accordion-cont'>
+            <h4 className='uppercased'>Shipping Address</h4>
+            <hr />
+            <h4 className='uppercased'>Payment Method</h4>
+            <hr />
+            <h3 className='uppercased'>Contact Information</h3>
+            <form className='checkout-form'>
+                <TextInput 
+                    placeholder='Email Address'
+                    value={null} 
+                    width="100%" />
+                <TextInput 
+                    placeholder='Phone Number'
+                    value={null} 
+                    width="100%" />
+                <input 
+                    className="black-btn" 
+                    type="submit" 
+                    value="Next"/>
+            </form>
+            <hr />
+            <h4 className='uppercased'>Review Order</h4>
+        </div>
+    )
 
 }
