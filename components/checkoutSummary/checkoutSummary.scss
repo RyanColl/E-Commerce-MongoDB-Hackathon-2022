@@ -1,3 +1,9 @@
+.flex-row-space-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .checkout-summary-cont {
     h3 {
@@ -7,9 +13,28 @@
 }
 
 .edit-option-cont {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
+    a {
+        margin-top: 8px;
+        text-decoration: underline;
+    }
+}
+
+.cost-summary-cont {
+    display: grid;
+    row-gap: 8px;
+    border-radius: 8px;
+    background-color: #F2F2F2;
+    padding: 36px;
+    margin-top: 24px;
+
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+    hr {
+        color: #A8A8A8;
+        width: 100%;
+        margin: 12px 0;
+    }
 }

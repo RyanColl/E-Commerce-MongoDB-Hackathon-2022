@@ -45,7 +45,10 @@ h4 {font-size: 24px;}
 h5 {font-size: 20px;}
 h6, p, span, a {font-size: 18px;}
 
-a {color: #71B1CC;}
+a {
+  color: #71B1CC;
+  cursor: pointer;
+}
 
 @media screen and (max-width: $md) {
   h1 {font-size: 36px;}
