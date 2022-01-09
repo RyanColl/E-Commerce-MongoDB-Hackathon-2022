@@ -38,7 +38,7 @@ export default function CheckoutAccordion() {
                         value={null} />
                     <TextInput 
                         placeholder='Country'
-                        value={null}
+                        value={"Canada"}
                         disabled={true} />
                 </div>
             </form>

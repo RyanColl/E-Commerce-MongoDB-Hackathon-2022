@@ -7,9 +7,9 @@ function TextInput({
     setValue = () => {},
     disabled = null,
 }) {
-    return (
+    return ( <div className='input-cont'>
         <input 
-            className='input-tag' 
+            className='input-tag'
             type={'text'} 
             placeholder={placeholder} 
             value={value} 
@@ -17,6 +17,9 @@ function TextInput({
             onChange={(e) => {setValue(e.target.value)}}
             disabled={disabled}
         />
+        <label className='input-label'>{placeholder}</label>
+
+    </div>
     )
 }
 
