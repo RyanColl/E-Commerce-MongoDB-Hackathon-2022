@@ -1,0 +1,15 @@
+
+.checkout-summary-cont {
+    h3 {
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+}
+
+.edit-option-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}

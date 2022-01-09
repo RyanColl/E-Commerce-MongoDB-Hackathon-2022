@@ -28,6 +28,8 @@ import "../components/browseDropdown/browsedropdown.scss";
 import '../components/cart/cart.scss';
 import "../components/breadcrumb/breadcrumb.scss";
 import "../components/checkoutAccordion/checkoutAccordion.scss";
+import "../components/checkoutSummary/checkoutSummary.scss";
+import "../components/checkoutItem/checkoutItem.scss";
 
 function CustomApp({Component, pageProps}) {
     return (

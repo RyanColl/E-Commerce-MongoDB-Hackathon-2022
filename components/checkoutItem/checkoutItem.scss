@@ -1,0 +1,22 @@
+.checkout-item-cont {
+    display: flex;
+    flex-direction: row;
+    column-gap: 12px;
+    margin-top: 24px;
+    width: 410px;
+}
+.item-image {
+    width: 98px;
+    height: 98px;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+.item-info-cont {
+    h6, p {
+        text-transform: uppercase;
+    }
+    p {
+        color: #A8A8A8;
+    }
+}
