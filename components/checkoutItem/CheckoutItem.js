@@ -2,16 +2,25 @@ import React from 'react'
 
 export default function CheckoutItem({
     prodTitle="Product Name",
-    prodColor="black"
-
+    prodImg="../placeholder.jpg",
+    prodColor="black",
+    quantity="1",
+    size="7",
+    prodPrice="550"
 }) {
     return (
         <div className='checkout-item-cont'>
-            <img className='item-image' src="../placeholder.jpg" />
-            <div className='item-info-cont'>
-                <h6>{prodTitle}</h6>
-                <p>Color: {prodColor}</p>
+            <div>
+                <img className='item-image' src={prodImg} />
+                <div className='item-info-cont'>
+                    <div>
+                        <h6>{prodTitle}</h6>
+                        <p>Color: {prodColor}</p>
+                    </div>
+                    <p>Qty: {quantity}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Size: {size}</p>
+                </div>
             </div>
+            <h5>${prodPrice}</h5>
         </div>
     )
 }

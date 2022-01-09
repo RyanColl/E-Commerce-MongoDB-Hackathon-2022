@@ -1,6 +1,12 @@
 .checkout-content {
     display: flex;
     flex-direction: row;
-    column-gap: 100px;
+    column-gap: 60px;
     margin: 60px 24px 0;
+    width: 100%;
+    max-width: 1115px;
+}
+
+.checkout-content-right {
+    width: 100%;
 }
