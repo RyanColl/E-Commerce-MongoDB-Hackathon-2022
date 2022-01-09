@@ -1,0 +1,25 @@
+.menu {
+    height: 100vh;
+    width: 234px;
+    position: absolute;
+    background-color: black;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 5.5em 3.5em 2.5em 4em;
+}
+.menu-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+    font-size: 32px;
+    color: white;
+    margin: 10px 0;
+    }
+}
+.menu-item:hover {
+    cursor: pointer;
+}
