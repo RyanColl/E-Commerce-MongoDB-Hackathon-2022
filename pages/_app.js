@@ -27,6 +27,7 @@ import "../components/browseDropdown/browsedropdown.scss";
 import '../components/cart/cart.scss';
 import "../components/breadcrumb/breadcrumb.scss";
 import "../components/menu/menu.scss";
+import '../components/searchBar/searchbar.scss';
 
 function CustomApp({Component, pageProps}) {
     return (

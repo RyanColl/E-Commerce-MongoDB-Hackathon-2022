@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { getProducts } from '../lib/dbAccess'
 import dbConnect from '../lib/dbConnect'
-import Product from '../models/Product'
 import { AppProvider } from '../context/AppContext'
 import React from 'react'
 
@@ -31,8 +30,8 @@ export default index
 
 export async function getStaticProps() {
     await dbConnect()
-    const products = await getProducts()
-    const brands = await Product.collection.distinct('brand')
+    const products = await getProducts()  
+    // const brands = await Product.collection.distinct('brand')
     // console.log(brands)
     // server side rendering
     return {

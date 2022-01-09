@@ -9,7 +9,6 @@ export default function Item({product: {
 }}) {
   const [Rating, setRating] = useState(0)
   useEffect(() => { setRating( calculateRating(rating) ) }, [])
-  console.log('rating...', Rating)
   return (
     <Product 
       // need halp much halp 
