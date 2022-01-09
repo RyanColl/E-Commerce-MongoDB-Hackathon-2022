@@ -7,6 +7,7 @@
   background-color: black;
   height: 250px;
   width: 100%;
+  text-align: left;
 
   @media screen and (max-width: 800px) {
     height: auto;
@@ -21,7 +22,10 @@
   }
 
   div {
-    max-width: 1115px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1115px; width: 100%;
     margin: 24px;
   }
 

@@ -32,7 +32,7 @@ html, body {
 // ===== text styling ==========================
 h1, h2, h3, h4, h5, h6, p, a, span, 
 button[type="button"], input[type="text"],
-label {
+label, input[type="submit"] {
   font-family: 'Inria Sans', sans-serif;
   font-weight: 400;
   margin: 0;
@@ -56,7 +56,7 @@ a {color: #71B1CC;}
 }
 
 // ===== button styling ===================================
-button[type="button"], input[type="button"] {
+button[type="button"], input[type="button"], input[type="submit"] {
   padding: 8px 36px;
   border-radius: 3px;
   text-transform: uppercase;

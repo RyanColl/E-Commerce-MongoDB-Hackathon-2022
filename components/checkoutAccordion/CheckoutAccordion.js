@@ -41,6 +41,7 @@ export default function CheckoutAccordion() {
                         value={"Canada"}
                         disabled={true} />
                 </div>
+                <input className="black-btn" type="submit" value="Next"/>
             </form>
         </div>
     )
