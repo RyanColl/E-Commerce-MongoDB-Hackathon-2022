@@ -21,7 +21,8 @@ const ProductSchema = new mongoose.Schema({
     fiveStar: Number,
   },
   type: {type: String},
-  collectionName: {type: String}
+  collectionName: {type: String},
+  shoeSizes: {type: Array}
 })
 
 export default mongoose.models.Product || mongoose.model('Product', ProductSchema)

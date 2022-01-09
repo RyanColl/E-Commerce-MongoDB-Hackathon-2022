@@ -9,6 +9,7 @@ import { AppProvider } from '../../context/AppContext'
 import CartBubble from '../cart/CartBubble';
 import { Spin as Hamburger } from 'hamburger-react'
 import Menu from '../menu/Menu';
+import SearchBar from '../searchBar/SearchBar';
 
 function NavBar() {
     // app context = global state
@@ -51,6 +52,29 @@ function NavBar() {
 
     // Need to set a state variable for the hamburger menu => 
     const [isOpen, setOpen] = useState(false)
+
+    // Open Search Bar up and close it too
+    const [isSearchOpen, setSearchOpen] = useState(false)
+    const searchOpen = () => setSearchOpen(true)
+    const searchClose = () => setSearchOpen(false)
+    const parentVariants = {
+        initial: {
+            transition: {
+                when: "afterChildren"
+            }
+        },
+        animate: {
+            transition: {
+                when: "beforeChildren",
+                staggerChildren: 0.3
+            }
+        }
+    }
+    const childVariants = {
+        initial: { opacity: 0},
+        animate: { opacity: 1},
+        exit: { opacity: 0}
+    }
     if(width > 600) {
         return (
             <AnimatePresence>
@@ -87,8 +111,40 @@ function NavBar() {
                         </motion.div>
                     </motion.div>
                     <motion.div className='nav-right'>
-                        <motion.div className='nav-item search'>
-                            <Icon style={iconSize} icon="akar-icons:search" />
+                        <motion.div 
+                        variants={parentVariants}
+                        animate="animate" initial="initial"
+                        className='nav-item search'>
+                            <AnimatePresence>
+                                {isSearchOpen 
+                                ?
+                                <motion.div
+                                className='search-bar-div'
+                                variants={childVariants}
+                                animate={{x: 50, opacity: 1}}
+                                initial="initial"
+                                exit="exit"
+                                >
+                                    <SearchBar />
+                                    <motion.span 
+                                    onClick={searchClose}
+                                    className='close-search'
+                                    >
+                                        <Icon style={{width: 20, height: 20}} icon="ph:x-bold" color='black' />
+                                    </motion.span>
+                                </motion.div>
+                                :
+                                <motion.span
+                                variants={childVariants}
+                                animate="animate"
+                                initial="initial"
+                                exit="exit"
+                                onClick={searchOpen}
+                                >
+                                    <Icon style={iconSize} icon="akar-icons:search" />
+                                </motion.span>
+                                }
+                            </AnimatePresence>
                         </motion.div>
                         <motion.div className='nav-item account'>
                             <Icon style={iconSize} icon="bi:person" />
