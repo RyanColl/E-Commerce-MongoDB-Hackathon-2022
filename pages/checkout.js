@@ -7,6 +7,7 @@ export default function checkout() {
     return (
         <div className='centered-cont'>
             <Banner pageTitle='Checkout' pageDescription=''/>
+            
             <div className='checkout-content'>
                 <CheckoutAccordion />
                 <div className='checkout-content-right'>

@@ -8,6 +8,7 @@
   height: 250px;
   width: 100%;
   text-align: left;
+  padding: 24px;
 
   @media screen and (max-width: 800px) {
     height: auto;
@@ -27,7 +28,7 @@
     justify-content: center;
     max-width: 1115px;
     width: 100%;
-    margin: 24px;
+    // margin: 24px;
   }
 
   div > h2, p {
