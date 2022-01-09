@@ -31,6 +31,7 @@ import "../components/checkoutAccordion/checkoutAccordion.scss";
 import "../components/checkoutSummary/checkoutSummary.scss";
 import "../components/checkoutItem/checkoutItem.scss";
 import "../components/menu/menu.scss";
+import '../components/searchBar/searchbar.scss';
 
 function CustomApp({Component, pageProps}) {
     return (

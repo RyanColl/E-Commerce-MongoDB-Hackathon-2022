@@ -40,3 +40,26 @@
 .hamburger {
     margin-right: 0em !important;
 }
+.search-bar-div {
+    border-radius: 20px;
+    width: 230px;
+    height: 50px;
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    form {
+        display: grid;
+        place-items: center;
+    }
+}
+
+.search-bar {
+    outline: none;
+    border: 0px solid black;
+    padding: 5px 15px;
+}
+.close-search {
+    display: grid;
+    place-items: center;
+}
