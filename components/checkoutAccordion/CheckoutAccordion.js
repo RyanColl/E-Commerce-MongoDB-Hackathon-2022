@@ -1,55 +1,156 @@
 import React from 'react'
 import TextInput from '../textInput/TextInput'
+import visa from "../../assets/visa.svg";
+import mastercard from "../../assets/mastercard.svg";
+import americanexpress from "../../assets/american-express.svg";
+import paypal from "../../assets/paypal.svg";
 
-export default function CheckoutAccordion({
-    form1 = true,
-    form2 = false,
-    form3 = false,
-    results = false
-}) {
+export default function CheckoutAccordion({}) {
+    // form 1 ============================================================
+    //     return (
+    //         <div className='accordion-cont'>
+    //             <h3 className='uppercased'>Shipping Address</h3>
+    //             <form className='checkout-form'>
+    //                 <div className='flex-row'>
+    //                     <TextInput 
+    //                         placeholder='First Name'
+    //                         value={null} />
+    //                     <TextInput 
+    //                         placeholder='Last Name'
+    //                         value={null} />
+    //                 </div>
+    //                 <TextInput 
+    //                     placeholder='Address Line 1'
+    //                     value={null} 
+    //                     width="100%" />
+    //                 <TextInput 
+    //                     placeholder='Address Line 2'
+    //                     value={null}
+    //                     width="100%" />
+    //                 <div className='flex-row'>
+    //                     <TextInput 
+    //                         placeholder='City'
+    //                         value={null} />
+    //                     <TextInput 
+    //                         placeholder='Province'
+    //                         value={null} />
+    //                 </div>
+    //                 <div className='flex-row'>
+    //                     <TextInput 
+    //                         placeholder='Postal Code'
+    //                         value={null} />
+    //                     <TextInput 
+    //                         placeholder='Country'
+    //                         value={"Canada"}
+    //                         disabled={true} />
+    //                 </div>
+    //                 <input 
+    //                     className="black-btn" 
+    //                     type="submit" 
+    //                     value="Next"/>
+    //             </form>
+    //             <hr />
+    //             <h4 className='uppercased'>Payment Method</h4>
+    //             <hr />
+    //             <h4 className='uppercased'>Contact Information</h4>
+    //             <hr />
+    //             <h4 className='uppercased'>Review Order</h4>
+    //         </div>
+    //     )
 
-    if(form1 === true, form2 === false, form3 === false, results === false) {
+
+    //form 2 ========================================================
+        // return (
+        //     <div className='accordion-cont'>
+        //         <h4 className='uppercased'>Shipping Address</h4>
+        //         <hr />
+        //         <div className='flex-row-space-between'>
+        //             <h3 className='uppercased'>Payment Method</h3>
+        //             <div className='payment-methods'>
+        //                 <img src={visa.src} />
+        //                 <img src={mastercard.src} />
+        //                 <img src={americanexpress.src} />
+        //                 <img src={paypal.src} />
+        //             </div>
+        //         </div>
+        //         <form className='checkout-form'>
+        //             <TextInput 
+        //                 placeholder='Card Number'
+        //                 value={null} 
+        //                 width="100%" />
+        //             <div className='flex-row'>
+        //                 <TextInput 
+        //                     placeholder='MM/YY'
+        //                     value={null} />
+        //                 <TextInput 
+        //                     placeholder='CVV'
+        //                     value={null} />
+        //             </div>
+        //             <div>
+        //                 <p>CHECKBOX: Shipping address same as billing address</p>
+        //             </div>
+        //             <TextInput 
+        //                 placeholder='Address Line 1'
+        //                 value={null}
+        //                 width="100%" />
+        //             <TextInput 
+        //                 placeholder='Address Line 2'
+        //                 value={null}
+        //                 width="100%" />
+        //             <div className='flex-row'>
+        //                 <TextInput 
+        //                     placeholder='City'
+        //                     value={null} />
+        //                 <TextInput 
+        //                     placeholder='Province'
+        //                     value={null} />
+        //             </div>
+        //             <div className='flex-row'>
+        //                 <TextInput 
+        //                     placeholder='Postal Code'
+        //                     value={null} />
+        //                 <TextInput 
+        //                     placeholder='Country'
+        //                     value={"Canada"}
+        //                     disabled={true} />
+        //             </div>
+        //             <input 
+        //                 className="black-btn" 
+        //                 type="submit" 
+        //                 value="Next"/>
+        //         </form>
+        //         <hr />
+        //         <h4 className='uppercased'>Contact Information</h4>
+        //         <hr />
+        //         <h4 className='uppercased'>Review Order</h4>
+        //     </div>
+        // )
+
+    //form 3 ========================================================
         return (
             <div className='accordion-cont'>
-                <h3 className='uppercased'>Shipping Address</h3>
+                <h4 className='uppercased'>Shipping Address</h4>
+                <hr />
+                <h4 className='uppercased'>Payment Method</h4>
+                <hr />
+                <h3 className='uppercased'>Contact Information</h3>
                 <form className='checkout-form'>
-                    <div className='flex-row'>
-                        <TextInput 
-                            placeholder='First Name'
-                            value={null} />
-                        <TextInput 
-                            placeholder='Last Name'
-                            value={null} />
-                    </div>
                     <TextInput 
-                        placeholder='Address Line 1'
+                        placeholder='Email Address'
                         value={null} 
                         width="100%" />
                     <TextInput 
-                        placeholder='Address Line 2'
-                        value={null}
+                        placeholder='Phone Number'
+                        value={null} 
                         width="100%" />
-                    <div className='flex-row'>
-                        <TextInput 
-                            placeholder='City'
-                            value={null} />
-                        <TextInput 
-                            placeholder='Province'
-                            value={null} />
-                    </div>
-                    <div className='flex-row'>
-                        <TextInput 
-                            placeholder='Postal Code'
-                            value={null} />
-                        <TextInput 
-                            placeholder='Country'
-                            value={"Canada"}
-                            disabled={true} />
-                    </div>
-                    <input className="black-btn" type="submit" value="Next"/>
+                    <input 
+                        className="black-btn" 
+                        type="submit" 
+                        value="Next"/>
                 </form>
+                <hr />
+                <h4 className='uppercased'>Review Order</h4>
             </div>
         )
-    }
 
 }

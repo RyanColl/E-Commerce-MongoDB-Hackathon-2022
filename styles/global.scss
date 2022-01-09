@@ -25,6 +25,13 @@ html, body {
   flex-direction: column;
   align-items: center;
 }
+
+.flex-row-space-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 .uppercased {
   text-transform: uppercase;
 }
@@ -78,3 +85,10 @@ button[type="button"], input[type="button"], input[type="submit"] {
   border: 1px solid black;
 }
 
+// ===== misc styling =====================================
+
+hr {
+  color: #A8A8A8;
+  width: 100%;
+  margin: 12px 0;
+}
