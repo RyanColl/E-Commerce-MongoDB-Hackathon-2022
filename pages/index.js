@@ -8,7 +8,7 @@ import React from 'react'
 function index({products}) {
   const {state, dispatch} = React.useContext(AppProvider)
   useEffect(() => {
-    dispatch({...state, products})
+    dispatch({...state, loading: false, products})
   }, []) // empty dependency array forces use effect to run only once, upon render
   
   // use this to work with products after getting them into state
@@ -31,12 +31,12 @@ export default index
 export async function getStaticProps() {
     await dbConnect()
     const products = await getProducts()  
-    // const brands = await Product.collection.distinct('brand')
-    // console.log(brands)
-    // server side rendering
+    const Products = products.map((product, i) => {
+      return {...product, _id: product._id.toString()}
+    })
     return {
       props: {
-        products: JSON.parse(JSON.stringify(products))
+        products: JSON.parse(JSON.stringify(Products))
       }, // will be passed to the page component as props
     }
   }

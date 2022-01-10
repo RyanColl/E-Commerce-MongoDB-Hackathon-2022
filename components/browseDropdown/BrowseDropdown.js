@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import React, { useEffect } from 'react'
 import Link from 'next/link'
-
+import { AppProvider } from '../../context/AppContext'
 function BrowseDropdown({exit, initial, animate, close}) {
     // added dropdownr ref, but then realized I do not need it. Code is neat tho
     const dropdownRef = React.useRef(null)
@@ -16,6 +16,10 @@ function BrowseDropdown({exit, initial, animate, close}) {
         window.addEventListener("click", clickEvent)
         return () => window.removeEventListener('click', clickEvent) 
     })
+
+    // adding a click for loading effect
+    const {state, dispatch} = React.useContext(AppProvider)
+    const navigate = () => dispatch({...state, loading: true})
     return (
         <motion.div 
         ref={dropdownRef}
@@ -23,18 +27,18 @@ function BrowseDropdown({exit, initial, animate, close}) {
         exit={exit} initial={initial} animate={{...animate, x: -15}}>
             <div className='browse-dropdown-content'>
                 <div className='view-by view-all-products'>
-                    <span onClick={close}><Link href={'/products'}>View All Products</Link></span>
+                    <span onClick={close}><Link onClick={navigate} href={'/products'}>View All Products</Link></span>
                 </div>
                 <div className='view-by view-by-type'>
                     <span>VIEW BY TYPE</span>
-                    <span onClick={close}><Link href={'/products?type=mens'}>Men's Footwear</Link></span>
-                    <span onClick={close}><Link href={'/products?type=womens'}>Women's Footwear</Link></span>
+                    <span onClick={close}><Link onClick={navigate} href={'/products?type=mens'}>Men's Footwear</Link></span>
+                    <span onClick={close}><Link onClick={navigate} href={'/products?type=womens'}>Women's Footwear</Link></span>
                 </div>
                 <div className='view-by view-by-collection'>
                     <span>VIEW BY COLLECTION</span>
-                    <span onClick={close}><Link href={'/products?collection=sport'}>Sport</Link></span>
-                    <span onClick={close}><Link href={'/products?collection=luxury'}>Luxury</Link></span>
-                    <span onClick={close}><Link href={'/products?collection=collectors'}>Collectors</Link></span>
+                    <span onClick={close}><Link onClick={navigate} href={'/products?collection=sport'}>Sport</Link></span>
+                    <span onClick={close}><Link onClick={navigate} href={'/products?collection=luxury'}>Luxury</Link></span>
+                    <span onClick={close}><Link onClick={navigate} href={'/products?collection=collectors'}>Collectors</Link></span>
                 </div>
             </div>
         </motion.div>
