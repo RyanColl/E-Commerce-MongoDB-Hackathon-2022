@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import { getProducts } from '../lib/dbAccess'
+import { getProductsByPage } from '../lib/dbAccess'
 import dbConnect from '../lib/dbConnect'
 import { AppProvider } from '../context/AppContext'
 import React from 'react'
@@ -14,7 +14,8 @@ function index({products}) {
   // use this to work with products after getting them into state
   useEffect(() => {
     if(state.products.length) {
-      console.log('products now added to state')
+      console.log('products now added to state', products)
+
     }
   }, [state.products])
   return (
@@ -30,7 +31,7 @@ export default index
 
 export async function getStaticProps() {
     await dbConnect()
-    const products = await getProducts()  
+    const products = await getProductsByPage(1)  
     const Products = products.map((product, i) => {
       return {...product, _id: product._id.toString()}
     })

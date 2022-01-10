@@ -86,7 +86,7 @@ function NavBar() {
                 exit={{ opacity: 0 }}
                 className='nav-bar'>
                     <motion.div className='nav-left'>
-                        <motion.div onClick={home} className='nav-item logo'>
+                        <motion.div whileTap={{scale: 0.9}} onClick={home} className='nav-item logo'>
                             <motion.img src={logo.src} />
                         </motion.div>
                         <motion.div onClick={home} className='nav-item home'>
@@ -203,4 +203,4 @@ function NavBar() {
 }
 
 export default NavBar
-const iconSize = {width: 24, height: 24}
+export const iconSize = {width: 24, height: 24}

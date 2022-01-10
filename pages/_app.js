@@ -5,6 +5,7 @@ import AppContext from '../context/AppContext';
 // components
 import NavBar from '../components/navbar/NavBar';
 import Footer from '../components/footer/Footer';
+import Loader from '../components/loader/Loader';
 
 // pages scss
 import '../styles/global.scss';
@@ -32,8 +33,8 @@ import "../components/checkoutSummary/checkoutSummary.scss";
 import "../components/checkoutItem/checkoutItem.scss";
 import "../components/menu/menu.scss";
 import '../components/searchBar/searchbar.scss';
-import '../components/loader/loader.scss'
-import Loader from '../components/loader/Loader';
+import '../components/loader/loader.scss';
+import '../components/searchBar/searchbar.scss';
 
 function CustomApp({Component, pageProps}) {
     return (
