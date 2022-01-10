@@ -14,19 +14,19 @@ export default function FilterBar() {
     // console.log(router.asPath)
     fetch(route, {method: "POST", body: JSON.stringify({price:1})})
       .then(data => data.json())
-      .then(data => dispatch({...state, products: [data.data.products]}))
+      .then(data => dispatch({...state, products: data.data.products}))
       .catch(e => console.log(e.message))
   }
   const highToLow = () => {
     fetch(route, {method: "POST", body: JSON.stringify({price:-1})})
       .then(data => data.json())
-      .then(data => dispatch({...state, products: [data.data.products]}))
+      .then(data => dispatch({...state, products: data.data.products}))
       .catch(e => console.log(e.message))
   }
   const shoeSize = (size) => {
     fetch(route, {method: "POST", body: JSON.stringify({shoeSizes: size})})
       .then(data => data.json())
-      .then(data => dispatch({...state, products: [data.data.products]}))
+      .then(data => dispatch({...state, products: data.data.products}))
       .catch(e => console.log(e.message))
   }
   return (

@@ -10,6 +10,10 @@ import { AppProvider } from '../context/AppContext'
 function products({products}) {
     const {state, dispatch} = React.useContext(AppProvider)
     const router = useRouter();
+    const navigateToProduct = (id) => {
+        dispatch({...state, loading: true})
+        router.push(`products/${id}`)
+    }
     useEffect(() => {
         if(products.length) dispatch({...state, loading: false, products})
         else dispatch({...state, loading: false})
@@ -25,9 +29,9 @@ function products({products}) {
                             i={i}
                             src={product.image[0] || product.image[1]} 
                             prodTitle={product.title} 
-                            prodPrice={`${product.price}`}
+                            prodPrice={`${product.price/100}`}
                             // prodPage={() => router.push("products/" + product._id)} Use template literal with ``
-                            prodPage={() => router.push(`products/${product._id}`)}
+                            prodPage={() => navigateToProduct(product._id)}
                         />
                     );
                 })}
