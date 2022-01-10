@@ -1,7 +1,7 @@
-import React,{ useEffect, useState } from 'react'
-// import { getData } from '../../utils/fetchData'
+import React from 'react'
 import { getProduct } from '../../lib/dbAccess'
 import Product from '../../components/product/Product'
+import { useEffect, useState } from 'react/cjs/react.development'
 
 export default function Item({product: {
   brand, category, description, image, price, rating, title, _id
@@ -10,14 +10,11 @@ export default function Item({product: {
   useEffect(() => { setRating( calculateRating(rating) ) }, [])
   return (
     <Product 
-      // need halp much halp 
         rating={parseFloat(Rating.toFixed(2))}
       // information section 1 ==================
         title={title}
-        //the price is not in the thousands -- there should be a period before the second last #
-        // the price is in the thousands. The cheapest shoe we have is like 900
         price={price}
-      // image={product.image}
+        image={image[0]}
 
       // information section 2 ==================
         // longDetails={}
