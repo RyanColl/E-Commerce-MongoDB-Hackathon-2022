@@ -1,0 +1,48 @@
+.accordion-cont {
+    width: 672px; 
+    h3, .payment-methods {
+        margin-bottom: 24px;
+    }
+    h4 {
+        color: #828282;
+    }
+    .payment-methods {
+        display: flex;
+        column-gap: 4px;
+    }
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+
+    .flex-row {
+        display: flex;
+        flex-direction: row;
+        column-gap: 12px;
+    }
+
+    input[type="submit"] {
+        border-radius: 4px;
+        font-size: 18px;
+        width: 330px;
+        height: 54px;
+        padding: 0;
+        margin: 36px 0;
+    }
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    .accordion-cont {
+        width: 330px;
+        margin-bottom: 12px;
+    }
+    .flex-row {
+        flex-direction: column !important;
+        row-gap: 12px;
+    }
+    
+}

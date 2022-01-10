@@ -26,8 +26,20 @@ html, body {
   align-items: center;
 }
 
+.flex-row-space-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.uppercased {
+  text-transform: uppercase;
+}
+
 // ===== text styling ==========================
-h1, h2, h3, h4, h5, h6, p, a, span, button[type="button"] {
+h1, h2, h3, h4, h5, h6, p, a, span, 
+button[type="button"], input[type="text"],
+label, input[type="submit"] {
   font-family: 'Inria Sans', sans-serif;
   font-weight: 400;
   margin: 0;
@@ -40,7 +52,10 @@ h4 {font-size: 24px;}
 h5 {font-size: 20px;}
 h6, p, span, a {font-size: 18px;}
 
-a {color: #71B1CC;}
+a {
+  color: #71B1CC;
+  cursor: pointer;
+}
 
 @media screen and (max-width: $md) {
   h1 {font-size: 36px;}
@@ -51,7 +66,7 @@ a {color: #71B1CC;}
 }
 
 // ===== button styling ===================================
-button[type="button"], input[type="button"] {
+button[type="button"], input[type="button"], input[type="submit"] {
   padding: 8px 36px;
   border-radius: 3px;
   text-transform: uppercase;
@@ -70,3 +85,10 @@ button[type="button"], input[type="button"] {
   border: 1px solid black;
 }
 
+// ===== misc styling =====================================
+
+hr {
+  color: #A8A8A8;
+  width: 100%;
+  margin: 12px 0;
+}

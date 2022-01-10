@@ -1,0 +1,35 @@
+.checkout-summary-cont {
+    h3 {
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+}
+
+.edit-option-cont {
+    width: 100%;
+    max-width: 410px;
+    min-width: 330px;
+    a {
+        margin-top: 8px;
+        text-decoration: underline;
+    }
+}
+
+.cost-summary-cont {
+    display: grid;
+    row-gap: 8px;
+    border-radius: 8px;
+    background-color: #F2F2F2;
+    padding: 36px;
+    margin-top: 24px;
+
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+    hr {
+        color: #A8A8A8;
+        width: 100%;
+        margin: 12px 0;
+    }
+}

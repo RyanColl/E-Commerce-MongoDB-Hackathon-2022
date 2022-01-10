@@ -1,8 +1,7 @@
-import React from 'react'
+import React,{ useEffect, useState } from 'react'
 // import { getData } from '../../utils/fetchData'
 import { getProduct } from '../../lib/dbAccess'
 import Product from '../../components/product/Product'
-import { useEffect, useState } from 'react/cjs/react.development'
 
 export default function Item({product: {
   brand, category, description, image, price, rating, title, _id
