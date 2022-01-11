@@ -1,3 +1,4 @@
+$sm: 600px;
 .nav-bar {
     position: fixed;
     top: 0px;
@@ -27,7 +28,7 @@
         margin-right: 1em;
     }
     div:last-child {
-        margin-right: 2em;
+        margin-right: 1em;
     }
 }
 .logo {
@@ -39,4 +40,15 @@
 }
 .hamburger {
     margin: 0 1em 0 0.3em !important;
+}
+
+@media screen and (max-width: $sm) {
+    .hamburger {
+        margin: 0 0.3em 0 0.3em !important;
+    }
+    .nav-right {
+        div:last-child {
+            margin-right: 0.2em;
+        }
+    }
 }

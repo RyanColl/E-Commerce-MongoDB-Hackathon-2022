@@ -15,9 +15,17 @@ function index({products}) {
   useEffect(() => {
     if(state.products.length) {
       console.log('products now added to state', products)
-
+      /* TESTING - REMOVE BEFORE DEPLOYMENT */
+      dispatch({...state, cart: [state.products[0]]})
+      /* TESTING COMPLETE */
     }
   }, [state.products])
+
+
+  
+  useEffect(() => {
+    
+  }, [products])
   return (
     <div>
       

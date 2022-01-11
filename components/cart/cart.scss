@@ -1,6 +1,18 @@
 .cart {
     position: relative;
 }
+.open-cart {
+    height: 100vh;
+    width: 360px;
+    position: absolute;
+    background-color: black;
+    top: 60px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 5.5em 3.5em 2.5em 4em;
+    z-index: 11;
+}
 .cart-bubble {
     width: 17px;
     height: 17px;
