@@ -1,0 +1,26 @@
+.accordian-dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    span {
+        text-align: center;
+    }
+}
+.accordian-dropdown:hover {
+    cursor: pointer;
+}
+.accordian-dropdown-div {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: flex-start;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    span {
+        margin: 0.15em 0 0.15em 0.15em;
+        font-size: 18px !important;
+    }
+}

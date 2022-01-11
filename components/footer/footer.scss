@@ -1,24 +1,25 @@
+$sm: 600px;
+$lg: 1120px;
 .footer {
     width: 100%;
-    height: 346px;
     background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     box-sizing: border-box;
-    padding: 1em 2em;
+    padding: 1em 2em 2em 2em;
     margin-top: 100px;
 }
 .footer-top {
     display: flex;
     justify-content: space-evenly;
-    
+    flex-direction: row;
 }
 .footer-section {
     display: flex;
     flex-direction: column;
-    padding: 2em;
+    padding: 2em 2em 1em;
     span {
         text-align: left;
         margin: 0.25em 0;
@@ -36,5 +37,10 @@
     place-items: center;
     span {
         color: white;
+    }
+}
+@media screen and (max-width: $lg) {
+    .footer-top{
+        flex-direction: column;
     }
 }

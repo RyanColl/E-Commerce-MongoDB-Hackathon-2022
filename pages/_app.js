@@ -35,6 +35,7 @@ import "../components/menu/menu.scss";
 import '../components/searchBar/searchbar.scss';
 import '../components/loader/loader.scss';
 import '../components/searchBar/searchbar.scss';
+import '../components/accordian/accordiandropdown.scss';
 
 function CustomApp({Component, pageProps}) {
     return (
