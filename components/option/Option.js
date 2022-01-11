@@ -4,7 +4,7 @@ export default function Option({
   optionText=null
 }) { 
   if(typeof optionText ==="string") {
-    console.log('number')
+    // console.log('number')
     return (
       <div className='option' tabIndex={0}>
         <p>{optionText}</p>

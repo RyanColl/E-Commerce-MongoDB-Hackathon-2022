@@ -7,6 +7,7 @@ function Breadcrumb() {
             className='breadcrumb'
             // omitRootLabel
             rootLabel="Home" 
+            
         />
     )
 }

@@ -7,7 +7,7 @@ export const AppProvider = createContext()
 // provider component created
 function AppContext({children}) {
     const initialState = {
-        cart: [], categories: [], products: []
+        cart: [], categories: [], products: [], loading: false, modal: false
     }
     const [state, dispatch] = useState(initialState)
     return (

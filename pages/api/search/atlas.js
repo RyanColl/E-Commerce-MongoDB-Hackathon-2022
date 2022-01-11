@@ -3,7 +3,7 @@ import dbConnect from "../../../lib/dbConnect"
 import { atlasSearch } from "../../../lib/atlasSearch"
 
 export default async (req, res) => {
-    await dbConnect()
+    await dbConnect() // grab db connection from local cache or create new one
     try {
         console.log(req.query)
         console.log(atlasSearch('w'))

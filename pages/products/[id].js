@@ -2,22 +2,27 @@ import React,{ useEffect, useState } from 'react'
 // import { getData } from '../../utils/fetchData'
 import { getProduct } from '../../lib/dbAccess'
 import Product from '../../components/product/Product'
-
-export default function Item({product: {
-  brand, category, description, image, price, rating, title, _id
-}}) {
+import {AppProvider} from '../../context/AppContext'
+export default function Item({product}) {
+  const {
+    brand, category, description, image, price, rating, title, _id
+  } = product;
+  const {state, dispatch} = React.useContext(AppProvider)
   const [Rating, setRating] = useState(0)
-  useEffect(() => { setRating( calculateRating(rating) ) }, [])
+  useEffect(() => { 
+    setRating( calculateRating(rating) ) 
+  }, [])
+  useEffect(() => {
+    dispatch({...state, loading: false})
+  }, [product])
   return (
     <Product 
-      // need halp much halp 
         rating={parseFloat(Rating.toFixed(2))}
       // information section 1 ==================
         title={title}
         //the price is not in the thousands -- there should be a period before the second last #
-        // the price is in the thousands. The cheapest shoe we have is like 900
-        price={price}
-      // image={product.image}
+        price={price/100}
+        image={product.image}
 
       // information section 2 ==================
         // longDetails={}
