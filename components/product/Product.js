@@ -8,6 +8,7 @@ export default function Product({
   title="Name of Product",
   image=["/placeholder.jpg"],
   price="550",
+  sizeOptions=null,
   rating=5,
 
   longDetails="one short descriptive paragraph",
@@ -65,7 +66,7 @@ export default function Product({
           <h4>${price}</h4>
 
           {/* <OptionCont optionTitle="Select a Color" optionText={"dwfwe"} /> */}
-          <OptionCont optionTitle="Select a Size" optionText={11.5} />
+          <OptionCont optionTitle="Select a Size">{sizeOptions}</OptionCont>
           <button className="black-btn cart-btn" type="button">
             Add to Cart
           </button>

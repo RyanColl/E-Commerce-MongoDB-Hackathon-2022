@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { getProduct } from '../../lib/dbAccess'
 import Product from '../../components/product/Product'
 import {AppProvider} from '../../context/AppContext'
+import Option from '../../components/option/Option';
 
 
 export default function Item({product}) {
@@ -24,6 +25,11 @@ export default function Item({product}) {
         //the price is not in the thousands -- there should be a period before the second last #
         price={price/100}
         image={product.image}
+
+        sizeOptions={
+          product.shoeSizes.map((i)=>
+          <Option optionText={product.shoeSizes[i]} />
+        )}
 
       // information section 2 ==================
         // longDetails={}
