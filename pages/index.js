@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { getProducts } from '../lib/dbAccess'
 import dbConnect from '../lib/dbConnect'
 import { AppProvider } from '../context/AppContext'
+import styled from 'styled-components'
 import ProductPreview from '../components/productPreview/productPreview'
 
 //images
@@ -10,12 +11,23 @@ import leftarrow from '../assets/left_arrow.svg'
 import rightarrow from '../assets/right_arrow.svg'
 import heroimage from '../assets/hero-img.svg'
 
+const Carousel = styled.div`
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  right: ${props=>props.right};
+  left: ${props=>props.left};
+  width: 100%;
+`;
+
 function index({
   products,
-  left="500px",
+  left="24px",
+  right="24px",
 }) {
   const {state, dispatch} = React.useContext(AppProvider)
   const router = useRouter();
+  
   useEffect(() => {
     dispatch({...state, products})
   }, []) // empty dependency array forces use effect to run only once, upon render
@@ -66,7 +78,8 @@ function index({
       </div>
 
       <div className='carousel-cont'>
-        <div className='carousel' styles={{left:`${left}`}}>
+        <Carousel className='carousel' 
+        >
           {products.map((product, i) => {
             return (
                 <ProductPreview 
@@ -78,7 +91,7 @@ function index({
                 />
             );
           })}
-        </div>
+        </Carousel>
 
       </div>
 
