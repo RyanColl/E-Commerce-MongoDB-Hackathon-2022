@@ -40,6 +40,11 @@ $md: 800px;
     height: 550px;
   }
 }
+@media screen and (min-width: 600px) {
+  .main-product-image {
+    height: 550px;
+  }
+}
 .small-product-images {
   display: flex;
   flex-direction: column;
