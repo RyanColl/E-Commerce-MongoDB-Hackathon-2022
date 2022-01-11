@@ -1,15 +1,21 @@
-import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import { getProducts } from '../lib/dbAccess'
 import dbConnect from '../lib/dbConnect'
 import { AppProvider } from '../context/AppContext'
-import React from 'react'
-import leftarrow from '../assets/left_arrow.svg'
-import rightarrow from '../assets/right_arrow.svg'
 import ProductPreview from '../components/productPreview/productPreview'
 
-function index({products}) {
+//images
+import leftarrow from '../assets/left_arrow.svg'
+import rightarrow from '../assets/right_arrow.svg'
+import heroimage from '../assets/hero-img.svg'
+
+function index({
+  products,
+  left="500px",
+}) {
   const {state, dispatch} = React.useContext(AppProvider)
+  const router = useRouter();
   useEffect(() => {
     dispatch({...state, products})
   }, []) // empty dependency array forces use effect to run only once, upon render
@@ -21,20 +27,46 @@ function index({products}) {
     }
   }, [state.products])
 
+
+
+  const [counter, setCounter] = useState(0);
+
+  const HandleImgChange = (i) => {
+    console.log("is this working")
+    var carousel = document.getElementsByClassName("carousel")
+    if (i<carousel.length-1) {
+      i = carousel.length-1;
+      console.log("left click")
+    }
+    else if(i>carousel.length-1) {
+      i=0;
+      console.log("right click")
+    }
+    setCounter(i)
+  } 
+  
+
   return (
     <div className='centered-cont'>
-      <img src="./placeholder.jpg" className='hero-img' />
+
+      <div className='hero-cont'>
+        <div>
+          <h1 className='uppercased'>Shop now for the lastest kicks of the season.</h1>
+          <button type="button" className='black-btn'>Discover Now</button>
+        </div>
+        <img src={heroimage.src} className='hero-img' />
+      </div>
 
       <div className='carousel-title flex-row-space-between'>
         <h4>Trending now</h4>
         <div className='carousel-arrows'>
-          <img src={leftarrow.src} />
-          <img src={rightarrow.src} />
+          <img src={leftarrow.src} onClick={()=>HandleImgChange(counter - 1)} />
+          <img src={rightarrow.src} onClick={()=>HandleImgChange(counter + 1)}  />
         </div>
       </div>
 
       <div className='carousel-cont'>
-        <div className='carousel'>
+        <div className='carousel' styles={{left:`${left}`}}>
           {products.map((product, i) => {
             return (
                 <ProductPreview 
@@ -51,10 +83,10 @@ function index({products}) {
       </div>
 
       <div className='collection-cont'>
-        <img src="./placeholder.jpg" />
+        <img src={products[17].image[7]} />
         <div>
-          <h3 className='uppercased'>View the Luxury Collection</h3>
-          <button type="button" className='white-btn'>Discover Now</button>
+          <h3 className='uppercased'>View the Collectors Collection</h3>
+          <button type="button" className='white-btn' onClick={()=>router.push('products?collection=collectors')}>Discover Now</button>
         </div>
       </div>
     </div>
