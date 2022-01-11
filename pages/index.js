@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { getProducts } from '../lib/dbAccess'
+// import { getProducts } from '../lib/dbAccess'
+// import { motion } from 'framer-motion'
+import { getProductsByPage } from '../lib/dbAccess'
 import dbConnect from '../lib/dbConnect'
 import { AppProvider } from '../context/AppContext'
 import styled from 'styled-components'
@@ -29,13 +31,16 @@ function index({
   const router = useRouter();
   
   useEffect(() => {
-    dispatch({...state, products})
+    dispatch({...state, loading: false, products})
   }, []) // empty dependency array forces use effect to run only once, upon render
   
   // use this to work with products after getting them into state
   useEffect(() => {
     if(state.products.length) {
-      console.log('products now added to state')
+      console.log('products now added to state', products)
+      /* TESTING - REMOVE BEFORE DEPLOYMENT */
+      dispatch({...state, cart: [{...state.products[0], quantity: 1, selectedSize: 9}]})
+      /* TESTING COMPLETE */
     }
   }, [state.products])
 
@@ -58,6 +63,10 @@ function index({
   } 
   
 
+  
+  useEffect(() => {
+    
+  }, [products])
   return (
     <div className='centered-cont'>
 
@@ -112,13 +121,13 @@ export default index
 
 export async function getStaticProps() {
     await dbConnect()
-    const products = await getProducts()  
-    // const brands = await Product.collection.distinct('brand')
-    // console.log(brands)
-    // server side rendering
+    const products = await getProductsByPage(1)  
+    const Products = products.map((product, i) => {
+      return {...product, _id: product._id.toString()}
+    })
     return {
       props: {
-        products: JSON.parse(JSON.stringify(products))
+        products: JSON.parse(JSON.stringify(Products))
       }, // will be passed to the page component as props
     }
   }

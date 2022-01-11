@@ -10,6 +10,7 @@ import CartBubble from '../cart/CartBubble';
 import { Spin as Hamburger } from 'hamburger-react'
 import Menu from '../menu/Menu';
 import SearchBar from '../searchBar/SearchBar';
+import Cart from '../cart/Cart';
 
 function NavBar() {
     // app context = global state
@@ -42,7 +43,7 @@ function NavBar() {
     // state for browse dropdown
     const [isHover, setHover] = useState(false)
 
-    // router access for pushing route instead of adding a tags
+    // router access for pushing route instead of adding <a> tags
     const router = useRouter()
     const home = () => router.push('/')
     console.log()
@@ -75,97 +76,109 @@ function NavBar() {
         animate: { opacity: 1},
         exit: { opacity: 0}
     }
+
+    // Open cart and close cart on cart-button press
+    const [isCartOpen, setCartOpen] = useState(false)
+    const cartPress = () => {
+        setCartOpen(!isCartOpen)
+        setOpen(false)
+    }
+    const closeCart = () => setCartOpen(false)
     if(width > 600) {
         return (
-            <AnimatePresence>
-                {!hidden &&
-                <motion.div 
-                key='nav-bar'
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className='nav-bar'>
-                    <motion.div className='nav-left'>
-                        <motion.div onClick={home} className='nav-item logo'>
-                            <motion.img src={logo.src} />
+            <>
+                <AnimatePresence>{isCartOpen && <Cart closeCart={closeCart} />}</AnimatePresence>
+                <AnimatePresence>
+                    {!hidden &&
+                    <motion.div 
+                    key='nav-bar'
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className='nav-bar'>
+                        <motion.div className='nav-left'>
+                            <motion.div whileTap={{scale: 0.9}} onClick={home} className='nav-item logo'>
+                                <motion.img src={logo.src} />
+                            </motion.div>
+                            <motion.div whileTap={{scale: 0.9}} onClick={home} className='nav-item home'>
+                                <span>Home</span>
+                            </motion.div>
+                            <motion.div 
+                            onHoverStart={() => {setHover(true)}}
+                            onHoverEnd={() => {setHover(false)}}
+                            className='nav-item browse'>
+                                <span>Browse
+                                    <AnimatePresence>
+                                    {isHover && 
+                                        <BrowseDropdown
+                                        close={()=>setHover(false)} 
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        />
+                                    }
+                                    </AnimatePresence>
+                                </span>
+                            </motion.div>
                         </motion.div>
-                        <motion.div onClick={home} className='nav-item home'>
-                            <span>Home</span>
-                        </motion.div>
-                        <motion.div 
-                        onHoverStart={() => {setHover(true)}}
-                        onHoverEnd={() => {setHover(false)}}
-                        className='nav-item browse'>
-                            <span>Browse
+                        <motion.div className='nav-right'>
+                            <motion.div 
+                            variants={parentVariants}
+                            animate="animate" initial="initial"
+                            className='nav-item search'>
                                 <AnimatePresence>
-                                {isHover && 
-                                    <BrowseDropdown
-                                    close={()=>setHover(false)} 
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    />
+                                    {isSearchOpen 
+                                    ?
+                                    <motion.div
+                                    className='search-bar-div'
+                                    variants={childVariants}
+                                    animate={{x: 20, opacity: 1}}
+                                    initial="initial"
+                                    exit="exit"
+                                    >
+                                        <SearchBar />
+                                        <motion.span 
+                                        onClick={searchClose}
+                                        className='close-search'
+                                        >
+                                            <Icon style={{width: 20, height: 20}} icon="ph:x-bold" color='black' />
+                                        </motion.span>
+                                    </motion.div>
+                                    :
+                                    <motion.span
+                                    variants={childVariants}
+                                    animate="animate"
+                                    initial="initial"
+                                    exit="exit"
+                                    onClick={searchOpen}
+                                    >
+                                        <Icon style={iconSize} icon="akar-icons:search" />
+                                    </motion.span>
+                                    }
+                                </AnimatePresence>
+                            </motion.div>
+                            <motion.div className='nav-item account'>
+                                <Icon style={iconSize} icon="bi:person" />
+                            </motion.div>
+                            <motion.div onClick={cartPress} className='nav-item cart'>
+                                <Icon style={iconSize} icon="clarity:shopping-cart-line" />
+                                <AnimatePresence>
+                                {cart.length &&
+                                    <CartBubble number={cart.length} />
                                 }
                                 </AnimatePresence>
-                            </span>
+                            </motion.div>
                         </motion.div>
                     </motion.div>
-                    <motion.div className='nav-right'>
-                        <motion.div 
-                        variants={parentVariants}
-                        animate="animate" initial="initial"
-                        className='nav-item search'>
-                            <AnimatePresence>
-                                {isSearchOpen 
-                                ?
-                                <motion.div
-                                className='search-bar-div'
-                                variants={childVariants}
-                                animate={{x: 50, opacity: 1}}
-                                initial="initial"
-                                exit="exit"
-                                >
-                                    <SearchBar />
-                                    <motion.span 
-                                    onClick={searchClose}
-                                    className='close-search'
-                                    >
-                                        <Icon style={{width: 20, height: 20}} icon="ph:x-bold" color='black' />
-                                    </motion.span>
-                                </motion.div>
-                                :
-                                <motion.span
-                                variants={childVariants}
-                                animate="animate"
-                                initial="initial"
-                                exit="exit"
-                                onClick={searchOpen}
-                                >
-                                    <Icon style={iconSize} icon="akar-icons:search" />
-                                </motion.span>
-                                }
-                            </AnimatePresence>
-                        </motion.div>
-                        <motion.div className='nav-item account'>
-                            <Icon style={iconSize} icon="bi:person" />
-                        </motion.div>
-                        <motion.div onClick={() => dispatch({...state, cart: [...cart, ['']]})} className='nav-item cart'>
-                            <Icon style={iconSize} icon="clarity:shopping-cart-line" />
-                            <AnimatePresence>
-                            {cart.length &&
-                                <CartBubble number={cart.length} />
-                            }
-                            </AnimatePresence>
-                        </motion.div>
-                    </motion.div>
-                </motion.div>
-                }
-            </AnimatePresence>
+                    }
+                </AnimatePresence>
+            </>
         )
     }
     else {
         return (
         <>
+            <AnimatePresence>{isCartOpen && <Cart closeCart={closeCart} />}</AnimatePresence>
             <AnimatePresence>{isOpen && <Menu />}</AnimatePresence>
             <AnimatePresence>
                 {!hidden &&
@@ -181,7 +194,7 @@ function NavBar() {
                         </motion.div>
                     </motion.div>
                     <motion.div className='nav-right'>
-                        <motion.div onClick={() => dispatch({...state, cart: [...cart, ['']]})} className='nav-item cart'>
+                        <motion.div onClick={cartPress} className='nav-item cart'>
                             <Icon style={iconSize} icon="clarity:shopping-cart-line" />
                             <AnimatePresence>
                             {cart.length &&
@@ -189,7 +202,7 @@ function NavBar() {
                             }
                             </AnimatePresence>
                         </motion.div>
-                        <motion.div className='nav-item hamburger'>
+                        <motion.div onClick={() => setCartOpen(false)} className='nav-item hamburger'>
                             <Hamburger color="white" direction="right" size={20} toggled={isOpen} toggle={setOpen} />
                         </motion.div>
                     </motion.div>
@@ -203,4 +216,4 @@ function NavBar() {
 }
 
 export default NavBar
-const iconSize = {width: 24, height: 24}
+export const iconSize = {width: 24, height: 24}

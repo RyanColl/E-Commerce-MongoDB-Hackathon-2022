@@ -5,6 +5,7 @@ import AppContext from '../context/AppContext';
 // components
 import NavBar from '../components/navbar/NavBar';
 import Footer from '../components/footer/Footer';
+import Loader from '../components/loader/Loader';
 
 // pages scss
 import '../styles/global.scss';
@@ -32,6 +33,11 @@ import "../components/checkoutSummary/checkoutSummary.scss";
 import "../components/checkoutItem/checkoutItem.scss";
 import "../components/menu/menu.scss";
 import '../components/searchBar/searchbar.scss';
+import '../components/loader/loader.scss';
+import '../components/searchBar/searchbar.scss';
+import '../components/accordian/accordiandropdown.scss';
+import '../components/modal/modal.scss';
+import Modal from '../components/modal/Modal';
 
 function CustomApp({Component, pageProps}) {
     return (
@@ -42,6 +48,8 @@ function CustomApp({Component, pageProps}) {
           <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
         </Head>
         <AppContext>
+          <Modal />
+          <Loader />
           <NavBar />
           <Component {...pageProps} />
           <Footer />
@@ -51,3 +59,17 @@ function CustomApp({Component, pageProps}) {
 }
 
 export default CustomApp
+
+
+export async function getStaticProps() {
+      await dbConnect()
+      const products = await getProducts()  
+      // const brands = await Product.collection.distinct('brand')
+      // console.log(brands)
+      // server side rendering
+      return {
+        props: {
+          products: JSON.parse(JSON.stringify(products))
+        }, // will be passed to the page component as props
+      }
+    }

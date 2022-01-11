@@ -1,24 +1,33 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { getProduct } from '../../lib/dbAccess'
 import Product from '../../components/product/Product'
-import { useEffect, useState } from 'react/cjs/react.development'
+import {AppProvider} from '../../context/AppContext'
 
-export default function Item({product: {
-  brand, category, description, image, price, rating, title, _id
-}}) {
+
+export default function Item({product}) {
+  const {
+    brand, category, description, image, price, rating, title, _id
+  } = product;
+  const {state, dispatch} = React.useContext(AppProvider)
   const [Rating, setRating] = useState(0)
-  useEffect(() => { setRating( calculateRating(rating) ) }, [])
+  useEffect(() => { 
+    setRating( calculateRating(rating) ) 
+  }, [])
+  useEffect(() => {
+    dispatch({...state, loading: false})
+  }, [product])
   return (
     <Product 
         rating={parseFloat(Rating.toFixed(2))}
       // information section 1 ==================
         title={title}
-        price={price}
-        image={image[0]}
+        //the price is not in the thousands -- there should be a period before the second last #
+        price={price/100}
+        image={product.image}
 
       // information section 2 ==================
         // longDetails={}
-        // imgDetails={}
+        imgDetails={product.image[7]}
         // prodDetails={}
     />
   )

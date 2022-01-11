@@ -1,3 +1,4 @@
+$sm: 600px;
 .nav-bar {
     position: fixed;
     top: 0px;
@@ -27,7 +28,7 @@
         margin-right: 1em;
     }
     div:last-child {
-        margin-right: 2em;
+        margin-right: 1em;
     }
 }
 .logo {
@@ -38,28 +39,16 @@
     position: relative;
 }
 .hamburger {
-    margin-right: 0em !important;
-}
-.search-bar-div {
-    border-radius: 20px;
-    width: 230px;
-    height: 50px;
-    background-color: white;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    form {
-        display: grid;
-        place-items: center;
-    }
+    margin: 0 1em 0 0.3em !important;
 }
 
-.search-bar {
-    outline: none;
-    border: 0px solid black;
-    padding: 5px 15px;
-}
-.close-search {
-    display: grid;
-    place-items: center;
+@media screen and (max-width: $sm) {
+    .hamburger {
+        margin: 0 0.3em 0 0.3em !important;
+    }
+    .nav-right {
+        div:last-child {
+            margin-right: 0.2em;
+        }
+    }
 }
