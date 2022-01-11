@@ -1,8 +1,10 @@
-import React,{ useEffect, useState } from 'react'
-// import { getData } from '../../utils/fetchData'
+import React, {useState, useEffect} from 'react'
 import { getProduct } from '../../lib/dbAccess'
 import Product from '../../components/product/Product'
 import {AppProvider} from '../../context/AppContext'
+import Option from '../../components/option/Option';
+
+
 export default function Item({product}) {
   const {
     brand, category, description, image, price, rating, title, _id
@@ -24,9 +26,14 @@ export default function Item({product}) {
         price={price/100}
         image={product.image}
 
+        sizeOptions={
+          product.shoeSizes.map((i)=>
+          <Option optionText={product.shoeSizes[i]} />
+        )}
+
       // information section 2 ==================
         // longDetails={}
-        // imgDetails={}
+        imgDetails={product.image[7]}
         // prodDetails={}
     />
   )
