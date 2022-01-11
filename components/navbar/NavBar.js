@@ -79,7 +79,10 @@ function NavBar() {
 
     // Open cart and close cart on cart-button press
     const [isCartOpen, setCartOpen] = useState(false)
-    const cartPress = () => setCartOpen(!isCartOpen)
+    const cartPress = () => {
+        setCartOpen(!isCartOpen)
+        setOpen(false)
+    }
     const closeCart = () => setCartOpen(false)
     if(width > 600) {
         return (
@@ -191,7 +194,7 @@ function NavBar() {
                         </motion.div>
                     </motion.div>
                     <motion.div className='nav-right'>
-                        <motion.div onClick={() => {cartPress(); setOpen(false)}} className='nav-item cart'>
+                        <motion.div onClick={cartPress} className='nav-item cart'>
                             <Icon style={iconSize} icon="clarity:shopping-cart-line" />
                             <AnimatePresence>
                             {cart.length &&

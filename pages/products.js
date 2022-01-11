@@ -19,7 +19,7 @@ function products({products}) {
         else dispatch({...state, loading: false})
     }, [products])
     return (
-        <div className='centered-cont'>
+        <div className={`centered-cont ${state.modal && 'blur'}`}>
             <Banner />
             <FilterBar />
             <div className='product-list'>

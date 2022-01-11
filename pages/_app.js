@@ -36,6 +36,8 @@ import '../components/searchBar/searchbar.scss';
 import '../components/loader/loader.scss';
 import '../components/searchBar/searchbar.scss';
 import '../components/accordian/accordiandropdown.scss';
+import '../components/modal/modal.scss';
+import Modal from '../components/modal/Modal';
 
 function CustomApp({Component, pageProps}) {
     return (
@@ -46,6 +48,7 @@ function CustomApp({Component, pageProps}) {
           <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
         </Head>
         <AppContext>
+          <Modal />
           <Loader />
           <NavBar />
           <Component {...pageProps} />
