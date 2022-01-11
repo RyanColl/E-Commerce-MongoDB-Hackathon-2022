@@ -128,7 +128,7 @@ function NavBar() {
                                     <motion.div
                                     className='search-bar-div'
                                     variants={childVariants}
-                                    animate={{x: 50, opacity: 1}}
+                                    animate={{x: 20, opacity: 1}}
                                     initial="initial"
                                     exit="exit"
                                     >

@@ -12,17 +12,17 @@ function Footer() {
                 <div className='footer-top'>
                     <div className='footer-section customer-care'>
                         {customerCare.map((text, i) => {
-                            return (<span key={`customer-care-text-${i}`}>{text}</span>)
+                            return (<a key={`customer-care-text-${i}`}>{text}</a>)
                         })}
                     </div>
                     <div className='footer-section legal-info'>
                         {legalInformation.map((text, i) => {
-                            return (<span key={`customer-care-text-${i}`}>{text}</span>)
+                            return (<a key={`customer-care-text-${i}`}>{text}</a>)
                         })}
                     </div>
                     <div className='footer-section our-company'>
                         {ourCompany.map((text, i) => {
-                            return (<span key={`customer-care-text-${i}`}>{text}</span>)
+                            return (<a key={`customer-care-text-${i}`}>{text}</a>)
                         })}
                     </div>
                     <div className='footer-section subscribe'>
@@ -34,7 +34,7 @@ function Footer() {
                 </div>
             </div>
         )
-    } else/* if ( windowObject.innerWidth > 600 &&  windowObject.innerWidth < 1120)*/ {
+    } else {
         return (
             <div className='footer'>
                 <div className='footer-top'>
@@ -42,14 +42,10 @@ function Footer() {
                         <AccordianDropdown items={customerCare} />
                     </div>
                     <div className='footer-section legal-info'>
-                        {legalInformation.map((text, i) => {
-                            return (<span key={`customer-care-text-${i}`}>{text}</span>)
-                        })}
+                        <AccordianDropdown items={legalInformation} />
                     </div>
                     <div className='footer-section our-company'>
-                        {ourCompany.map((text, i) => {
-                            return (<span key={`customer-care-text-${i}`}>{text}</span>)
-                        })}
+                        <AccordianDropdown items={ourCompany} />
                     </div>
                     <div className='footer-section subscribe'>
                         <Subscribe />

@@ -14,9 +14,9 @@ function AccordianDropdown({
     const clickEvent = (e) => {
         if(dropdownRef != null) {
             // console.log(true, e)
-            if (dropdownRef.current.contains(e.target)) { // this is how we determine if our click is inside of our ref
-                    press()
-            } else click()
+            // this is how we determine if our click is inside of our ref
+            if (dropdownRef.current.contains(e.target)) press()  
+            else click()
         } else {
             console.log(false, e)
         }
@@ -28,16 +28,18 @@ function AccordianDropdown({
     return (
         <motion.div ref={dropdownRef}
         onClick={press} className='accordian-dropdown'>
-            <span>{items[0]}</span>
-            <motion.img 
-            animate={isOpen ? {rotate: '0deg'} : {rotate: '180deg'}} 
-            src={vectorArrow.src} 
-            />
+            <div>
+                <span>{items[0]}</span>
+                <motion.img 
+                animate={{rotate: isOpen ? '0deg' : '180deg'}} 
+                src={vectorArrow.src} 
+                />
+            </div>
             <AnimatePresence>
                 {isOpen && 
                     <motion.div 
                     initial={{opacity: 0}}
-                    animate={{opacity: 1, y: 35}}
+                    animate={{opacity: 1, y: 5}}
                     exit={{opacity: 0}}
                     className='accordian-dropdown-div'>
                         {items.filter((item, i) => i !== 0).map((item, i) => {
