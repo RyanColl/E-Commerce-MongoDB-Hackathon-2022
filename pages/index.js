@@ -62,9 +62,6 @@ function index({
     1: { left: -2000 } 
 
   }
-  const buttonClick = () => router.push(`products?collection=collectors`)
-
-
   // capture click event and close modal if open => add to all components inside of pages
   let keys = Object.keys(state.modal)
   let currentModal = keys.filter((key, i) => {
