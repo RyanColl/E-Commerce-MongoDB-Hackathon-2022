@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { motion, useMotionValue } from 'framer-motion'
 // import { getProducts } from '../lib/dbAccess'
-// import { motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { getProductsByPage } from '../lib/dbAccess'
 import dbConnect from '../lib/dbConnect'
 import { AppProvider } from '../context/AppContext'
 import ProductPreview from '../components/productPreview/productPreview'
+import { initialModalState } from '../context/AppContext'
 
 //images
 import leftarrow from '../assets/left_arrow.svg'
@@ -29,7 +30,7 @@ function index({
     if(state.products.length) {
       console.log('products now added to state', products)
       /* TESTING - REMOVE BEFORE DEPLOYMENT */
-      dispatch({...state, cart: [{...state.products[0], quantity: 1, selectedSize: 9}]})
+      dispatch({...state, cart: [{product: state.products[0], quantity: 1, selectedSize: 9}]})
       /* TESTING COMPLETE */
     }
   }, [state.products])
@@ -56,21 +57,37 @@ function index({
     }
     setCounter(i)
   } 
-
   const load = {
     0: { left: -1000 },
     0.5: { left: -1500 },
     1: { left: -2000 } 
 
   }
+  const buttonClick = () => router.push(`products?collection=collectors`)
+
+
+  // capture click event and close modal if open => add to all components inside of pages
+  let keys = Object.keys(state.modal)
+  let currentModal = keys.filter((key, i) => {
+      return state.modal[key]
+  })
+  const click = (e) => {
+    if (state.modalRef.current != null && (currentModal.length && !state.modalRef.current.contains(e.target))) {
+      dispatch({ ...state, modal: initialModalState });
+    }
+  };
+  React.useEffect(() => {
+    window.addEventListener("click", click);
+    return () => window.removeEventListener("click", click);
+  });
 
   return (
-    <div className='centered-cont'>
+    <div className={`centered-cont ${currentModal.length && 'blur'}`}>
 
       <div className='hero-cont'>
         <div>
           <h1 className='uppercased'>Shop now for the lastest kicks of the season.</h1>
-          <button type="button" className='black-btn'>Discover Now</button>
+          <motion.span whileTap={{scale: 0.9}}><button type="button" className='black-btn'>Discover Now</button></motion.span>
         </div>
         <img src={heroimage.src} className='hero-img' />
       </div>

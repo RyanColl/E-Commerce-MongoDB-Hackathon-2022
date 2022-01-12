@@ -1,26 +1,34 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 import { Icon } from '@iconify/react';
-
+import Modal from '../modal/Modal';
+import { AppProvider, initialModalState } from '../../context/AppContext';
+import AccordianDropdown from '../accordian/AccordianDropdown';
 function Menu() {
+    const {state, dispatch} = React.useContext(AppProvider)
+    const aboutPress = () => setTimeout(() => dispatch({...state, modal: {...initialModalState, about: true}}), 10)
+    
+    // console.log(state.modal)
     return (
-        <motion.div 
-        initial={'initial'}
-        exit={'exit'}
-        animate={'animate'}
-        variants={variants}
-        transition={{type: 'tween'}}
-        className='menu'>
-            <motion.div className='menu-item'>
-                <motion.span>ABOUT</motion.span>
+        <>
+            <motion.div 
+            initial={'initial'}
+            exit={'exit'}
+            animate={'animate'}
+            variants={variants}
+            transition={{type: 'tween'}}
+            className='menu'>
+                <motion.div onClick={aboutPress} className='menu-item'>
+                    <motion.span>ABOUT</motion.span>
+                </motion.div>
+                <motion.div className='menu-item'>
+                    <AccordianDropdown items={['Browse', 'View All', 'View By Brand', 'View By Collection']} />
+                </motion.div>
+                <motion.div className='menu-item'>
+                    <motion.span>SEARCH</motion.span>
+                </motion.div>
             </motion.div>
-            <motion.div className='menu-item'>
-                <motion.span>BROWSE</motion.span><Icon width="20" height="20" color='white' icon="ep:arrow-down-bold" />
-            </motion.div>
-            <motion.div className='menu-item'>
-                <motion.span>SEARCH</motion.span>
-            </motion.div>
-        </motion.div>
+        </>
     )
 }
 
@@ -36,3 +44,5 @@ const variants = {
         x: '100vw'
     }
 }
+
+

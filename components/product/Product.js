@@ -3,7 +3,7 @@ import OptionCont from '../optionCont/OptionCont';
 import Rating from '../rating/Rating';
 import Breadcrumb from '../breadcrumb/Breadcrumb';
 import { AnimatePresence, motion } from 'framer-motion';
-
+import { AppProvider } from '../../context/AppContext';
 export default function Product({
   title="Name of Product",
   image=["/placeholder.jpg"],
@@ -15,12 +15,18 @@ export default function Product({
   imgDetails="/placeholder.jpg",
   prodDetails="short point form information"
 }) {
+  const {state, dispatch} = React.useContext(AppProvider)
+    // capture click event and close modal if open => add to all components inside of pages
+  let keys = Object.keys(state.modal)
+  let currentModal = keys.filter((key, i) => {
+      return state.modal[key]
+  })
   const [bigImage, setBigImage] = useState(image[0])
   const hoverImageOn = (src) => {
     setBigImage(src)
   }
   return (
-    <div className="centered-cont">
+    <div className={`centered-cont ${currentModal.length && 'blur'}`}>
       <div className="basic-info-cont">
         <Breadcrumb />
         <Rating rating={rating} />
