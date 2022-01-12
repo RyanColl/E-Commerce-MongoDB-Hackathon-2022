@@ -2,11 +2,12 @@ import React from 'react'
 import TextInput from '../textInput/TextInput'
 import SubscribeButton from './SubscribeButton'
 
-function Subscribe() {
+function Subscribe({click = () => {}}) {
     const [value, setValue] = React.useState('')
     const subscribeEmail = (e) => {
         e.preventDefault()
         console.log(value)
+        click('subscribe')
     }
     return (
         <form onSubmit={subscribeEmail} className='subscribe-form'>

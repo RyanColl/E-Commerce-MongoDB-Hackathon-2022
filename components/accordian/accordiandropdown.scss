@@ -5,6 +5,7 @@
     align-items: center;
     position: relative;
     color: white;
+    width: 100%;
     div {
         display: flex;
         justify-content: space-between;
@@ -31,6 +32,8 @@
         font-size: 18px !important;
         background-color: black;
         z-index: 11;
+        width: 100%;
+        text-align: left !important;
     }
     span:hover {
         text-decoration: underline;
