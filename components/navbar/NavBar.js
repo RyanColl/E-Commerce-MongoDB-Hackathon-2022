@@ -11,6 +11,7 @@ import { Spin as Hamburger } from 'hamburger-react'
 import Menu from '../menu/Menu';
 import SearchBar from '../searchBar/SearchBar';
 import Cart from '../cart/Cart';
+import SiteDisclaimer from '../disclaimer/SiteDisclaimer';
 
 function NavBar() {
     // app context = global state
@@ -96,6 +97,7 @@ function NavBar() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     className='nav-bar'>
+                        <AnimatePresence><SiteDisclaimer /></AnimatePresence>
                         <motion.div className='nav-left'>
                             <motion.div whileTap={{scale: 0.9}} onClick={home} className='nav-item logo'>
                                 <motion.img src={logo.src} />
@@ -188,13 +190,14 @@ function NavBar() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className='nav-bar'>
+                    <AnimatePresence><SiteDisclaimer /></AnimatePresence>
                     <motion.div className='nav-left'>
-                        <motion.div onClick={home} className='nav-item logo'>
+                        <motion.div whileTap={{scale: 0.9}} onClick={home} className='nav-item logo'>
                             <motion.img src={logo.src} />
                         </motion.div>
                     </motion.div>
                     <motion.div className='nav-right'>
-                        <motion.div onClick={cartPress} className='nav-item cart'>
+                        <motion.div whileTap={{scale: 0.9}} onClick={cartPress} className='nav-item cart'>
                             <Icon style={iconSize} icon="clarity:shopping-cart-line" />
                             <AnimatePresence>
                             {cart.length &&

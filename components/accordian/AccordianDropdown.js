@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import React, {useEffect} from 'react'
-import { useState } from 'react/cjs/react.development'
+import React, {useEffect, useState} from 'react'
 import vectorArrow from '../../assets/vector-arrow.svg'
 function AccordianDropdown({
     items = ['']

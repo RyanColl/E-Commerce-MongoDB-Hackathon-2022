@@ -61,12 +61,7 @@ function index({
     }
     setCounter(i)
   } 
-  
-
-  
-  useEffect(() => {
-    
-  }, [products])
+  const buttonClick = () => router.push(`products?collection=collectors`)
   return (
     <div className='centered-cont'>
 
@@ -95,7 +90,7 @@ function index({
                     i={i}
                     src={product.image[0] || product.image[1]} 
                     prodTitle={product.title} 
-                    prodPrice={`${product.price}`}
+                    prodPrice={`${product.price/100}`}
                     prodPage={() => router.push(`products/${product._id}`)}
                 />
             );
@@ -108,7 +103,7 @@ function index({
         <img src={products[17].image[7]} />
         <div>
           <h3 className='uppercased'>View the Collectors Collection</h3>
-          <button type="button" className='white-btn' onClick={()=>router.push('products?collection=collectors')}>Discover Now</button>
+          <button type="button" className='white-btn' onClick={buttonClick}>Discover Now</button>
         </div>
       </div>
     </div>
@@ -131,3 +126,5 @@ export async function getStaticProps() {
       }, // will be passed to the page component as props
     }
   }
+
+

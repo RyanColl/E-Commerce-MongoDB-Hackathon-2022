@@ -37,6 +37,8 @@ import '../components/loader/loader.scss';
 import '../components/searchBar/searchbar.scss';
 import '../components/accordian/accordiandropdown.scss';
 import '../components/modal/modal.scss';
+import '../components/disclaimer/sitedisclaimer.scss';
+
 import Modal from '../components/modal/Modal';
 
 function CustomApp({Component, pageProps}) {

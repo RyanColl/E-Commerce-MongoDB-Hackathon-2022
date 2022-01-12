@@ -39,7 +39,6 @@ function Cart({closeCart}) {
                 :
                 <div className='empty-cart'>
                     <span>Your Cart is currently empty.</span>
-                    <hr />
                     <ContinueShopping onClick={closeCart} />
                 </div>
             }

@@ -26,7 +26,7 @@ function products({products}) {
                 {state.products.length && state.products.map((product, i) => {
                     return (
                         <ProductPreview 
-                            i={i}
+                            key={i}
                             src={product.image[0] || product.image[1]} 
                             prodTitle={product.title} 
                             prodPrice={`${product.price/100}`}
