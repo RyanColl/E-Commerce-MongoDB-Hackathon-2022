@@ -7,6 +7,7 @@ import dbConnect from '../lib/dbConnect'
 import { useRouter } from 'next/router'
 import { getProductsByCollection, getProductsByType } from '../lib/atlasSearch';
 import { AppProvider } from '../context/AppContext'
+import { initialModalState } from '../context/AppContext'
 function products({products}) {
     const {state, dispatch} = React.useContext(AppProvider)
     const router = useRouter();
@@ -18,8 +19,23 @@ function products({products}) {
         if(products.length) dispatch({...state, loading: false, products})
         else dispatch({...state, loading: false})
     }, [products])
+
+        // capture click event and close modal if open => add to all components inside of pages
+    let keys = Object.keys(state.modal);
+    let currentModal = keys.filter((key, i) => {
+        return state.modal[key];
+    });
+    const click = (e) => {
+        if (currentModal.length && !state.modalRef.current.contains(e.target)) {
+          dispatch({ ...state, modal: initialModalState });
+        }
+    };
+    React.useEffect(() => {
+        window.addEventListener("click", click);
+        return () => window.removeEventListener("click", click);
+    });
     return (
-        <div className={`centered-cont ${state.modal && 'blur'}`}>
+        <div className={`centered-cont ${currentModal.length && 'blur'}`}>
             <Banner />
             <FilterBar />
             <div className='product-list'>

@@ -1,13 +1,13 @@
 .menu {
     height: 100vh;
     width: 234px;
-    position: absolute;
+    position: fixed;
     background-color: black;
     top: 60px;
     right: 0;
     display: flex;
     flex-direction: column;
-    padding: 5.5em 3.5em 2.5em 4em;
+    padding: 4.5em 2.5em 2.5em 2.5em;
     z-index: 11;
 }
 .menu-item {
@@ -16,9 +16,10 @@
     justify-content: space-between;
     align-items: center;
     span {
-        font-size: 32px;
+        font-size: 32px !important;
         color: white;
         margin: 10px 0;
+        white-space: nowrap;
     }
 }
 .menu-item:hover {

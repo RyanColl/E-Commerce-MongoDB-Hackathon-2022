@@ -3,13 +3,28 @@ import { getProduct } from '../../lib/dbAccess'
 import Product from '../../components/product/Product'
 import {AppProvider} from '../../context/AppContext'
 import Option from '../../components/option/Option';
-
+import { initialModalState } from '../../context/AppContext'
 
 export default function Item({product}) {
   const {
     brand, category, description, image, price, rating, title, _id
   } = product;
   const {state, dispatch} = React.useContext(AppProvider)
+    // capture click event and close modal if open => add to all components inside of pages
+    let keys = Object.keys(state.modal)
+    let currentModal = keys.filter((key, i) => {
+        return state.modal[key]
+    })
+    const click = (e) => {
+      //this checks if the modalRef that was passed into state contains the click event
+      if (currentModal.length && !state.modalRef.current.contains(e.target)) {
+        dispatch({ ...state, modal: initialModalState });
+      }
+    };
+    React.useEffect(() => {
+        window.addEventListener("click", click);
+        return () => window.removeEventListener("click", click);
+    });
   const [Rating, setRating] = useState(0)
   useEffect(() => { 
     setRating( calculateRating(rating) ) 

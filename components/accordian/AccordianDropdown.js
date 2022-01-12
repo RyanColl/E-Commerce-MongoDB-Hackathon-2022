@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import React, {useEffect, useState} from 'react'
 import vectorArrow from '../../assets/vector-arrow.svg'
 function AccordianDropdown({
-    items = ['']
+    items = [''], onClick = () => {}
 }) {
     const [isOpen, setOpen] = useState(false)
     const press = () => setOpen(!isOpen)
@@ -44,6 +44,7 @@ function AccordianDropdown({
                         {items.filter((item, i) => i !== 0).map((item, i) => {
                             return (
                                 <motion.span 
+                                onClick={() => {onClick(item)}}
                                 initial={{opacity: 0}} 
                                 animate={{opacity: 1}}
                                 transition={{delay: i*0.2}}
