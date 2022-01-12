@@ -7,6 +7,7 @@ import dbConnect from '../lib/dbConnect'
 import { useRouter } from 'next/router'
 import { getProductsByCollection, getProductsByType } from '../lib/atlasSearch';
 import { AppProvider } from '../context/AppContext'
+import PageChanger from '../components/pageChanger/PageChanger';
 import { initialModalState } from '../context/AppContext'
 function products({products}) {
     const {state, dispatch} = React.useContext(AppProvider)
@@ -52,6 +53,10 @@ function products({products}) {
                     );
                 })}
             </div>
+                <PageChanger 
+                    prevPage={()=>{}}
+                    nextPage={()=>{}}
+                />
         </div>
     )
 }

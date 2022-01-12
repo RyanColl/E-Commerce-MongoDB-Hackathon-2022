@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import { motion, useMotionValue } from 'framer-motion'
 // import { getProducts } from '../lib/dbAccess'
 import { motion } from 'framer-motion'
 import { getProductsByPage } from '../lib/dbAccess'
 import dbConnect from '../lib/dbConnect'
 import { AppProvider } from '../context/AppContext'
-import styled from 'styled-components'
 import ProductPreview from '../components/productPreview/productPreview'
 import { initialModalState } from '../context/AppContext'
 
@@ -14,19 +14,9 @@ import leftarrow from '../assets/left_arrow.svg'
 import rightarrow from '../assets/right_arrow.svg'
 import heroimage from '../assets/hero-img.svg'
 
-const Carousel = styled.div`
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  right: ${props=>props.right};
-  left: ${props=>props.left};
-  width: 100%;
-`;
 
 function index({
   products,
-  left="24px",
-  right="24px",
 }) {
   const {state, dispatch} = React.useContext(AppProvider)
   const router = useRouter();
@@ -45,9 +35,12 @@ function index({
     }
   }, [state.products])
 
+  const buttonClick = () => router.push(`products?collection=collectors`)
+
 
 
   const [counter, setCounter] = useState(0);
+   const xValue = useMotionValue(0)
 
   const HandleImgChange = (i) => {
     console.log("is this working")
@@ -55,13 +48,21 @@ function index({
     if (i<carousel.length-1) {
       i = carousel.length-1;
       console.log("left click")
+      xValue = xValue.get();
     }
     else if(i>carousel.length-1) {
       i=0;
       console.log("right click")
+      xValue = xValue.set(xValue);
     }
     setCounter(i)
   } 
+  const load = {
+    0: { left: -1000 },
+    0.5: { left: -1500 },
+    1: { left: -2000 } 
+
+  }
   const buttonClick = () => router.push(`products?collection=collectors`)
 
 
@@ -79,6 +80,7 @@ function index({
     window.addEventListener("click", click);
     return () => window.removeEventListener("click", click);
   });
+
   return (
     <div className={`centered-cont ${currentModal.length && 'blur'}`}>
 
@@ -93,14 +95,22 @@ function index({
       <div className='carousel-title flex-row-space-between'>
         <h4>Trending now</h4>
         <div className='carousel-arrows'>
-          <img src={leftarrow.src} onClick={()=>HandleImgChange(counter - 1)} />
-          <img src={rightarrow.src} onClick={()=>HandleImgChange(counter + 1)}  />
+          {/* <img src={leftarrow.src} onClick={()=>HandleImgChange(-1)} />
+          <img src={rightarrow.src} onClick={()=>HandleImgChange(+1)}  /> */}
         </div>
       </div>
 
       <div className='carousel-cont'>
-        <Carousel className='carousel' 
-        >
+        <motion.div className='carousel'
+              initial={{ x: xValue.get() }}
+              // animate={load}
+              animate={{ x: -4358 }}
+              whileHover={{
+                x: xValue.get() }}
+              transition={{
+                x: { duration: 80 }
+              }}
+            >
           {products.map((product, i) => {
             return (
                 <ProductPreview 
@@ -112,8 +122,7 @@ function index({
                 />
             );
           })}
-        </Carousel>
-
+        </motion.div>
       </div>
 
       <div className='collection-cont'>

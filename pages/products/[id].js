@@ -47,9 +47,9 @@ export default function Item({product}) {
         )}
 
       // information section 2 ==================
-        // longDetails={}
+        longDetails={product.description}
         imgDetails={product.image[7]}
-        // prodDetails={}
+        prodDetails={product.brand}
     />
   )
 }
