@@ -38,6 +38,7 @@ import '../components/searchBar/searchbar.scss';
 import '../components/accordian/accordiandropdown.scss';
 import '../components/modal/modal.scss';
 import '../components/disclaimer/sitedisclaimer.scss';
+import '../components/pageChanger/pagechanger.scss';
 
 import Modal from '../components/modal/Modal';
 
