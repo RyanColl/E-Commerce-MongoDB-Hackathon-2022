@@ -83,7 +83,7 @@ export default function Product({
           <div className="style-cont"></div>
         </div>
         <div className="short-details">
-          <h4>Product Details</h4>
+          <h4 className='uppercased'>Product Details</h4>
           <p>{prodDetails}</p>
         </div>
       </div>

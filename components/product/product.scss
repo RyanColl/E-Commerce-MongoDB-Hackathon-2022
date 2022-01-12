@@ -108,7 +108,12 @@ $md: 800px;
     }
   }
 
-  .short-details { margin-left: 36px; }
+  .short-details { 
+    margin-left: 36px; 
+    h4 {
+      margin-bottom: 12px;
+    }
+  }
 }
 
 // end of section 2 ==============================
