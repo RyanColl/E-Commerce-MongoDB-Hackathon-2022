@@ -3,6 +3,9 @@ import React from 'react'
 import { AppProvider } from '../../context/AppContext'
 import garbageBin from '../../assets/garbage-bin.svg';
 import Dropdown from '../dropdown/Dropdown';
+import ContinueShopping from './ContinueShopping';
+import ProceedToCheckout from './ProceedToCheckout';
+import { useRouter } from 'next/router';
 const qtys = [1,2,3,4,5,6,7,8]
 const sizes = [
     5.5, 6, 6.5, 7, 7.5, 
@@ -11,6 +14,7 @@ const sizes = [
     12.5, 13, 13.5, 14, 14.5
 ]
 function CartContents({closeCart}) {
+    const router = useRouter()
     const {state, dispatch} = React.useContext(AppProvider)
     const windowObject = typeof window != 'undefined' && window
     const deleteItem = (id) => {
@@ -19,6 +23,10 @@ function CartContents({closeCart}) {
         })
         // console.log(id, newCart.length)
         dispatch({...state, cart: newCart})
+    }
+    const proceed = () => {
+        closeCart()
+        router.push('/checkout')
     }
     return (
         <div className='open-cart-layout'>
@@ -70,7 +78,8 @@ function CartContents({closeCart}) {
                     <h4>${(state.cart.reduce((acc, cartObj) => (acc+cartObj.product.price), 0))/100}</h4>
                 </div>
                 <div className='cart-buttons'>
-                    {/* <ContinueShopping onClick={closeCart} /> */}
+                    <ContinueShopping onClick={closeCart} />
+                    <ProceedToCheckout onClick={proceed} />
                 </div>
             </div>
         </div>
