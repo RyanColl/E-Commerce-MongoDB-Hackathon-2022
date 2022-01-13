@@ -9,7 +9,7 @@ const SiteDisclaimer = () => {
         <>
             <span className='site-disclaimer'>
                 <a onClick={disclaimerClick}>
-                    <Icon style={{width: 16, height: 16}} icon="bi:info-circle" color="white" />
+                    <Icon style={{width: 12, height: 12}} icon="bi:info-circle" color="#808080" />
                     <span>Site Disclaimer</span>
                 </a>
             </span>

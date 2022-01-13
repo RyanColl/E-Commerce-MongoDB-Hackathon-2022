@@ -6,10 +6,11 @@
     a {
         display: flex;
         span {
-            color: white;
+            color:#808080;
+            font-size: 14px;
         }
         svg {
-            transform: translate(-6px, 2px);
+            transform: translate(-6px, 3px);
         }
     }
     a:active {

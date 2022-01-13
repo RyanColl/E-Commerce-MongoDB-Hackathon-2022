@@ -34,6 +34,9 @@
         cursor: pointer;
         color: white !important;
     }
+    a:hover {
+        text-decoration: underline;
+    }
     span {
         text-align: left;
         font-size: 18px;

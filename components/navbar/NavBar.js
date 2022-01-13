@@ -154,7 +154,7 @@ function NavBar() {
                                     exit="exit"
                                     onClick={searchOpen}
                                     >
-                                        <Icon style={iconSize} icon="akar-icons:search" />
+                                        <Icon style={iconSize} icon="akar-icons:search" className='search-icon'/>
                                     </motion.span>
                                     }
                                 </AnimatePresence>
@@ -219,4 +219,4 @@ function NavBar() {
 }
 
 export default NavBar
-export const iconSize = {width: 24, height: 24}
+export const iconSize = {width: 24, height: 22}

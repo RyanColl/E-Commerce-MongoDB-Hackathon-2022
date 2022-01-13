@@ -14,6 +14,8 @@ import Careers from './content/Careers'
 import History from './content/History'
 import Responsibility from './content/Responsibility'
 
+import Subscribe from './content/Subscribe'
+
 const modals = [
     // customer care
     {
@@ -59,6 +61,10 @@ const modals = [
     {
         name: 'social responsibility',
         Component: Responsibility
+    },
+    {
+        name: 'subscribe',
+        Component: Subscribe
     }
 
 ]
