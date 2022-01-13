@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 function Tracking() {
     useEffect(() => {
         // change modal properties from here
-        document.getElementById('modal').style.height = '300px'
+        document.getElementById('modal').style.height = '320px'
     })
     return (
         <div className='tracking-div' id='TrackingDiv'>

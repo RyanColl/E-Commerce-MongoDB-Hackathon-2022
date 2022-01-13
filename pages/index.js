@@ -73,12 +73,17 @@ function index({
     return () => window.removeEventListener("click", click);
   });
 
+  const bannerButton = () => {
+    dispatch({...state, loading: true})
+    router.push('/products')
+  }
+
   return (
     <div className={`centered-cont ${state.modal !== '' && 'blur'}`}>
       <div className='hero-cont'>
         <div>
           <h1 className='uppercased'>Shop now for the lastest kicks of the season.</h1>
-          <motion.span whileTap={{scale: 0.9}}><button type="button" className='black-btn'>Discover Now</button></motion.span>
+          <motion.span whileTap={{scale: 0.9}}><button onClick={bannerButton} type="button" className='black-btn'>Discover Now</button></motion.span>
         </div>
         <img src={heroimage.src} className='hero-img' />
       </div>
@@ -109,7 +114,7 @@ function index({
                     src={product.image[0] || product.image[1]} 
                     prodTitle={product.title} 
                     prodPrice={`${product.price/100}`}
-                    prodPage={() => router.push(`products/${product._id}`)}
+                    prodPage={() => {dispatch({...state, loading: true}); router.push(`products/${product._id}`)}}
                 />
             );
           })}

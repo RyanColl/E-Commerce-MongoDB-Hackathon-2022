@@ -7,21 +7,20 @@ const modals = [
         Component: Shipping
     },
     {
-        name: 'track',
+        name: 'track your order',
         Component: Tracking
     },
     {
-        name: 'privacy',
+        name: 'privacy policy',
         Component: () => <span>Hello Irene</span>
     }
-
 ]
 function ModalContent({content}) {
     console.log(content)
     return (
         <>
             {
-                modals.filter(({name, Component}, i) => name === content)
+                modals.filter(({name, Component}, i) => name.toLowerCase() === content.toLowerCase())
                 .map(({name, Component}, i) => {
                     return <Component />
                 }) 
