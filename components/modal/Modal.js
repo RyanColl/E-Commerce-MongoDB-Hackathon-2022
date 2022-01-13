@@ -38,7 +38,7 @@ function Modal({
                             <Icon style={{width: 32, height: 32}} icon="bi:x" />
                         </motion.div>
                     </div>
-                    <ModalContent content={state.modal} />
+                    <ModalContent className="modal-content" content={state.modal} />
                 </motion.div>
             </AnimatePresence>
             }

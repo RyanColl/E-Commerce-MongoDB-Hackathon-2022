@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
-function Tracking() {
+export default function History() {
     return (
         <div>
             <p className='bolded'>Disclaimer:</p>
         </div>
     )
 }
-
-export default Tracking

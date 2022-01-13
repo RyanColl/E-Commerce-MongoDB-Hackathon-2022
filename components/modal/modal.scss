@@ -1,8 +1,9 @@
 .modal {
+    box-sizing: border-box;
     position: fixed;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    // align-items: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -13,36 +14,38 @@
     backdrop-filter: blur(4px);
     z-index: 99;
     box-shadow: 4px 4px 4px rgba(0,0,0,0.25), -4px -4px 4px rgba(0,0,0,0.25);
-    overflow: hidden;
+    // overflow: hidden;
+    padding: 0 12px 12px;
+
+    @media screen and (max-width: 800px) {
+        max-width: 340px;
+        
+    }
 }
 .modal-top {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    align-items: inherit;
+    align-items: center;
     border: 0px solid rgba(0,0,0,0.25);
     border-bottom: 1px solid rgba(0,0,0,0.25);
-    width: 95%;
+    padding: 8px 0;
+    margin-bottom: 12px;
     span {
-        padding: 0.75em 0.75em 0.75em 2em;
+        // padding: 0.75em 0.75em 0.75em 2em;
         font-size: 20px;
         text-transform: uppercase;
     }
 }
 
 .close-modal-button {
-    height: 100%;
-    width: 35px;
+    height: 32px;
     border-radius: 3px;
-    display: grid;
-    place-items: center;
-    padding-right: 0.5em;
-    padding-left: 0.5em;
     background-color: white;
     
 }
 .close-modal-button:hover {
-    transition: background-color 0.1s;
+    transition: background-color 0.3s;
     background-color: black;
     cursor: pointer;
     svg {
@@ -50,13 +53,16 @@
     }
 }
 
+.modal-content {
+    padding: 8px;
+}
+
 .tracking-div {
+    box-sizing: border-box;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    padding: 0.5em;
-    span {
+    // padding: 12px;
+    p {
         text-align: left;
         width: 100%;
     }
