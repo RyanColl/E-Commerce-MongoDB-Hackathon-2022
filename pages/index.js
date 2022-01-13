@@ -63,13 +63,9 @@ function index({
 
   }
   // capture click event and close modal if open => add to all components inside of pages
-  let keys = Object.keys(state.modal)
-  let currentModal = keys.filter((key, i) => {
-      return state.modal[key]
-  })
   const click = (e) => {
-    if (state.modalRef.current != null && (currentModal.length && !state.modalRef.current.contains(e.target))) {
-      dispatch({ ...state, modal: initialModalState });
+    if (state.modalRef.current != null && (state.modal !== '' && !state.modalRef.current.contains(e.target))) {
+      dispatch({ ...state, modal: '' });
     }
   };
   React.useEffect(() => {
@@ -77,13 +73,17 @@ function index({
     return () => window.removeEventListener("click", click);
   });
 
-  return (
-    <div className={`centered-cont ${currentModal.length && 'blur'}`}>
+  const bannerButton = () => {
+    dispatch({...state, loading: true})
+    router.push('/products')
+  }
 
+  return (
+    <div className={`centered-cont ${state.modal !== '' && 'blur'}`}>
       <div className='hero-cont'>
         <div>
           <h1 className='uppercased'>Shop now for the lastest kicks of the season.</h1>
-          <motion.span whileTap={{scale: 0.9}}><button type="button" className='black-btn'>Discover Now</button></motion.span>
+          <motion.span whileTap={{scale: 0.9}}><button onClick={bannerButton} type="button" className='black-btn'>Discover Now</button></motion.span>
         </div>
         <img src={heroimage.src} className='hero-img' />
       </div>
@@ -114,7 +114,7 @@ function index({
                     src={product.image[0] || product.image[1]} 
                     prodTitle={product.title} 
                     prodPrice={`${product.price/100}`}
-                    prodPage={() => router.push(`products/${product._id}`)}
+                    prodPage={() => {dispatch({...state, loading: true}); router.push(`products/${product._id}`)}}
                 />
             );
           })}

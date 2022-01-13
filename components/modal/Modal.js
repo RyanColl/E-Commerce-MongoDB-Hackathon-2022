@@ -7,10 +7,6 @@ function Modal({
     width = 360, height = 200
 }) {
     const {state, dispatch} = React.useContext(AppProvider)
-    let keys = Object.keys(state.modal)
-    let currentModal = keys.filter((key, i) => {
-        return state.modal[key]
-    })
     const [hovering, setHovering] = React.useState(false)
     const hovOn = () => setHovering(true)
     const hovOff = () => setHovering(false)
@@ -28,7 +24,7 @@ function Modal({
     
     return (
         <>
-            {currentModal.length &&
+            {state.modal !== '' &&
             <AnimatePresence>
                 <motion.div 
                 ref={modalRef}
@@ -37,12 +33,12 @@ function Modal({
                 animate={{opacity: 1}}
                 style={{width, height}} className='modal'>
                     <div className='modal-top'>
-                        <span>{currentModal[0]}</span>
-                        <motion.div onClick={() => dispatch({...state, modal: initialModalState})} whileTap={{scale: 0.9}} onHoverStart={hovOn} onHoverEnd={hovOff} className='close-modal-button'>
+                        <span>{state.modal}</span>
+                        <motion.div onClick={() => dispatch({...state, modal: ''})} whileTap={{scale: 0.9}} onHoverStart={hovOn} onHoverEnd={hovOff} className='close-modal-button'>
                             <Icon style={{width: 32, height: 32}} icon="bi:x" />
                         </motion.div>
                     </div>
-                    <ModalContent content={currentModal[0]} />
+                    <ModalContent content={state.modal} />
                 </motion.div>
             </AnimatePresence>
             }

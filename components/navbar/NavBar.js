@@ -29,7 +29,7 @@ function NavBar() {
     // function for useeffect, for adding and removing purposes
     const setScroll = () => {
         let offset = windowObject.pageYOffset;
-        offset > scrollY && setHidden(true) // sets hiding when scrolling down
+        (offset > scrollY && scrollY > 60) && setHidden(true) // sets hiding when scrolling down
         offset < scrollY && setHidden(false) //sets visible when scrolling up
         setScrollY(offset)
     };

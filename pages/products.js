@@ -22,21 +22,18 @@ function products({products}) {
     }, [products])
 
         // capture click event and close modal if open => add to all components inside of pages
-    let keys = Object.keys(state.modal);
-    let currentModal = keys.filter((key, i) => {
-        return state.modal[key];
-    });
-    const click = (e) => {
-        if (currentModal.length && !state.modalRef.current.contains(e.target)) {
-          dispatch({ ...state, modal: initialModalState });
-        }
-    };
-    React.useEffect(() => {
-        window.addEventListener("click", click);
-        return () => window.removeEventListener("click", click);
-    });
+        const click = (e) => {
+            if (state.modalRef.current != null && (state.modal !== '' && !state.modalRef.current.contains(e.target))) {
+              dispatch({ ...state, modal: '' });
+            }
+          };
+          React.useEffect(() => {
+            window.addEventListener("click", click);
+            return () => window.removeEventListener("click", click);
+          });
+        
     return (
-        <div className={`centered-cont ${currentModal.length && 'blur'}`}>
+        <div className={`centered-cont ${state.modal !== '' && 'blur'}`}>
             <Banner />
             <FilterBar />
             <div className='product-list'>
