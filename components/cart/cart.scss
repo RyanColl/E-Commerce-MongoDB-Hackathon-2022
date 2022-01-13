@@ -63,7 +63,6 @@
     }
 }
 .open-cart-bottom {
-    width: 100%;
     background-color: white;
     padding: 20px;
 }
@@ -83,6 +82,96 @@
     cursor: pointer;
 }
 .open-cart-layout {
+    display: flex;
+    align-items: center;
     
 }
-
+.cart-contents {
+    flex-grow: 2;
+    width: 100%;
+}
+.cart-bottom {
+    flex-grow: 1;
+}
+.cart-item {
+    height: 90px;
+    width: 100%;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .left {
+        height: 100%;
+        display: flex;
+        .image {
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .image, .info {
+            height: 100%;
+            width: 90px;
+            margin-left: 0.5em;
+        }
+        .info {
+            height: calc(100% - 0.2em);
+            width: 180px !important;
+            padding: 0.1em;
+            margin-left: 1.5em !important;
+            display: flex;
+            flex-direction: column;
+            
+        }
+    }
+    .right {
+        height: 100%;
+        width: 120px;
+        
+        display: flex;
+        flex-direction: column;
+        .top, .bottom {
+            flex-grow: 1;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            
+        }
+        .top {
+            span {
+                padding-right: 0.6em;
+                padding-top: 0.2em;
+                width: 100%;
+                height: calc(100% - 0.2em);
+                font-size: 18px;
+                text-align: right;
+            }
+        }
+        .bottom {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            div {
+                padding-right: 0.6em;
+                padding-top: 0.2em;
+                img:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+.cart-options {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+@media screen and (max-width: 500px) {
+    .open-cart {
+        width: 100vw;
+    }
+    .open-cart-bottom {
+        padding: 20px 0.5em;
+    }
+}

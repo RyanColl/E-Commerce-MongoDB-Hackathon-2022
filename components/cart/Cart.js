@@ -3,6 +3,7 @@ import React from 'react'
 import { Icon } from '@iconify/react'
 import { AppProvider } from '../../context/AppContext'
 import ContinueShopping from './ContinueShopping'
+import CartContents from './CartContents'
 
 function Cart({closeCart}) {
     // nextjs checks our code on the server, and there is no window object on the server,
@@ -33,9 +34,9 @@ function Cart({closeCart}) {
             </div>
             <div className='open-cart-bottom'>
             {
-                !cart.length
+                cart.length
                 ?
-                <></>
+                <CartContents />
                 :
                 <div className='empty-cart'>
                     <span>Your Cart is currently empty.</span>
