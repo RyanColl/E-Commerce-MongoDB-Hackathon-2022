@@ -15,6 +15,7 @@ import History from './content/History'
 import Responsibility from './content/Responsibility'
 
 import Subscribe from './content/Subscribe'
+import Summary from './content/Summary'
 
 const modals = [
     // customer care
@@ -65,6 +66,10 @@ const modals = [
     {
         name: 'subscribe',
         Component: Subscribe
+    },
+    {
+        name: 'purchase summary',
+        Component: Summary
     }
 
 ]

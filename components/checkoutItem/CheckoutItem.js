@@ -3,7 +3,7 @@ import React from 'react'
 export default function CheckoutItem({
     prodTitle="Product Name",
     prodImg="../placeholder.jpg",
-    prodColor="black",
+    prodBrand="Nike",
     quantity="1",
     size="7",
     prodPrice="550"
@@ -15,7 +15,7 @@ export default function CheckoutItem({
                 <div className='item-info-cont'>
                     <div>
                         <h6>{prodTitle}</h6>
-                        <p>Color: {prodColor}</p>
+                        <p>Brand: {prodBrand}</p>
                     </div>
                     <p>Qty: {quantity}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Size: {size}</p>
                 </div>

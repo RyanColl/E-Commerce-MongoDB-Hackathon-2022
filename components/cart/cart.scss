@@ -95,6 +95,24 @@
     color: white;
     margin-bottom: 2em;
 }
+.purchase-complete {
+    width: 100%;
+    padding: 2em 0;
+    display: grid;
+    place-items: center;
+}
+.complete-purchase-button {
+    width: 230px;
+    height: 41px;
+    background: black;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 2em;
+}
 .open-cart-layout {
     display: flex;
     align-items: center;
