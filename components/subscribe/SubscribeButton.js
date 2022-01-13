@@ -2,7 +2,7 @@ import React from 'react'
 
 function SubscribeButton() {
     return (
-        <button className='subscribe-button'>
+        <button type="button" className='black-btn'>
             SUBSCRIBE
         </button>
     )

@@ -11,7 +11,7 @@ function Subscribe({click = () => {}}) {
     }
     return (
         <form onSubmit={subscribeEmail} className='subscribe-form'>
-            <span>SUBSCRIBE TO OUR NEWSLETTER</span>
+            <h5>SUBSCRIBE TO OUR NEWSLETTER</h5>
             <TextInput placeholder='Email' value={value} setValue={setValue} />
             <SubscribeButton />
         </form>
