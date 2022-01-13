@@ -65,6 +65,7 @@
 .open-cart-bottom {
     background-color: white;
     padding: 20px;
+    
 }
 .continue-shopping-button {
     width: 230px;
@@ -78,13 +79,26 @@
     color: #000000;
     margin-bottom: 2em;
 }
-.continue-shopping-button:hover {
+
+.continue-shopping-button:hover, .proceed-to-checkout-button:hover {
     cursor: pointer;
+}
+.proceed-to-checkout-button {
+    width: 230px;
+    height: 41px;
+    background: black;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 2em;
 }
 .open-cart-layout {
     display: flex;
     align-items: center;
-    
+    flex-direction: column;
 }
 .cart-contents {
     flex-grow: 2;
@@ -92,6 +106,23 @@
 }
 .cart-bottom {
     flex-grow: 1;
+    border-top: 1px solid black;
+    width: 96%;
+    
+}
+.subtotal {
+    font-size: 22px !important;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5em;
+    h4{
+        margin-right: 0.5em;
+    }
+    h4:first-child {
+        margin-left: 0.5em;
+    }
 }
 .cart-item {
     margin: 1em 0;
@@ -167,6 +198,18 @@
     display: flex;
     width: 100%;
     justify-content: space-evenly;
+}
+.cart-buttons {
+    margin: 3em 0 0em 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    button {
+        font-size: 15px !important;
+        padding: 0.25em !important;
+        width: 200px;
+    }
 }
 @media screen and (max-width: 500px) {
     .open-cart {

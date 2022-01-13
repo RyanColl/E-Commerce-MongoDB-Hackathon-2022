@@ -36,7 +36,7 @@ function Cart({closeCart}) {
             {
                 cart.length
                 ?
-                <CartContents />
+                <CartContents closeCart={closeCart} />
                 :
                 <div className='empty-cart'>
                     <span>Your Cart is currently empty.</span>

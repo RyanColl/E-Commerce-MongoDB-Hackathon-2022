@@ -35,12 +35,8 @@ function index({
   }, [state.products])
 
   const buttonClick = () => router.push(`products?collection=collectors`)
-
-
-
   const [counter, setCounter] = useState(0);
-   const xValue = useMotionValue(0)
-
+  const xValue = useMotionValue(0)
   const HandleImgChange = (i) => {
     console.log("is this working")
     var carousel = document.getElementsByClassName("carousel")

@@ -4,13 +4,14 @@ import Product from '../../components/product/Product'
 import {AppProvider} from '../../context/AppContext'
 import Option from '../../components/option/Option';
 import { initialModalState } from '../../context/AppContext'
-
+import {useRouter} from 'next/router'
 export default function Item({product}) {
   const {
     brand, category, description, image, price, rating, title, _id, shoeSizes
   } = product;
   const {state, dispatch} = React.useContext(AppProvider)
-    // capture click event and close modal if open => add to all components inside of pages
+  const router = useRouter()  
+  // capture click event and close modal if open => add to all components inside of pages
     const click = (e) => {
       if (state.modalRef.current != null && (state.modal !== '' && !state.modalRef.current.contains(e.target))) {
         dispatch({ ...state, modal: '' });
@@ -20,32 +21,42 @@ export default function Item({product}) {
       window.addEventListener("click", click);
       return () => window.removeEventListener("click", click);
     });
-  const [Rating, setRating] = useState(0)
+  const [Rating, setRating] = useState(10)
   useEffect(() => { 
     setRating( calculateRating(rating) ) 
   }, [])
   useEffect(() => {
     dispatch({...state, loading: false})
   }, [product])
+  console.log(shoeSizes)
+  const [selectedSize, setSelectedSize] = useState(0)
+  const addToCart = () => {
+    dispatch({...state, cart: [...state.cart, {product, quantity: 1, selectedSize}]})
+    router.push('/products')
+  }
   return (
-    <Product 
-        rating={parseFloat(Rating.toFixed(2))}
-      // information section 1 ==================
-        title={title}
-        //the price is not in the thousands -- there should be a period before the second last #
-        price={price/100}
-        image={image}
+    <>
+    {product &&
+      <Product 
+          rating={parseFloat(Rating.toFixed(2))}
+        // information section 1 ==================
+          title={title}
+          //the price is not in the thousands -- there should be a period before the second last #
+          price={price/100}
+          image={image}
 
-        sizeOptions={
-          shoeSizes.map((i)=>
-          <Option optionText={shoeSizes[i]} />
-        )}
+          sizeOptions={shoeSizes}
 
-      // information section 2 ==================
-        longDetails={description}
-        imgDetails={image[7]}
-        prodDetails={brand}
-    />
+        // information section 2 ==================
+          longDetails={description}
+          imgDetails={image[3]}
+          prodDetails={brand}
+          addToCart={addToCart}
+          selectedSize={selectedSize}
+          setSelectedSize={setSelectedSize}
+      />
+    }
+    </>
   )
 }
 
