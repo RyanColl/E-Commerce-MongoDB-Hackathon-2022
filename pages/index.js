@@ -63,13 +63,9 @@ function index({
 
   }
   // capture click event and close modal if open => add to all components inside of pages
-  let keys = Object.keys(state.modal)
-  let currentModal = keys.filter((key, i) => {
-      return state.modal[key]
-  })
   const click = (e) => {
-    if (state.modalRef.current != null && (currentModal.length && !state.modalRef.current.contains(e.target))) {
-      dispatch({ ...state, modal: initialModalState });
+    if (state.modalRef.current != null && (state.modal !== '' && !state.modalRef.current.contains(e.target))) {
+      dispatch({ ...state, modal: '' });
     }
   };
   React.useEffect(() => {
@@ -78,8 +74,7 @@ function index({
   });
 
   return (
-    <div className={`centered-cont ${currentModal.length && 'blur'}`}>
-
+    <div className={`centered-cont ${state.modal !== '' && 'blur'}`}>
       <div className='hero-cont'>
         <div>
           <h1 className='uppercased'>Shop now for the lastest kicks of the season.</h1>

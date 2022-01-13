@@ -6,7 +6,7 @@ import { AppProvider, initialModalState } from '../../context/AppContext';
 import AccordianDropdown from '../accordian/AccordianDropdown';
 function Menu() {
     const {state, dispatch} = React.useContext(AppProvider)
-    const aboutPress = () => setTimeout(() => dispatch({...state, modal: {...initialModalState, about: true}}), 10)
+    const aboutPress = () => setTimeout(() => dispatch({...state, modal: 'about'}), 10)
     
     // console.log(state.modal)
     return (

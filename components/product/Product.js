@@ -17,16 +17,12 @@ export default function Product({
 }) {
   const {state, dispatch} = React.useContext(AppProvider)
     // capture click event and close modal if open => add to all components inside of pages
-  let keys = Object.keys(state.modal)
-  let currentModal = keys.filter((key, i) => {
-      return state.modal[key]
-  })
   const [bigImage, setBigImage] = useState(image[0])
   const hoverImageOn = (src) => {
     setBigImage(src)
   }
   return (
-    <div className={`centered-cont ${currentModal.length && 'blur'}`}>
+    <div className={`centered-cont ${state.modal !== '' && 'blur'}`}>
       <div className="basic-info-cont">
         <Breadcrumb />
         <Rating rating={rating} />

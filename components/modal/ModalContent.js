@@ -9,6 +9,10 @@ const modals = [
     {
         name: 'track',
         Component: Tracking
+    },
+    {
+        name: 'privacy',
+        Component: () => <span>Hello Irene</span>
     }
 
 ]
