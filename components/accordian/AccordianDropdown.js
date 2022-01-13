@@ -28,7 +28,7 @@ function AccordianDropdown({
         <motion.div ref={dropdownRef}
         onClick={press} className='accordian-dropdown'>
             <div>
-                <span>{items[0]}</span>
+                <span className='browse-span'>{items[0]}</span>
                 <motion.img 
                 animate={{rotate: isOpen ? '180deg' : '0deg'}} 
                 src={vectorArrow.src} 

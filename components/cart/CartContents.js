@@ -3,14 +3,20 @@ import React from 'react'
 import { AppProvider } from '../../context/AppContext'
 import garbageBin from '../../assets/garbage-bin.svg';
 import Dropdown from '../dropdown/Dropdown';
+const qtys = [1,2,3,4,5,6,7,8]
+const sizes = [
+    5.5, 6, 6.5, 7, 7.5, 
+    8, 8.5, 9, 9.5, 10, 
+    10.5, 11, 11.5, 12,
+    12.5, 13, 13.5, 14, 14.5
+]
 function CartContents() {
     const {state, dispatch} = React.useContext(AppProvider)
-    const {cart} = state;
     const windowObject = typeof window != 'undefined' && window
     return (
         <div className='open-cart-layout'>
             <div className='cart-contents'>
-                {cart.map(({product, quantity, selectedSize}, i) => {
+                {state.cart.map(({product, quantity, selectedSize}, i) => {
                     const {brand, category, description, 
                     image, price, rating, title, _id, shoeSizes} = product
                     console.log(quantity,selectedSize)
@@ -31,9 +37,9 @@ function CartContents() {
                                     </div>
                                     <motion.div animate={{x:-4}} className='cart-options'>
                                         <span>QTY:</span>
-                                        <Dropdown number={quantity} />
+                                        <Dropdown type={'quantity'} iD={_id} number={quantity} numbers={qtys} />
                                         <span>SIZE: </span>
-                                        <Dropdown number={selectedSize} />
+                                        <Dropdown type={'size'} iD={_id} number={selectedSize} numbers={sizes} />
                                     </motion.div>
                                 </div>
                             </div>
