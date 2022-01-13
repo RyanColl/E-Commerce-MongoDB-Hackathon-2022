@@ -1,9 +1,12 @@
 import React from 'react'
-
+import {useRouter} from 'next/router'
 export default function Banner({
   pageTitle="Nike Shoes",
-  pageDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+  pageDescription="Nike Shoes are made from only the highest quality materials."
 }) {
+  const router = useRouter()
+  const {query} = router;
+  console.log(query)
   return (
     <div className='banner'>
       <div>

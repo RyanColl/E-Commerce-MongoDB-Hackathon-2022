@@ -3,6 +3,7 @@ import OptionCont from '../optionCont/OptionCont';
 import Rating from '../rating/Rating';
 import Breadcrumb from '../breadcrumb/Breadcrumb';
 import { AnimatePresence, motion } from 'framer-motion';
+import Option from '../../components/option/Option'
 import { AppProvider } from '../../context/AppContext';
 export default function Product({
   title="Name of Product",
@@ -10,7 +11,8 @@ export default function Product({
   price="550",
   sizeOptions=null,
   rating=5,
-
+  setSelectedSize,
+  addToCart = () => {},
   longDetails="one short descriptive paragraph",
   imgDetails="/placeholder.jpg",
   prodDetails="short point form information"
@@ -18,9 +20,11 @@ export default function Product({
   const {state, dispatch} = React.useContext(AppProvider)
     // capture click event and close modal if open => add to all components inside of pages
   const [bigImage, setBigImage] = useState(image[0])
+  
   const hoverImageOn = (src) => {
     setBigImage(src)
   }
+  const chooseSize = (size) => setSelectedSize(size)
   return (
     <div className={`centered-cont ${state.modal !== '' && 'blur'}`}>
       <div className="basic-info-cont">
@@ -68,8 +72,14 @@ export default function Product({
           <h4>${price}</h4>
 
           {/* <OptionCont optionTitle="Select a Color" optionText={"dwfwe"} /> */}
-          <OptionCont optionTitle="Select a Size">{sizeOptions}</OptionCont>
-          <button className="black-btn cart-btn" type="button">
+          <OptionCont optionTitle="Select a Size">
+              {sizeOptions.map((size, i)=>
+            <Option chooseSize={chooseSize} key={i} optionText={size} />
+          )}
+          </OptionCont>
+          <button 
+          onClick={() => {addToCart()}}
+          className="black-btn cart-btn" type="button">
             Add to Cart
           </button>
         </div>

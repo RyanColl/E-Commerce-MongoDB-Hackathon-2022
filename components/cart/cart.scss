@@ -65,6 +65,7 @@
 .open-cart-bottom {
     background-color: white;
     padding: 20px;
+    
 }
 .continue-shopping-button {
     width: 230px;
@@ -84,7 +85,7 @@
 .open-cart-layout {
     display: flex;
     align-items: center;
-    
+    flex-direction: column;
 }
 .cart-contents {
     flex-grow: 2;
@@ -92,6 +93,23 @@
 }
 .cart-bottom {
     flex-grow: 1;
+    border-top: 1px solid black;
+    width: 96%;
+    
+}
+.subtotal {
+    font-size: 22px !important;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5em;
+    h4{
+        margin-right: 0.5em;
+    }
+    h4:first-child {
+        margin-left: 0.5em;
+    }
 }
 .cart-item {
     margin: 1em 0;
