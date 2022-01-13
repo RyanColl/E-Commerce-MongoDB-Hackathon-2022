@@ -30,7 +30,13 @@ $lg: 1120px;
         white-space: nowrap;
     }
     a:first-child {
-        font-size: 22px;
+        font-size: 20px;
+        cursor: default;
+        pointer-events: none;
+    }
+    a:first-child:hover {
+        text-decoration: none;
+
     }
     a:hover {
         text-decoration: underline;

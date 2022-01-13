@@ -30,7 +30,7 @@ function AccordianDropdown({
             <div>
                 <span>{items[0]}</span>
                 <motion.img 
-                animate={{rotate: isOpen ? '0deg' : '180deg'}} 
+                animate={{rotate: isOpen ? '180deg' : '0deg'}} 
                 src={vectorArrow.src} 
                 />
             </div>
