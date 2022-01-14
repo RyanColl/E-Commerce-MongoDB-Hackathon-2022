@@ -8,7 +8,7 @@ import Link from 'next/link'
 export default function AboutUs() {
     useEffect(() => {
         // change modal properties from here
-        document.getElementById('modal').style.height = '430px'
+        document.getElementById('modal').style.height = '475px'
     })
     return (
         <div>
@@ -20,6 +20,7 @@ export default function AboutUs() {
                     <img className="profile-pic" src={Ryan.src} />
                     <p>Ryan Collicut</p>
                 </div>
+                <p className='uppercased role'>Full-stack Developer</p>
                 <div className='profie-row'>
                     <img className='social-icon' src={Linkedin.src} />
                     <a href="https://www.linkedin.com/in/rcollicutt-react-developer/" target="_blank">rcollicutt-react-developer</a>
@@ -35,6 +36,7 @@ export default function AboutUs() {
                     <img className="profile-pic" src={Irene.src} />
                     <p>Irene Wu</p>
                 </div>
+                <p className='uppercased role'>UX/UI Designer & Front-end Developer</p>
                 <div className='profie-row'>
                     <img className='social-icon' src={Linkedin.src} />
                     <a href="https://www.linkedin.com/in/irenewuu/" target="_blank">irenewuu</a>

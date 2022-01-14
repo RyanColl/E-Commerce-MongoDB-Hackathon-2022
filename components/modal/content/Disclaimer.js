@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 
 export default function Disclaimer() {
     useEffect(() => {
-        document.getElementById('modal').style.height = '400px'
+        document.getElementById('modal').style.height = '420px'
     })
     return (
         <div>
