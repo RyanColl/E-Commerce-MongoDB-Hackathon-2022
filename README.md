@@ -107,7 +107,7 @@ export const getProductsByCollection = async (collection) => {
 }
 ```
 
-3. The third index setup for this app is the most powerful and one I would like to show off for purposes fo the hackathon. This index is setup using MongoDB's Atlas Search's [AutoComplete](https://docs.atlas.mongodb.com/atlas-search/autocomplete/). Autocomplete allows us to take a complete index of our database, and search through a specific field for products that match the spelling of a word. We can even apply a fuzzy filter, so when users misspell our product names, MongoDB still knows what they mean. The index is as follows:
+3. The third index setup for this app is the most powerful and one I would like to show off for purposes of the hackathon. This index is setup using MongoDB's Atlas Search's [AutoComplete](https://docs.atlas.mongodb.com/atlas-search/autocomplete/). Autocomplete allows us to take a complete index of our database, and search through a specific field for products that match the spelling of a word. We can even apply a fuzzy filter, so when users misspell our product names, MongoDB still knows what they mean. The index is as follows:
 
 ```js
 export const atlasSearch = async (searchText) => {
@@ -130,7 +130,7 @@ export const atlasSearch = async (searchText) => {
 }
 ```
 
-The name of this index is autocomplete, and the path we are looking through is the description of the products. We could look through names/titles if we had simpler products like groceries, but with shoe descriptions, Atlas Search uses score based returns to order the products that are returned from the query based on their score. Using a simple dropdown, I have placed the products underneath the search bar in a scrollable menu.
+The name of this index is autocomplete, and the path we are looking through is the description of the products. We could look through names/titles if we had simpler products like groceries, but with shoe descriptions, Atlas Search uses score based returns to order the products from the query based on their score. Using a simple dropdown, I have placed the products underneath the search bar in a scrollable menu.
 
 
 
