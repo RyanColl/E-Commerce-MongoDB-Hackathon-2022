@@ -1,20 +1,12 @@
 import React from 'react'
 
 import Contact from './content/Contact'
-import Account from './content/Account'
-import Tracking from './content/Tracking'
 import Shipping from './content/Shipping'
 import Returns from './content/Returns'
-
-import Terms from './content/Terms'
-import Privacy from './content/Privacy'
-import Cookie from './content/Cookie'
-
 import Careers from './content/Careers'
-import History from './content/History'
-import Responsibility from './content/Responsibility'
 
 import Subscribe from './content/Subscribe'
+import Disclaimer from './content/Disclaimer'
 
 const modals = [
     // customer care
@@ -24,11 +16,11 @@ const modals = [
     },
     {
         name: 'my account',
-        Component: Account
+        Component: Disclaimer
     },
     {
         name: 'track your order',
-        Component: Tracking
+        Component: Disclaimer
     },
     {
         name: 'shipping',
@@ -40,15 +32,15 @@ const modals = [
     },
     {
         name: 'terms and conditions of sale',
-        Component: Terms
+        Component: Disclaimer
     },
     {
         name: 'privacy policy',
-        Component: Privacy
+        Component: Disclaimer
     },
     {
         name: 'cookie privacy',
-        Component: Cookie
+        Component: Disclaimer
     },
     {
         name: 'careers',
@@ -56,15 +48,19 @@ const modals = [
     },
     {
         name: 'our history',
-        Component: History
+        Component: Disclaimer
     },
     {
         name: 'social responsibility',
-        Component: Responsibility
+        Component: Disclaimer
     },
     {
         name: 'subscribe',
         Component: Subscribe
+    },
+    {
+        name: 'site disclaimer',
+        Component: Disclaimer
     }
 
 ]
