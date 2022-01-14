@@ -5,11 +5,11 @@ function ProductPreview({
   prodTitle="Product Name Here",
   prodPrice="399.00",
   prodPage = () => {},
-  key=0
+  i=0
 }) {
 
   return (
-    <div key={`prod-div-${key}`} className='prod-div'>
+    <div key={`prod-div-${i}`} className='prod-div'>
       <div className='prod-preview'>
         <button 
           className="white-btn" 

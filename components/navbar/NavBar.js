@@ -85,6 +85,7 @@ function NavBar() {
         setOpen(false)
     }
     const closeCart = () => setCartOpen(false)
+    const accountClick = () => setTimeout(() => dispatch({...state, modal: 'about'}), 10)
     if(width > 600) {
         return (
             <>
@@ -138,7 +139,7 @@ function NavBar() {
                                     initial="initial"
                                     exit="exit"
                                     >
-                                        <SearchBar />
+                                        <SearchBar nav={true} ex={20} />
                                         <motion.span 
                                         onClick={searchClose}
                                         className='close-search'
@@ -159,7 +160,7 @@ function NavBar() {
                                     }
                                 </AnimatePresence>
                             </motion.div>
-                            <motion.div className='nav-item account'>
+                            <motion.div onClick={accountClick} className='nav-item account'>
                                 <Icon style={iconSize} icon="bi:person" />
                             </motion.div>
                             <motion.div onClick={cartPress} className='nav-item cart'>
@@ -181,7 +182,7 @@ function NavBar() {
         return (
         <>
             <AnimatePresence>{isCartOpen && <Cart closeCart={closeCart} />}</AnimatePresence>
-            <AnimatePresence>{isOpen && <Menu />}</AnimatePresence>
+            <AnimatePresence>{isOpen && <Menu setOpen={setOpen} />}</AnimatePresence>
             <AnimatePresence>
                 {!hidden &&
                 <motion.div 
