@@ -71,6 +71,10 @@ const modals = [
     {
         name: 'next',
         Component: AboutUs
+    },
+    {
+        name: 'about',
+        Component: AboutUs
     }
 
 ]
