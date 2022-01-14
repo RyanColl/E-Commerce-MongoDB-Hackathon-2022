@@ -34,7 +34,7 @@ function products({products}) {
         
     return (
         <div className={`centered-cont ${state.modal !== '' && 'blur'}`}>
-            <Banner />
+            <Banner pageDescription=''/>
             <FilterBar />
             <div className='product-list'>
                 {state.products.length && state.products.map((product, i) => {

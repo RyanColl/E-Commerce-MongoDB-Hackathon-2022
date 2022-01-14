@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Account() {
+export default function Disclaimer() {
     return (
         <div>
             <p className='bolded'>Disclaimer:</p>
@@ -8,5 +8,3 @@ function Account() {
         </div>
     )
 }
-
-export default Account
