@@ -40,6 +40,7 @@ import '../components/modal/modal.scss';
 import '../components/disclaimer/sitedisclaimer.scss';
 import '../components/pageChanger/pagechanger.scss';
 import '../components/dropdown/dropdown.scss';
+import '../components/reviewContainer/reviewcont.scss';
 
 import Modal from '../components/modal/Modal';
 

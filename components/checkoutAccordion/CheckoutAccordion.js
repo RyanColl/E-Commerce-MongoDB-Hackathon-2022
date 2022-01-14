@@ -4,12 +4,14 @@ import visa from "../../assets/visa.svg";
 import mastercard from "../../assets/mastercard.svg";
 import americanexpress from "../../assets/american-express.svg";
 import paypal from "../../assets/paypal.svg";
+import ReviewCont from '../reviewContainer/ReviewCont';
+import checkmark from '../../assets/checkmark.svg';
 
 export default function CheckoutAccordion({}) {
     // form 1 - shipping address ============================================================
     //     return (
     //         <div className='accordion-cont'>
-    //             <h3 className='uppercased'>Shipping Address</h3>
+    //             <h4 className='uppercased'>Shipping Address</h4>
     //             <form className='checkout-form'>
     //                 <div className='flex-row'>
     //                     <TextInput 
@@ -65,7 +67,7 @@ export default function CheckoutAccordion({}) {
         //         <h4 className='uppercased'>Shipping Address</h4>
         //         <hr />
         //         <div className='flex-row-space-between'>
-        //             <h3 className='uppercased'>Payment Method</h3>
+        //             <h4 className='uppercased'>Payment Method</h4>
         //             <div className='payment-methods'>
         //                 <img src={visa.src} />
         //                 <img src={mastercard.src} />
@@ -133,7 +135,7 @@ export default function CheckoutAccordion({}) {
         //         <hr />
         //         <h4 className='uppercased'>Payment Method</h4>
         //         <hr />
-        //         <h3 className='uppercased'>Contact Information</h3>
+        //         <h4 className='uppercased'>Contact Information</h4>
         //         <form className='checkout-form'>
         //             <TextInput 
         //                 placeholder='Email Address'
@@ -157,27 +159,48 @@ export default function CheckoutAccordion({}) {
     //form 4 - review order ========================================================
     return (
         <div className='accordion-cont'>
-            <h4 className='uppercased'>Shipping Address</h4>
+            <div className='flex-row-space-between'>
+                <h4 
+                    className='uppercased'
+                    // onClick={}
+                >Shipping Address</h4>
+                <img src={checkmark.src} />
+            </div>
             <hr />
-            <h4 className='uppercased'>Payment Method</h4>
+            <div className='flex-row-space-between'>
+                <h4 
+                    className='uppercased'
+                    // onClick={}
+                >Payment Method</h4>
+                <img src={checkmark.src} />
+            </div>
             <hr />
-            <h3 className='uppercased'>Contact Information</h3>
-            <form className='checkout-form'>
-                <TextInput 
-                    placeholder='Email Address'
-                    value={null} 
-                    width="100%" />
-                <TextInput 
-                    placeholder='Phone Number'
-                    value={null} 
-                    width="100%" />
-                <input 
-                    className="black-btn" 
-                    type="submit" 
-                    value="Next"/>
-            </form>
+            <div className='flex-row-space-between'>
+                <h4
+                    className='uppercased'
+                    // onClick={}
+                >Contact Information</h4>
+                <img src={checkmark.src} />
+            </div>
             <hr />
-            <h4 className='uppercased'>Review Order</h4>
+            <h3 className='uppercased'>Review Order</h3>
+            <div className='all-review-cont'>
+                <ReviewCont 
+                    // header=''
+                    // text=''
+                    // editOnclick={}
+                />
+                <ReviewCont
+                    // header=''
+                    // text=''
+                    // editOnclick={}
+                />
+                <ReviewCont
+                    // header=''
+                    // text=''
+                    // editOnclick={}
+                />
+            </div>
         </div>
     )
 
