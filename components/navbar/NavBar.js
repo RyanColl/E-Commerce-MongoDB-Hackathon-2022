@@ -85,6 +85,7 @@ function NavBar() {
         setOpen(false)
     }
     const closeCart = () => setCartOpen(false)
+    const accountClick = () => setTimeout(() => dispatch({...state, modal: 'about'}), 10)
     if(width > 600) {
         return (
             <>
@@ -159,7 +160,7 @@ function NavBar() {
                                     }
                                 </AnimatePresence>
                             </motion.div>
-                            <motion.div className='nav-item account'>
+                            <motion.div onClick={accountClick} className='nav-item account'>
                                 <Icon style={iconSize} icon="bi:person" />
                             </motion.div>
                             <motion.div onClick={cartPress} className='nav-item cart'>

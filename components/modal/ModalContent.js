@@ -66,6 +66,10 @@ const modals = [
     {
         name: 'site disclaimer',
         Component: Disclaimer
+    },
+    {
+        name: 'account',
+        Component: Disclaimer
     }
 
 ]

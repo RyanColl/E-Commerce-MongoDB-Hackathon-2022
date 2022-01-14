@@ -6,6 +6,7 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
+    position: relative;
     form {
         display: flex;
         justify-content: space-between;
@@ -30,4 +31,10 @@
 .close-search {
     display: grid;
     place-items: center;
+}
+.products-dropdown {
+    position: absolute;
+    width: 230px;
+    height: 100px;
+    background-color: white;
 }

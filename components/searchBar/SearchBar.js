@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import React, {useState} from 'react'
 import { Icon } from '@iconify/react';
 import { iconSize } from '../navbar/NavBar';
@@ -30,7 +30,18 @@ function SearchBar() {
                 placeholder='Search...' 
                 />
             </form>
-            {
+            {products.length && 
+                <AnimatePresence>
+                    <motion.div className='products-dropdown'>
+                        {
+                            products.map((product, i) => {
+                                return (
+                                    <motion.div></motion.div>
+                                )
+                            })
+                        }
+                    </motion.div>
+                </AnimatePresence>
                 
             }
         </>
