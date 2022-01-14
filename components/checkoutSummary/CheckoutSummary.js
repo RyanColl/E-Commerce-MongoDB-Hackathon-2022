@@ -33,7 +33,7 @@ export default function CheckoutSummary({
 
             </div>
             <div className='purchase-complete'>
-                <CompletePurchase onClick={() => {dispatch({...state, modal: 'Purchase Summary'})}} />
+                <CompletePurchase onClick={() => setTimeout(() => dispatch({...state, modal: 'Purchase Summary'}), 10)} />
             </div>
             
         </div>
