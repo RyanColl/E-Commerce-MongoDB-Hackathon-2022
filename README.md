@@ -63,4 +63,75 @@ Alternatively, you can deploy using the original "with-mongodb" template by clic
 
 ### Indexes
 
-### Aggregation
+Three Indexes were set up (the maximum for a free cluster) for different purposes for this app.
+
+1. The first index searches our database for a single element of a collection: type.
+The type being passed as a parameter is either 'mens', or 'womens', and the database is searched accordingly.
+```js
+export const getProductsByType = async (type) => {
+    const res = await Product.collection.aggregate([
+        {
+          $search: {
+            index: 'type',
+            text: {
+              query: `${type}`,
+              path: {
+                'wildcard': '*'
+              }
+            }
+          }
+        }
+      ]).limit(20).toArray()
+      return res;
+}
+```
+
+2. The second index searches our database for a single element of a collection: collectionName.
+The collection being passed as a parameter is either 'sport', 'luxury', or 'collectors', and the database is searched accordingly.
+```js
+export const getProductsByCollection = async (collection) => {
+    const res = await Product.collection.aggregate([
+        {
+          $search: {
+            index: 'collectionName',
+            text: {
+              query: `${collection}`,
+              path: {
+                'wildcard': '*'
+              }
+            }
+          }
+        }
+      ]).limit(20).toArray()
+      return res;
+}
+```
+
+3. The third index setup for this app is the most powerful and one I would like to show off for purposes fo the hackathon. This index is setup using MongoDB's Atlas Search's [AutoComplete](https://docs.atlas.mongodb.com/atlas-search/autocomplete/). Autocomplete allows us to take a complete index of our database, and search through a specific field for products that match the spelling of a word. We can even apply a fuzzy filter, so when users misspell our product names, MongoDB still knows what they mean. The index is as follows:
+
+```js
+export const atlasSearch = async (searchText) => {
+    const res = await Product.collection.aggregate([
+        {
+            $search: {
+              index: 'autocomplete', 
+              autocomplete: {
+                query: `${searchText}`,
+                path: 'description',
+                fuzzy: {
+                    maxEdits: 2,
+                    prefixLength: 3
+                },
+              }
+            }
+          }
+    ]).limit(50).toArray()
+    return res;
+}
+```
+
+The name of this index is autocomplete, and the path we are looking through is the description of the products. We could look through names/titles if we had simpler products like groceries, but with shoe descriptions, Atlas Search uses score based returns to order the products that are returned from the query based on their score. Using a simple dropdown, I have placed the products underneath the search bar in a scrollable menu.
+
+
+
+
