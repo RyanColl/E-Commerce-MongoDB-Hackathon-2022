@@ -1,6 +1,9 @@
 import React, {useEffect} from 'react'
 import Irene from '../../../assets/irene1.png'
 import Ryan from '../../../assets/ryan1.png'
+import Github from '../../../assets/github.svg'
+import Linkedin from '../../../assets/linkedin.svg'
+import Link from 'next/link'
 
 export default function AboutUs() {
     useEffect(() => {
@@ -18,8 +21,12 @@ export default function AboutUs() {
                     <p>Ryan Collicut</p>
                 </div>
                 <div className='profie-row'>
-                    {/* <img src={} /> */}
-                    <a>https://www.linkedin.com/in/rcollicutt-react-developer/</a>
+                    <img className='social-icon' src={Linkedin.src} />
+                    <a href="https://www.linkedin.com/in/rcollicutt-react-developer/" target="_blank">rcollicutt-react-developer</a>
+                </div>
+                <div className='profie-row'>
+                    <img className='social-icon' src={Github.src} />
+                    <a href="https://github.com/RyanColl" target="_blank">RyanColl</a>
                 </div>
             </div>
 
@@ -29,8 +36,12 @@ export default function AboutUs() {
                     <p>Irene Wu</p>
                 </div>
                 <div className='profie-row'>
-                    {/* <img src={} /> */}
-                    <a>https://www.linkedin.com/in/irenewuu/</a>
+                    <img className='social-icon' src={Linkedin.src} />
+                    <a href="https://www.linkedin.com/in/irenewuu/" target="_blank">irenewuu</a>
+                </div>
+                <div className='profie-row'>
+                    <img className='social-icon' src={Github.src} />
+                    <a href="https://github.com/irenewuu" target="_blank">irenewuu</a>
                 </div>
             </div>
         </div>
