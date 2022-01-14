@@ -8,6 +8,7 @@ import Careers from './content/Careers'
 import Subscribe from './content/Subscribe'
 import Summary from './content/Summary'
 import Disclaimer from './content/Disclaimer'
+import AboutUs from './content/AboutUs'
 
 const modals = [
     // customer care
@@ -78,6 +79,10 @@ const modals = [
     {
         name: 'coupon',
         Component: Disclaimer
+    },
+    {
+        name: 'next',
+        Component: AboutUs
     }
 
 ]
