@@ -48,13 +48,19 @@ function CartContents({closeCart}) {
                                 <div className='info'>
                                     <div>
                                         <p className='uppercased'>{title}</p>
-                                        <p>Brand: {brand}</p>
+                                        <p className='greyed'>Brand: {brand}</p>
                                     </div>
-                                    <motion.div animate={{x:-4}} className='cart-options'>
-                                        <span>QTY:</span>
-                                        <Dropdown type={'quantity'} iD={_id} number={quantity} numbers={qtys} />
-                                        <span>SIZE: </span>
-                                        <Dropdown type={'size'} iD={_id} number={selectedSize} numbers={shoeSizes} />
+                                    <motion.div 
+                                        // animate={{x:-4}} 
+                                        className='cart-options'>
+                                        <div className='option-flex-row'>
+                                            <span>QTY:</span>
+                                            <Dropdown type={'quantity'} iD={_id} number={quantity} numbers={qtys} />
+                                        </div>
+                                        <div className='option-flex-row'>
+                                            <span>SIZE: </span>
+                                            <Dropdown type={'size'} iD={_id} number={selectedSize} numbers={shoeSizes} />
+                                        </div>
                                     </motion.div>
                                 </div>
                             </div>
