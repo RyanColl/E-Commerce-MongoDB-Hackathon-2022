@@ -6,6 +6,11 @@
     h4 {
         color: #828282;
     }
+
+    // h4:hover {
+    //     cursor: pointer;
+    //     text-decoration: underline;
+    // }
     .payment-methods {
         display: flex;
         column-gap: 4px;
@@ -23,7 +28,7 @@
         column-gap: 12px;
     }
 
-    input[type="submit"] {
+    input[type="submit"], input[type="button"] {
         border-radius: 4px;
         font-size: 18px;
         width: 330px;
@@ -35,6 +40,7 @@
 
 
 
+
 @media screen and (max-width: 1200px) {
     .accordion-cont {
         width: 330px;
@@ -43,6 +49,9 @@
     .flex-row {
         flex-direction: column !important;
         row-gap: 12px;
+    }
+    .payment-methods {
+        display: none !important;
     }
     
 }

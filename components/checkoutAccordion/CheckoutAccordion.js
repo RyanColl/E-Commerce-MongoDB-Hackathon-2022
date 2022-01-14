@@ -4,59 +4,71 @@ import visa from "../../assets/visa.svg";
 import mastercard from "../../assets/mastercard.svg";
 import americanexpress from "../../assets/american-express.svg";
 import paypal from "../../assets/paypal.svg";
+import ReviewCont from '../reviewContainer/ReviewCont';
+import checkmark from '../../assets/checkmark.svg';
+import { AppProvider } from '../../context/AppContext';
 
-export default function CheckoutAccordion({}) {
+export default function CheckoutAccordion({
+    text="NEXT"
+}) {
+    const {state, dispatch} = React.useContext(AppProvider)
+const handleModalPress = () => {
+    setTimeout(() => dispatch({...state, modal: text}), 10)
+}
     // form 1 - shipping address ============================================================
-    //     return (
-    //         <div className='accordion-cont'>
-    //             <h3 className='uppercased'>Shipping Address</h3>
-    //             <form className='checkout-form'>
-    //                 <div className='flex-row'>
-    //                     <TextInput 
-    //                         placeholder='First Name'
-    //                         value={null} />
-    //                     <TextInput 
-    //                         placeholder='Last Name'
-    //                         value={null} />
-    //                 </div>
-    //                 <TextInput 
-    //                     placeholder='Address Line 1'
-    //                     value={null} 
-    //                     width="100%" />
-    //                 <TextInput 
-    //                     placeholder='Address Line 2'
-    //                     value={null}
-    //                     width="100%" />
-    //                 <div className='flex-row'>
-    //                     <TextInput 
-    //                         placeholder='City'
-    //                         value={null} />
-    //                     <TextInput 
-    //                         placeholder='Province'
-    //                         value={null} />
-    //                 </div>
-    //                 <div className='flex-row'>
-    //                     <TextInput 
-    //                         placeholder='Postal Code'
-    //                         value={null} />
-    //                     <TextInput 
-    //                         placeholder='Country'
-    //                         value={"Canada"}
-    //                         disabled={true} />
-    //                 </div>
-    //                 <input 
-    //                     className="black-btn" 
-    //                     type="submit" 
-    //                     value="Next"/>
-    //             </form>
-    //             <hr />
-    //             <h4 className='uppercased'>Payment Method</h4>
-    //             <hr />
-    //             <h4 className='uppercased'>Contact Information</h4>
-    //             <hr />
-    //             <h4 className='uppercased'>Review Order</h4>
-    //         </div>
-    //     )
+        return (
+            <div className='accordion-cont'>
+                <h3 className='uppercased'>Shipping Address</h3>
+                <form className='checkout-form'>
+                    <div className='flex-row'>
+                        <TextInput 
+                            placeholder='First Name'
+                            value={null} />
+                        <TextInput 
+                            placeholder='Last Name'
+                            value={null} />
+                    </div>
+                    <TextInput 
+                        placeholder='Address Line 1'
+                        value={null} 
+                        width="100%" />
+                    <TextInput 
+                        placeholder='Address Line 2'
+                        value={null}
+                        width="100%" />
+                    <div className='flex-row'>
+                        <TextInput 
+                            placeholder='City'
+                            value={null} />
+                        <TextInput 
+                            placeholder='Province'
+                            value={null} />
+                    </div>
+                    <div className='flex-row'>
+                        <TextInput 
+                            placeholder='Postal Code'
+                            value={null} />
+                        <TextInput 
+                            placeholder='Country'
+                            value={"Canada"}
+                            disabled={true} />
+                    </div>
+                    <input 
+                        className="black-btn" 
+                        type="button" 
+                        value={text}
+                        onClick={() => {handleModalPress(text)}}
+                        
+                        />
+                </form>
+                <hr />
+                <h4 className='uppercased'>Payment Method</h4>
+                <hr />
+                <h4 className='uppercased'>Contact Information</h4>
+                <hr />
+                <h4 className='uppercased'>Review Order</h4>
+            </div>
+        )
 
 
     //form 2 - payment method ========================================================
@@ -129,9 +141,21 @@ export default function CheckoutAccordion({}) {
     //form 3 - contact information ========================================================
         // return (
         //     <div className='accordion-cont'>
-        //         <h4 className='uppercased'>Shipping Address</h4>
+        //         <div className='flex-row-space-between'>
+        //             <h4
+        //                 className='uppercased'
+        //                 // onClick={}
+        //             >Shipping Address</h4>
+        //             <img src={checkmark.src} />
+        //         </div>
         //         <hr />
-        //         <h4 className='uppercased'>Payment Method</h4>
+        //         <div className='flex-row-space-between'>
+        //             <h4
+        //                 className='uppercased'
+        //                 // onClick={}
+        //             >Payment Method</h4>
+        //             <img src={checkmark.src} />
+        //         </div>
         //         <hr />
         //         <h3 className='uppercased'>Contact Information</h3>
         //         <form className='checkout-form'>
@@ -155,30 +179,51 @@ export default function CheckoutAccordion({}) {
 
         
     //form 4 - review order ========================================================
-    return (
-        <div className='accordion-cont'>
-            <h4 className='uppercased'>Shipping Address</h4>
-            <hr />
-            <h4 className='uppercased'>Payment Method</h4>
-            <hr />
-            <h3 className='uppercased'>Contact Information</h3>
-            <form className='checkout-form'>
-                <TextInput 
-                    placeholder='Email Address'
-                    value={null} 
-                    width="100%" />
-                <TextInput 
-                    placeholder='Phone Number'
-                    value={null} 
-                    width="100%" />
-                <input 
-                    className="black-btn" 
-                    type="submit" 
-                    value="Next"/>
-            </form>
-            <hr />
-            <h4 className='uppercased'>Review Order</h4>
-        </div>
-    )
+    // return (
+    //     <div className='accordion-cont'>
+    //         <div className='flex-row-space-between'>
+    //             <h4 
+    //                 className='uppercased'
+    //                 // onClick={}
+    //             >Shipping Address</h4>
+    //             <img src={checkmark.src} />
+    //         </div>
+    //         <hr />
+    //         <div className='flex-row-space-between'>
+    //             <h4 
+    //                 className='uppercased'
+    //                 // onClick={}
+    //             >Payment Method</h4>
+    //             <img src={checkmark.src} />
+    //         </div>
+    //         <hr />
+    //         <div className='flex-row-space-between'>
+    //             <h4
+    //                 className='uppercased'
+    //                 // onClick={}
+    //             >Contact Information</h4>
+    //             <img src={checkmark.src} />
+    //         </div>
+    //         <hr />
+    //         <h3 className='uppercased'>Review Order</h3>
+    //         <div className='all-review-cont'>
+    //             <ReviewCont 
+    //                 // header=''
+    //                 // text=''
+    //                 // editOnclick={}
+    //             />
+    //             <ReviewCont
+    //                 // header=''
+    //                 // text=''
+    //                 // editOnclick={}
+    //             />
+    //             <ReviewCont
+    //                 // header=''
+    //                 // text=''
+    //                 // editOnclick={}
+    //             />
+    //         </div>
+    //     </div>
+    // )
 
 }
