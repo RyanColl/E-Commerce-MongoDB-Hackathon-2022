@@ -167,8 +167,8 @@
         }
         .info {
             height: calc(100% - 0.2em);
-            width: 180px !important;
-            // padding: 0.1em;
+
+            width: 250px !important;            // padding: 0.1em;
             margin-left: 12px;
             // margin-left: 1.5em !important;
             display: flex;
@@ -251,6 +251,7 @@
     .cart-item {
         .left .info {
             margin-left: 0 !important;
+            width: 275px !important;
         }
     }
 }
