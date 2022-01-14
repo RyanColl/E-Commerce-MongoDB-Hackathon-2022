@@ -6,6 +6,7 @@ import Returns from './content/Returns'
 import Careers from './content/Careers'
 
 import Subscribe from './content/Subscribe'
+import Summary from './content/Summary'
 import Disclaimer from './content/Disclaimer'
 
 const modals = [
@@ -57,6 +58,10 @@ const modals = [
     {
         name: 'subscribe',
         Component: Subscribe
+    },
+    {
+        name: 'purchase summary',
+        Component: Summary
     },
     {
         name: 'site disclaimer',

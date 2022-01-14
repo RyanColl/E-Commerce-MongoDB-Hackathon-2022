@@ -23,7 +23,7 @@ export default function checkout() {
             <div className='checkout-content'>
                 <CheckoutAccordion />
                 <div className='checkout-content-right'>
-                    <CheckoutSummary />
+                    <CheckoutSummary  />
                 </div>
 
             </div>

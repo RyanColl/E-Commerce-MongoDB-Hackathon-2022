@@ -1,33 +1,41 @@
 import React from 'react';
 import CheckoutItem from '../checkoutItem/CheckoutItem';
-
+import { AppProvider } from '../../context/AppContext';
+import CompletePurchase from '../cart/CompletePurchase';
 export default function CheckoutSummary({
-    subtotal="5000",
     taxEstimate="4000",
     estimatedTotal="9000"
 }) {
+    const {state, dispatch} = React.useContext(AppProvider)
+    let subtotal = (state.cart.reduce((acc, cartObj) => (acc+cartObj.product.price), 0))/100
     return (
         <div className='checkout-summary-cont'>
             <div className='purchase-summary'>
                 <div className='edit-option-cont flex-row-space-between'>
                     <h3>Summary</h3>  <a>edit</a>
                 </div>
-                <CheckoutItem />
+                {state.cart.map(({product, quantity, selectedSize}, i) => {
+                    return <CheckoutItem prodPrice={product.price/100} prodImg={product.image[0]} prodTitle={product.title} quantity={quantity} size={selectedSize} />
+                })}
             </div>
             <div className='cost-summary-cont'>
                 <div className='flex-row-space-between'>
                     <p>Subtotal:</p>  <p>${subtotal}</p>
                 </div>
                 <div className='flex-row-space-between'>
-                    <p>Tax estimate:</p>  <p>${taxEstimate}</p>
+                    <p>Tax estimate:</p>  <p>${((subtotal)*0.12).toFixed(2)}</p>
                 </div>
                 <a>Have a promo code?</a>
                 <hr />
                 <div className='flex-row-space-between'>
-                    <h4>Estimated total:</h4>  <h4>${estimatedTotal}</h4>
+                    <h4>Estimated total:</h4>  <h4>${((subtotal)*1.12).toFixed(2)}</h4>
                 </div>
 
             </div>
+            <div className='purchase-complete'>
+                <CompletePurchase onClick={() => {dispatch({...state, modal: 'Purchase Summary'})}} />
+            </div>
+            
         </div>
     )
 }
