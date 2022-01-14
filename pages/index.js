@@ -29,7 +29,7 @@ function index({
     if(state.products.length) {
       console.log('products now added to state', products)
       /* TESTING - REMOVE BEFORE DEPLOYMENT */
-      dispatch({...state, cart: [{product: state.products[0], quantity: 1, selectedSize: 9}, {product: state.products[1], quantity: 1, selectedSize: 9}, {product: state.products[2], quantity: 1, selectedSize: 9}]})
+      // dispatch({...state, cart: [{product: state.products[0], quantity: 1, selectedSize: 9}, {product: state.products[1], quantity: 1, selectedSize: 9}, {product: state.products[2], quantity: 1, selectedSize: 9}]})
       /* TESTING COMPLETE */
     }
   }, [state.products])

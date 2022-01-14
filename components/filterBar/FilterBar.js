@@ -11,7 +11,7 @@ export default function FilterBar() {
     setRoute(`/api/sort/filter?${`${route.key}=${route.value}`}`)
   }, [router.query])
   const lowToHigh = () => {
-    // console.log(router.asPath)
+    console.log(router.asPath)
     fetch(route, {method: "POST", body: JSON.stringify({price:1})})
       .then(data => data.json())
       .then(data => dispatch({...state, products: data.data.products}))
