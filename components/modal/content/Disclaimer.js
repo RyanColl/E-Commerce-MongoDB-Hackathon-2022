@@ -12,7 +12,7 @@ export default function Disclaimer() {
             <br />
             <p>Any products or product images, descriptions, titles, brand names, or other recognitive information not owned by us are purely for educational purposes only.</p>
             <br />
-            <p>All code is open source and can be found at: <a>https://github.com/RyanColl/E-Commerce-MongoDB-Hackathon-2022</a></p>
+            <p>All code is open source and can be found at: <a href='https://github.com/RyanColl/E-Commerce-MongoDB-Hackathon-2022'>https://github.com/RyanColl/E-Commerce-MongoDB-Hackathon-2022</a></p>
         </div>
     )
 }

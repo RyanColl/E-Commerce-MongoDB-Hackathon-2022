@@ -70,6 +70,14 @@ const modals = [
     {
         name: 'account',
         Component: Disclaimer
+    },
+    {
+        name: 'about',
+        Component: Disclaimer
+    },
+    {
+        name: 'coupon',
+        Component: Disclaimer
     }
 
 ]

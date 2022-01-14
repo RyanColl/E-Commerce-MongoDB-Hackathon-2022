@@ -6,15 +6,15 @@ import { AppProvider, initialModalState } from '../../context/AppContext';
 import AccordianDropdown from '../accordian/AccordianDropdown';
 import { useRouter } from 'next/router';
 import SearchBar from '../searchBar/SearchBar';
-function Menu() {
+function Menu({setOpen}) {
     const {state, dispatch} = React.useContext(AppProvider)
     const aboutPress = () => setTimeout(() => dispatch({...state, modal: 'about'}), 10)
     const router = useRouter()
     const routing = (text) => {
         console.log(text)
-        if(text === 'View All') {router.push('/products'); return}
-        if(text === 'View By Gender') {router.push('/products?type=mens'); return}
-        if(text === 'View By Collection') {router.push('/products?collection=collectors'); return}
+        if(text === 'View All') {setOpen(false); router.push('/products'); return}
+        if(text === 'View By Gender') {setOpen(false); router.push('/products?type=mens'); return}
+        if(text === 'View By Collection') {setOpen(false); router.push('/products?collection=collectors'); return}
     }
     // console.log(state.modal)
     const [isSearching, setSearching] = useState(false)
@@ -47,7 +47,7 @@ function Menu() {
                             animate={{x: 0, opacity: 1, y: 4}}
                             exit={{x: 100, opacity: 0, y: 4}}
                             className='search-bar-div'>
-                                <SearchBar />
+                                <SearchBar setOpen={setOpen} />
                                 <motion.span 
                                 onClick={closeSearch}
                                 className='close-search'

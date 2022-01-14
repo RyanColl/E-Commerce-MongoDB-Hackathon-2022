@@ -139,7 +139,7 @@ function NavBar() {
                                     initial="initial"
                                     exit="exit"
                                     >
-                                        <SearchBar />
+                                        <SearchBar nav={true} ex={20} />
                                         <motion.span 
                                         onClick={searchClose}
                                         className='close-search'
@@ -182,7 +182,7 @@ function NavBar() {
         return (
         <>
             <AnimatePresence>{isCartOpen && <Cart closeCart={closeCart} />}</AnimatePresence>
-            <AnimatePresence>{isOpen && <Menu />}</AnimatePresence>
+            <AnimatePresence>{isOpen && <Menu setOpen={setOpen} />}</AnimatePresence>
             <AnimatePresence>
                 {!hidden &&
                 <motion.div 
