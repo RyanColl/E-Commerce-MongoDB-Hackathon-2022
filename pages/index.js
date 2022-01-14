@@ -107,6 +107,7 @@ function index({
             return (
                 <ProductPreview 
                     key={i}
+                    i={i}
                     src={product.image[0] || product.image[1]} 
                     prodTitle={product.title} 
                     prodPrice={`${product.price/100}`}

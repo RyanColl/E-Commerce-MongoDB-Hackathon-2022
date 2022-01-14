@@ -7,7 +7,7 @@ export default function CheckoutSummary({
     estimatedTotal="9000"
 }) {
     const {state, dispatch} = React.useContext(AppProvider)
-    let subtotal = (state.cart.reduce((acc, cartObj) => (acc+cartObj.product.price), 0))/100
+    let subtotal = (state.cart.reduce((acc, cartObj) => (acc+(cartObj.product.price*cartObj.quantity)), 0))/100
     return (
         <div className='checkout-summary-cont'>
             <div className='purchase-summary'>
@@ -25,7 +25,7 @@ export default function CheckoutSummary({
                 <div className='flex-row-space-between'>
                     <p>Tax estimate:</p>  <p>${((subtotal)*0.12).toFixed(2)}</p>
                 </div>
-                <a>Have a promo code?</a>
+                <a onClick={() => setTimeout(() => dispatch({...state, modal: 'coupon'}), 10)}>Have a promo code?</a>
                 <hr />
                 <div className='flex-row-space-between'>
                     <h4>Estimated total:</h4>  <h4>${((subtotal)*1.12).toFixed(2)}</h4>

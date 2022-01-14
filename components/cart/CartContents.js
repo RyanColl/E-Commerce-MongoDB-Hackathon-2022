@@ -75,7 +75,7 @@ function CartContents({closeCart}) {
             <div className='cart-bottom'>
                 <div className='subtotal'>
                     <h4>SUBTOTAL</h4>
-                    <h4>${(state.cart.reduce((acc, cartObj) => (acc+cartObj.product.price), 0))/100}</h4>
+                    <h4>${((state.cart.reduce((acc, cartObj) => (acc+(cartObj.product.price*cartObj.quantity)), 0))/100).toFixed(2)}</h4>
                 </div>
                 <div className='cart-buttons'>
                     <ContinueShopping onClick={closeCart} />

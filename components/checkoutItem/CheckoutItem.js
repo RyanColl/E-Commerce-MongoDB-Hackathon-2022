@@ -20,7 +20,7 @@ export default function CheckoutItem({
                     <p>Qty: {quantity}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Size: {size}</p>
                 </div>
             </div>
-            <h5>${prodPrice}</h5>
+            <h5>${(prodPrice*quantity).toFixed(2)}</h5>
         </div>
     )
 }
