@@ -4,7 +4,7 @@ import AboutUs from './AboutUs'
 function Summary() {
     const {state, dispatch} = React.useContext(AppProvider)
     useEffect(() => {
-        document.getElementById('modal').style.height = '480px';
+        document.getElementById('modal').style.height = '520px';
     })
     return (
         <div>

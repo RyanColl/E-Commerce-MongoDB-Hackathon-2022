@@ -5,7 +5,7 @@ import { iconSize } from '../navbar/NavBar';
 import FoundProduct from './FoundProduct';
 import { useRouter } from 'next/router'
 import { AppProvider } from '../../context/AppContext'
-function SearchBar({ex=0, setOpen, nav=false}) {
+function SearchBar({ex=0, setOpen=()=>{}, nav=false}) {
     const [value, setValue] = useState('')
     const [products, setProducts] = useState([])
     const submit = (e) => {

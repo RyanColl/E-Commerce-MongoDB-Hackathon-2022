@@ -12,6 +12,9 @@ $md: 800px;
 */
 
 /* COUNTERING USER AGENT STYLESHEET */
+html {
+  overflow-x: hidden;
+}
 html, body {
   box-sizing: border-box;
   margin: 0px;
