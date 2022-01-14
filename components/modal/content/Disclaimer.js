@@ -1,5 +1,4 @@
-import React from 'react'
-import { useEffect } from 'react/cjs/react.development'
+import React, {useEffect} from 'react'
 
 export default function Disclaimer() {
     useEffect(() => {
