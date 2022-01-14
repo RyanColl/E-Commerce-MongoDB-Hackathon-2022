@@ -67,3 +67,23 @@
         width: 100%;
     }
 }
+
+.mini-profile-cont {
+
+    margin: 12px 0;
+
+    .profie-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .profile-pic {
+        width: 45px;
+        border-radius: 100px;
+    }
+
+
+}
