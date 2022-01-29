@@ -34,6 +34,7 @@ export default function Item({product}) {
     dispatch({...state, cart: [...state.cart, {product, quantity: 1, selectedSize}]})
     router.push('/products')
   }
+  // pushing to main for production deployment
   return (
     <>
     {(product && product.image) &&
