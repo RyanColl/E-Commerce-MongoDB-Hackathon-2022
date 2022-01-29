@@ -6,7 +6,7 @@ export default function Banner({
 }) {
   const router = useRouter()
   const {query} = router;
-  console.log(query)
+  // console.log(query)
   return (
     <div className='banner'>
       <div>

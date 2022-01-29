@@ -9,9 +9,9 @@ function Dropdown({number, numbers, iD, type}) {
     const ddClick = () => setOpen(!isOpen)
     
     const {state, dispatch} = React.useContext(AppProvider)
-    console.log(number)
+    // console.log(number)
     const numOnclick = (num, id) => {
-        console.log(type,num)
+        // console.log(type,num)
         let findIndex = state.cart.map((cartObj, i) => {
             if(cartObj.product._id === id) {
                 return {

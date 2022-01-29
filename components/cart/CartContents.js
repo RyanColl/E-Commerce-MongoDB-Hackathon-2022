@@ -34,7 +34,7 @@ function CartContents({closeCart}) {
                 {state.cart.map(({product, quantity, selectedSize}, i) => {
                     const {brand, category, description, 
                     image, price, rating, title, _id, shoeSizes} = product
-                    console.log(quantity,selectedSize)
+                    // console.log(quantity,selectedSize)
                     return(
                         <motion.div 
                         className='cart-item'

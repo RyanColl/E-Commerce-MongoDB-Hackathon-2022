@@ -17,7 +17,7 @@ function AccordianDropdown({
             if (dropdownRef.current.contains(e.target)) press()  
             else click()
         } else {
-            console.log(false, e)
+            // console.log(false, e)
         }
     }
     useEffect(() => {

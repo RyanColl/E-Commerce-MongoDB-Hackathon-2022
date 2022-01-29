@@ -9,7 +9,7 @@ export default async (req, res) => {
         
         let data = await atlasSearch(text.val)
         let uniq = [...new Set(data)];
-        console.log(uniq.length)
+        // console.log(uniq.length)
         res.json({
             status: 'success',
             result: 1,

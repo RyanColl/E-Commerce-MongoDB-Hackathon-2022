@@ -28,7 +28,7 @@ export default function Item({product}) {
   useEffect(() => {
     dispatch({...state, loading: false})
   }, [product])
-  console.log(shoeSizes)
+  // console.log(shoeSizes)
   const [selectedSize, setSelectedSize] = useState(0)
   const addToCart = () => {
     dispatch({...state, cart: [...state.cart, {product, quantity: 1, selectedSize}]})
@@ -36,7 +36,7 @@ export default function Item({product}) {
   }
   return (
     <>
-    {product &&
+    {(product && product.image) &&
       <Product 
           rating={parseFloat(Rating.toFixed(2))}
         // information section 1 ==================

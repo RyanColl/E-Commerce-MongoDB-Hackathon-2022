@@ -11,7 +11,7 @@ function Menu({setOpen}) {
     const aboutPress = () => setTimeout(() => dispatch({...state, modal: 'about'}), 10)
     const router = useRouter()
     const routing = (text) => {
-        console.log(text)
+        // console.log(text)
         if(text === 'View All') {setOpen(false); router.push('/products'); return}
         if(text === 'View By Gender') {setOpen(false); router.push('/products?type=mens'); return}
         if(text === 'View By Collection') {setOpen(false); router.push('/products?collection=collectors'); return}
@@ -20,7 +20,7 @@ function Menu({setOpen}) {
     const [isSearching, setSearching] = useState(false)
     const openSearch = () => setSearching(true)
     const closeSearch = () => {
-        console.log('close?', isSearching)
+        // console.log('close?', isSearching)
         setSearching(false)
     }
     return (

@@ -6,7 +6,7 @@ function Subscribe({click = () => {}}) {
     const [value, setValue] = React.useState('')
     const subscribeEmail = (e) => {
         e.preventDefault()
-        console.log(value)
+        // console.log(value)
         click('subscribe')
     }
     return (
