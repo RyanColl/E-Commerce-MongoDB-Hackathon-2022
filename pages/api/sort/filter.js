@@ -10,7 +10,7 @@ const handler = async (req, res) => {
         switch(Object.keys(req.query)[0]) {
             case 'type': sortType(req.query[Object.keys(req.query)[0]], JSON.parse(req.body))
             .then(products => {
-                console.log(products)
+                // console.log(products)
                 res.send({
                     status: 'success',
                     result: products.length,
@@ -20,7 +20,7 @@ const handler = async (req, res) => {
             }); break;
             case 'collection': sortCollection(req.query[Object.keys(req.query)[0]], JSON.parse(req.body))
             .then(products => {
-                console.log(products)
+                // console.log(products)
                 res.send({
                     status: 'success',
                     result: products.length,

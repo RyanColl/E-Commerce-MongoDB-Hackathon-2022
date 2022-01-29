@@ -10,7 +10,7 @@ function SearchBar({ex=0, setOpen=()=>{}, nav=false}) {
     const [products, setProducts] = useState([])
     const submit = (e) => {
         e.preventDefault()
-        console.log(value)
+        // console.log(value)
     }
     const handleChange = (val) => {
         if(val.length > 2) {

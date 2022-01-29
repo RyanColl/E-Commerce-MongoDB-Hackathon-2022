@@ -27,7 +27,7 @@ function index({
   // use this to work with products after getting them into state
   useEffect(() => {
     if(state.products.length) {
-      console.log('products now added to state', products)
+      // console.log('products now added to state', products)
       /* TESTING - REMOVE BEFORE DEPLOYMENT */
       // dispatch({...state, cart: [{product: state.products[0], quantity: 1, selectedSize: 9}, {product: state.products[1], quantity: 1, selectedSize: 9}, {product: state.products[2], quantity: 1, selectedSize: 9}]})
       /* TESTING COMPLETE */
@@ -38,16 +38,16 @@ function index({
   const [counter, setCounter] = useState(0);
   const xValue = useMotionValue(0)
   const HandleImgChange = (i) => {
-    console.log("is this working")
+    // console.log("is this working")
     var carousel = document.getElementsByClassName("carousel")
     if (i<carousel.length-1) {
       i = carousel.length-1;
-      console.log("left click")
+      // console.log("left click")
       xValue = xValue.get();
     }
     else if(i>carousel.length-1) {
       i=0;
-      console.log("right click")
+      // console.log("right click")
       xValue = xValue.set(xValue);
     }
     setCounter(i)

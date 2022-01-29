@@ -86,7 +86,7 @@ const modals = [
 
 ]
 function ModalContent({content}) {
-    console.log(content)
+    // console.log(content)
     return (
         <>
             {

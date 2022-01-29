@@ -8,9 +8,9 @@ function BrowseDropdown({exit, initial, animate, close}) {
     const dropdownRef = React.useRef(null)
     const clickEvent = () => {
         if(dropdownRef != null) {
-            console.log(true)
+            // console.log(true)
         } else {
-            console.log(false)
+            // console.log(false)
         }
     }
     useEffect(() => {

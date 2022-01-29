@@ -6,7 +6,7 @@ import Product from '../models/Product'
 import {changeSpanColor} from '../lib/doc.serv'
 import Typewriter from 'typewriter-effect';
 export default function Home({ products }) {
-  console.log(products)
+  // console.log(products)
   // push for vercel
   return (
     <motion.div className="index-content">
@@ -56,7 +56,7 @@ export async function getStaticProps({query}) {
   await dbConnect()
   const products = await getProducts()
   const brands = await Product.collection.distinct('brand')
-  console.log(brands)
+  // console.log(brands)
   // server side rendering
   return {
     props: {
